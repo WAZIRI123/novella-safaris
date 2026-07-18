@@ -28,10 +28,6 @@
                     <a href="#"><i class="bi bi-people-fill"></i> About Us</a>
                     <a href="#"><i class="bi bi-telephone-fill"></i> Contact Us</a>
                     <a href="#"><i class="bi bi-file-earmark-pdf-fill"></i> Resources</a>
-                    <a href="#"><i class="bi bi-play-btn-fill"></i> Live Cam</a>
-                </div>
-                <div class="toll-free">
-                    Have questions? Toll Free: <a href="tel:+18665504447">+1 866 550 4447</a>
                 </div>
             </div>
         </div>
@@ -75,7 +71,6 @@
 
             <div class="nav-actions">
                 <a href="#" class="btn-plan"><i class="bi bi-briefcase-fill"></i> LET'S PLAN A TRIP</a>
-                <button class="nav-search" aria-label="Search"><i class="bi bi-search"></i></button>
                 <button class="nav-toggle" id="navToggle" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -85,12 +80,17 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-        <div class="hero-image" style="background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-slides" id="heroSlides">
+            <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1920&q=80');"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="container hero-inner">
             <h1 class="hero-title">PREMIER TOUR OPERATOR FOR THE BEST SAFARI IN TANZANIA</h1>
             <p class="hero-sub">TO SEE A BEAUTIFUL COUNTRY WITH ITS LANDSCAPES AND WILDERNESS.</p>
-            <a href="#" class="btn btn-yellow btn-hero">Book Now</a>
 
             <div class="dual-buttons">
                 <a href="#" class="dual-btn">
@@ -116,16 +116,6 @@
                     <span>Mount Kilimanjaro Trek</span>
                 </a>
             </div>
-        </div>
-    </section>
-
-    <!-- ============ AWARDS STRIP ============ -->
-    <section class="awards-strip">
-        <div class="container awards-inner">
-            <div class="award-logo"><strong>TATO</strong><span>Tanzania Association of Tour Operators</span></div>
-            <div class="award-logo"><strong>KPAP</strong><span>Kilimanjaro Porters Assistance</span></div>
-            <div class="award-logo"><strong>TripAdvisor</strong><span>Certificate of Excellence</span></div>
-            <div class="award-logo"><strong>Safari Bookings</strong><span>Recommended Operator</span></div>
         </div>
     </section>
 
@@ -492,13 +482,16 @@
 
     <!-- ============ PARTNERS ============ -->
     <section class="partners">
-        <div class="container partners-inner">
-            <span>TATO</span>
-            <span>KPAP</span>
-            <span>IATA</span>
-            <span>Responsible Tourism</span>
-            <span>Safari Bookings</span>
-            <span>TripAdvisor</span>
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Partners</h2>
+            </div>
+            <div class="partners-inner">
+                <a href="#" class="partner-logo"><img src="assets/partners/tato-2-e1690348892854.png" alt="TATO — Tanzania Association of Tour Operators" /></a>
+                <a href="#" class="partner-logo"><img src="assets/partners/atta-e1690300992660.png" alt="ATTA" /></a>
+                <a href="#" class="partner-logo"><img src="assets/partners/gstc-logo.png" alt="GSTC" /></a>
+                <a href="#" class="partner-logo"><img src="assets/partners/ttssp-web.png" alt="TTSSP" /></a>
+            </div>
         </div>
     </section>
 
@@ -510,15 +503,9 @@
                     <img src="assets/logo-light.png" alt="Novella Tanzania — Safaris &amp; Trekking" />
                 </a>
                 <p>Handcrafted Tanzania adventures since 2005. Licensed by TALA &amp; TATO. Proud KPAP partner.</p>
-                <form class="newsletter" onsubmit="event.preventDefault(); alert('Subscribed!');">
-                    <input type="email" placeholder="Your email address" required />
-                    <button type="submit" class="btn btn-yellow btn-sm">Subscribe</button>
-                </form>
                 <div class="socials">
                     <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                     <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                    <a href="#" aria-label="TripAdvisor"><i class="bi bi-tripadvisor"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -565,7 +552,6 @@
     <!-- Fixed side buttons -->
     <div class="fixed-side">
         <a href="#" class="fixed-btn book-now"><i class="bi bi-calendar-check"></i> Book Now</a>
-        <a href="#" class="fixed-btn pay-online"><i class="bi bi-credit-card"></i> Pay Online</a>
     </div>
 
     <!-- Floating WhatsApp -->

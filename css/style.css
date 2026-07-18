@@ -2,6 +2,7 @@
    NOVELLA SAFARIS — inspired by zaratanzaniaadventures.com
    ========================================================= */
 
+:root {
     /* ---- Brand palette — derived from the Novella logo ---- */
     --forest:        #283C28;   /* logo "N" green — exact match, primary */
     --forest-dark:   #1A2A1B;   /* deeper forest for footer */
@@ -44,7 +45,8 @@
 
     --font:          "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-    --container:     1300px;
+    --container:     1105px;   /* body content ~85% */
+    --container-wide: 1300px;   /* full width for header/nav/footer */
     --transition:    all .3s ease;
 }
 
@@ -75,6 +77,10 @@ h1, h2, h3, h4, h5 {
 p { margin: 0 0 1em; color: var(--text); }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+.header-top .container,
+.main-nav .container,
+.site-footer .container,
+.footer-bottom .container { max-width: var(--container-wide); }
 
 /* ---------- SHARED SECTION TITLE ---------- */
 .section-title {
@@ -363,18 +369,98 @@ p { margin: 0 0 1em; color: var(--text); }
     overflow: hidden;
     padding: 60px 0;
 }
-.hero-image {
+/* Revolution-slider-style slideshow with Ken Burns zoom */
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+.hero-slide {
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center;
-    z-index: 0;
+    background-position: center center;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 1.6s ease-in-out;
+    will-change: transform, opacity;
+}
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+    animation: kenBurnsZoom 9s ease-out forwards;
+}
+@keyframes kenBurnsZoom {
+    0%   { transform: scale(1)     translate(0, 0); }
+    100% { transform: scale(1.18)  translate(-1.5%, -1%); }
 }
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: var(--overlay-hero);
-    z-index: 1;
+    z-index: 2;
+}
+
+/* Arrows */
+.hero-nav {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+.hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.16);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,.28);
+}
+.hero-arrow:hover { background: var(--amber); color: var(--forest-deep); border-color: var(--amber); transform: translateY(-50%) scale(1.06); }
+.hero-arrow.prev { left: 24px; }
+.hero-arrow.next { right: 24px; }
+
+/* Dots */
+.hero-dots {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+.hero-dots button {
+    width: 34px;
+    height: 4px;
+    border-radius: 3px;
+    background: rgba(255,255,255,.35);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+}
+.hero-dots button.active { background: var(--amber); width: 52px; }
+.hero-dots button:hover:not(.active) { background: rgba(255,255,255,.6); }
+
+@media (max-width: 640px) {
+    .hero-arrow { width: 42px; height: 42px; font-size: 18px; }
+    .hero-arrow.prev { left: 10px; }
+    .hero-arrow.next { right: 10px; }
+    .hero-dots { bottom: 14px; }
+    .hero-dots button { width: 24px; }
+    .hero-dots button.active { width: 40px; }
 }
 .hero-inner {
     position: relative;
@@ -1046,24 +1132,39 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    PARTNERS
    ========================================================== */
-.partners { padding: 40px 0; background: var(--white); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
+.partners { padding: 80px 0; background: var(--white); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
+.partners .section-title { margin-bottom: 40px; }
 .partners-inner {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    justify-items: center;
+    gap: 40px;
 }
-.partners-inner span {
-    font-family: var(--font);
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--navy);
-    opacity: .5;
-    letter-spacing: 1px;
+.partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    max-width: 100%;
     transition: var(--transition);
+    filter: grayscale(30%);
+    opacity: .8;
 }
-.partners-inner span:hover { opacity: 1; color: var(--gold); }
+.partner-logo:hover { filter: grayscale(0); opacity: 1; transform: translateY(-3px); }
+.partner-logo img {
+    max-height: 90px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+@media (max-width: 768px) {
+    .partners-inner { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+}
+@media (max-width: 480px) {
+    .partners-inner { grid-template-columns: 1fr; }
+}
 
 /* ==========================================================
    FOOTER

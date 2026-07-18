@@ -10,6 +10,63 @@
         onScroll();
     }
 
+    // Revolution-style hero slider with Ken Burns zoom
+    const slidesRoot = document.getElementById('heroSlides');
+    const dotsRoot   = document.getElementById('heroDots');
+    const prevBtn    = document.getElementById('heroPrev');
+    const nextBtn    = document.getElementById('heroNext');
+    if (slidesRoot) {
+        const slides = Array.from(slidesRoot.querySelectorAll('.hero-slide'));
+        let current = 0;
+        let timer;
+        const SLIDE_MS = 6500;
+
+        if (dotsRoot) {
+            slides.forEach((_, i) => {
+                const b = document.createElement('button');
+                b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                if (i === 0) b.classList.add('active');
+                b.addEventListener('click', () => goTo(i));
+                dotsRoot.appendChild(b);
+            });
+        }
+
+        const restartKenBurns = (el) => {
+            el.style.animation = 'none';
+            el.offsetWidth;
+            el.style.animation = '';
+        };
+        const goTo = (i) => {
+            if (i === current) return;
+            slides[current].classList.remove('active');
+            current = (i + slides.length) % slides.length;
+            const next = slides[current];
+            restartKenBurns(next);
+            next.classList.add('active');
+            if (dotsRoot) {
+                dotsRoot.querySelectorAll('button').forEach((b, k) =>
+                    b.classList.toggle('active', k === current)
+                );
+            }
+            resetTimer();
+        };
+        const nextSlide = () => goTo(current + 1);
+        const prevSlide = () => goTo(current - 1);
+        const resetTimer = () => {
+            clearInterval(timer);
+            timer = setInterval(nextSlide, SLIDE_MS);
+        };
+
+        prevBtn && prevBtn.addEventListener('click', prevSlide);
+        nextBtn && nextBtn.addEventListener('click', nextSlide);
+
+        // pause on hover, resume on leave
+        slidesRoot.parentElement.addEventListener('mouseenter', () => clearInterval(timer));
+        slidesRoot.parentElement.addEventListener('mouseleave', resetTimer);
+
+        resetTimer();
+    }
+
     // Mobile menu toggle
     const toggle = document.getElementById('navToggle');
     const menu   = document.getElementById('primaryNav');
