@@ -7,11 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class OtherCountryTrip extends Model
 {
     protected $fillable = [
-        'country', 'name', 'slug', 'image', 'description',
-        'price_from', 'duration', 'sort_order', 'is_published',
+        'country', 'name', 'slug', 'image', 'description', 'overview',
+        'price_from', 'duration', 'duration_days', 'duration_nights',
+        'pricing_tiers', 'itinerary', 'includes', 'excludes',
+        'accommodations', 'gallery', 'category', 'theme', 'skill_level',
+        'sort_order', 'is_published',
     ];
 
     protected $casts = [
+        'pricing_tiers' => 'array',
+        'itinerary' => 'array',
+        'includes' => 'array',
+        'excludes' => 'array',
+        'accommodations' => 'array',
+        'gallery' => 'array',
         'price_from' => 'decimal:2',
         'is_published' => 'boolean',
     ];

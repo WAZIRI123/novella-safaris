@@ -12,8 +12,11 @@ Route::get('/trekking/{slug}', [PageController::class, 'trekkingShow'])->name('t
 Route::get('/zanzibar', [PageController::class, 'zanzibar'])->name('zanzibar');
 Route::get('/zanzibar/{slug}', [PageController::class, 'zanzibarShow'])->name('zanzibar.show');
 Route::get('/day-trips', [PageController::class, 'dayTrips'])->name('day-trips');
+Route::get('/day-trips/{slug}', [PageController::class, 'dayTripShow'])->name('day-trips.show');
 Route::get('/special-packages', [PageController::class, 'specialPackages'])->name('special-packages');
+Route::get('/special-packages/{slug}', [PageController::class, 'specialPackageShow'])->name('special-packages.show');
 Route::get('/other-country', [PageController::class, 'otherCountry'])->name('other-country');
+Route::get('/other-country/{slug}', [PageController::class, 'otherCountryShow'])->name('other-country.show');
 Route::get('/blog', [PageController::class, 'blog'])->name('blog');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');

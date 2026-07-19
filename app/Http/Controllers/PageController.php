@@ -116,4 +116,28 @@ class PageController extends Controller
 
         return view('pages.zanzibar-detail', compact('package', 'relatedTours'));
     }
+
+    public function dayTripShow(string $slug)
+    {
+        $package = DayTrip::query()->where('slug', $slug)->where('is_published', true)->firstOrFail();
+        $relatedTours = DayTrip::query()->where('is_published', true)->where('id', '!=', $package->id)->orderBy('sort_order')->limit(3)->get();
+
+        return view('pages.day-trip-detail', compact('package', 'relatedTours'));
+    }
+
+    public function specialPackageShow(string $slug)
+    {
+        $package = SpecialPackage::query()->where('slug', $slug)->where('is_published', true)->firstOrFail();
+        $relatedTours = SpecialPackage::query()->where('is_published', true)->where('id', '!=', $package->id)->orderBy('sort_order')->limit(3)->get();
+
+        return view('pages.special-package-detail', compact('package', 'relatedTours'));
+    }
+
+    public function otherCountryShow(string $slug)
+    {
+        $package = OtherCountryTrip::query()->where('slug', $slug)->where('is_published', true)->firstOrFail();
+        $relatedTours = OtherCountryTrip::query()->where('is_published', true)->where('id', '!=', $package->id)->orderBy('sort_order')->limit(3)->get();
+
+        return view('pages.other-country-detail', compact('package', 'relatedTours'));
+    }
 }

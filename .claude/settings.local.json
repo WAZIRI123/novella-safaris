@@ -56,7 +56,9 @@
       "Bash(curl -s http://127.0.0.1:8000/safari/wildebeest-migration-safari)",
       "Bash(rm -f /tmp/cookies.txt)",
       "Bash(curl -s -c /tmp/cookies.txt http://127.0.0.1:8000/admin/login)",
-      "Bash(curl -s -o /tmp/d.html -w \"%{http_code}\\\\n\" http://127.0.0.1:8000/safari/wildebeest-migration-safari)"
+      "Bash(curl -s -o /tmp/d.html -w \"%{http_code}\\\\n\" http://127.0.0.1:8000/safari/wildebeest-migration-safari)",
+      "Bash(curl -s http://127.0.0.1:8000/other-country/rwanda-gorilla-trekking)",
+      "Bash(curl -s http://127.0.0.1:8000/trekking)"
     ]
   }
 }

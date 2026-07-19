@@ -33,7 +33,7 @@
                             <p>{{ $p->description }}</p>
                             <div class="dest-foot">
                                 @if ($p->price_from)<div class="dest-price">From <strong>${{ number_format($p->price_from) }}</strong></div>@endif
-                                <a href="{{ route('contact') }}" class="btn btn-outline btn-sm">Enquire</a>
+                                <a href="{{ route('special-packages.show', $p->slug) }}" class="btn btn-outline btn-sm">View Details</a>
                             </div>
                         </div>
                     </article>

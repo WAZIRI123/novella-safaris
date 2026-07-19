@@ -1,8 +1,10 @@
 {{--
-    Shared detail template for Safari, TrekkingRoute, ZanzibarPackage.
-    Expects: $package, $typeLabel, $listRoute, $typeBanner, optionally $relatedTours.
+    Shared detail template for Safari, TrekkingRoute, ZanzibarPackage,
+    DayTrip, SpecialPackage, OtherCountryTrip.
+    Expects: $package, $typeLabel, $listRoute, $typeBanner, optionally $destination, $relatedTours.
     Uses site palette: --forest, --amber, --gold, --cream, --sand.
 --}}
+@php $destination = $destination ?? ($package->country ?? 'Tanzania'); @endphp
 
 <style>
     /* ============ Package detail — Novella palette ============ */
@@ -409,7 +411,7 @@
                 <div class="pkg-card-body">
                     <div class="pkg-meta-grid">
                         <div class="meta"><strong>Category</strong><span>{{ $package->category ?? $typeLabel }}</span></div>
-                        <div class="meta"><strong>Destination</strong><span>Tanzania</span></div>
+                        <div class="meta"><strong>Destination</strong><span>{{ $destination }}</span></div>
                         <div class="meta"><strong>Theme</strong><span>{{ $package->theme ?? 'Culture & Wildlife' }}</span></div>
                         <div class="meta"><strong>Skill Level</strong><span>{{ $package->skill_level ?? 'Intermediate' }}</span></div>
                         <div class="meta"><strong>Payment</strong><span>Visa · AMEX · MC · Wire</span></div>
@@ -509,7 +511,7 @@
                     <ul>
                         @if ($package->duration_days)<li><i class="bi bi-calendar3"></i> {{ $package->duration_days }} Days</li>@endif
                         @if ($package->duration_nights)<li><i class="bi bi-moon-stars"></i> {{ $package->duration_nights }} Nights</li>@endif
-                        <li><i class="bi bi-geo-alt-fill"></i> Tanzania</li>
+                        <li><i class="bi bi-geo-alt-fill"></i> {{ $destination }}</li>
                         @if ($package->skill_level)<li><i class="bi bi-bar-chart"></i> {{ $package->skill_level }}</li>@endif
                         @if ($package->theme)<li><i class="bi bi-compass"></i> {{ $package->theme }}</li>@endif
                         <li><i class="bi bi-check-circle-fill"></i> Best-price guarantee</li>
