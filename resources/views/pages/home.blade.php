@@ -65,7 +65,7 @@
                 <a href="{{ route('about') }}" class="btn btn-navy">Read Our Story <i class="bi bi-arrow-right"></i></a>
             </div>
             <div class="why-portrait">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80" alt="Founder portrait" />
+                <img src="{{ asset('assets/novellapic.jpeg') }}" alt="Novella Safaris Owner" />
                 <div class="portrait-badge">
                     <strong>19+</strong>
                     <span>Years serving travellers</span>
