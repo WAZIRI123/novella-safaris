@@ -76,36 +76,20 @@
 
     <section class="features-charity">
         <div class="container features-inner">
-            <div class="feature-column">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
-                    <h3>Safety First</h3>
-                    <p>Modern 4x4 Land Cruisers, satellite comms and oxygen on every climb.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="bi bi-person-badge"></i></div>
-                    <h3>Qualified Guides</h3>
-                    <p>Wildlife College certified, WFR trained, averaging 12 years in the bush.</p>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                <h3>Safety First</h3>
+                <p>Modern 4x4 Land Cruisers, satellite comms and oxygen on every climb.</p>
             </div>
-            <div class="feature-column">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="bi bi-geo-alt"></i></div>
-                    <h3>Local Knowledge</h3>
-                    <p>Born and bred in Tanzania — we know every corner, every season, every secret.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="bi bi-tree"></i></div>
-                    <h3>Environmentally Friendly</h3>
-                    <p>Plastic-free camps, KPAP-certified porter care, conservation levies on every trip.</p>
-                </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-person-badge"></i></div>
+                <h3>Qualified Guides</h3>
+                <p>Wildlife College certified, WFR trained, averaging 12 years in the bush.</p>
             </div>
-            <div class="charity-card">
-                <span class="eyebrow">Corporate Social Responsibility</span>
-                <h2>Novella Foundation</h2>
-                <p>A portion of every booking funds classrooms, clean water and porter welfare in the villages around Kilimanjaro and the Serengeti.</p>
-                <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=700&q=80" alt="Community project" />
-                <a href="#" class="btn btn-yellow"><i class="bi bi-heart"></i> Donate Now</a>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="bi bi-geo-alt"></i></div>
+                <h3>Local Knowledge</h3>
+                <p>Born and bred in Tanzania — we know every corner, every season, every secret.</p>
             </div>
         </div>
     </section>
