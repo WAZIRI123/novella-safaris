@@ -25,7 +25,7 @@ include __DIR__ . "/partials/header.php";
 
         <div class="split-row">
             <div class="split-media">
-                <img src="https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?auto=format&fit=crop&w=900&q=80" alt="Stone Town" />
+                <img src="images/10.jpeg" alt="Stone Town" />
             </div>
             <div class="split-content">
                 <span class="eyebrow">History</span>
@@ -41,7 +41,7 @@ include __DIR__ . "/partials/header.php";
 
         <div class="split-row reverse">
             <div class="split-media">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80" alt="Nungwi beach" />
+                    <img src="images/11.jpeg" alt="Nungwi beach" />
             </div>
             <div class="split-content">
                 <span class="eyebrow">Beaches</span>
@@ -57,7 +57,7 @@ include __DIR__ . "/partials/header.php";
 
         <div class="split-row">
             <div class="split-media">
-                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=900&q=80" alt="Spice tour" />
+                    <img src="images/12.jpeg" alt="Spice tour" />
             </div>
             <div class="split-content">
                 <span class="eyebrow">Excursions</span>

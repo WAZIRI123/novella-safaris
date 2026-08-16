@@ -24,7 +24,7 @@ include __DIR__ . "/partials/header.php";
     <div class="container">
         <div class="split-row">
             <div class="split-media">
-                <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80" alt="Serengeti sunset" />
+                <img src="images/01.jpeg" alt="Serengeti sunset" />
             </div>
             <div class="split-content">
                 <span class="eyebrow">Our Mission</span>
@@ -41,7 +41,7 @@ include __DIR__ . "/partials/header.php";
 
         <div class="split-row reverse" id="sustainability">
             <div class="split-media">
-                <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80" alt="Community project" />
+                <img src="images/02.jpeg" alt="Community project" />
             </div>
             <div class="split-content">
                 <span class="eyebrow">Sustainability</span>
@@ -70,19 +70,19 @@ include __DIR__ . "/partials/header.php";
     <div class="container">
         <div class="team-grid">
             <div class="team-card">
-                <img src="https://i.pravatar.cc/400?img=68" alt="" />
+                <img src="images/03.jpeg" alt="" />
                 <div class="team-info"><strong>Amani Mwakalinga</strong><span>Founder &amp; Head Guide</span></div>
             </div>
             <div class="team-card">
-                <img src="https://i.pravatar.cc/400?img=47" alt="" />
+                <img src="images/04.jpeg" alt="" />
                 <div class="team-info"><strong>Neema Kileo</strong><span>Trip Designer</span></div>
             </div>
             <div class="team-card">
-                <img src="https://i.pravatar.cc/400?img=12" alt="" />
+                <img src="images/05.jpeg" alt="" />
                 <div class="team-info"><strong>Emmanuel Msigwa</strong><span>Senior Safari Guide</span></div>
             </div>
             <div class="team-card">
-                <img src="https://i.pravatar.cc/400?img=32" alt="" />
+                <img src="images/06.jpeg" alt="" />
                 <div class="team-info"><strong>Grace Massawe</strong><span>Guest Relations</span></div>
             </div>
         </div>

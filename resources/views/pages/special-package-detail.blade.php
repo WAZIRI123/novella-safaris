@@ -9,7 +9,7 @@
         'package' => $package,
         'typeLabel' => 'Special Packages',
         'listRoute' => 'special-packages',
-        'typeBanner' => 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1920&q=80',
+        'typeBanner' => asset('images/26.jpeg'),
         'destination' => 'Tanzania',
         'relatedTours' => $relatedTours,
     ])

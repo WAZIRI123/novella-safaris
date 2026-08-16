@@ -4,7 +4,7 @@
 ])
 
 @section('content')
-    <section class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1920&q=80');">
+    <section class="page-banner" style="background-image:url('{{ asset('images/13.jpeg') }}');">
         <div class="container">
             <h1>About Novella</h1>
             <div class="breadcrumb"><a href="{{ route('home') }}">Home</a> <i class="bi bi-chevron-right"></i> <span>About Us</span></div>
@@ -23,7 +23,7 @@
         <div class="container">
             <div class="split-row">
                 <div class="split-media">
-                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80" alt="Serengeti sunset" />
+                    <img src="{{ asset('images/01.jpeg') }}" alt="Serengeti sunset" />
                 </div>
                 <div class="split-content">
                     <span class="eyebrow">Our Mission</span>
@@ -40,7 +40,7 @@
 
             <div class="split-row reverse" id="sustainability">
                 <div class="split-media">
-                    <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80" alt="Community project" />
+                    <img src="{{ asset('images/02.jpeg') }}" alt="Community project" />
                 </div>
                 <div class="split-content">
                     <span class="eyebrow">Sustainability</span>
@@ -69,10 +69,10 @@
         <div class="container">
             <div class="team-grid">
                 @foreach ([
-                    ['Amani Mwakalinga', 'Founder & Head Guide', 'https://i.pravatar.cc/400?img=68'],
-                    ['Neema Kileo', 'Trip Designer', 'https://i.pravatar.cc/400?img=47'],
-                    ['Emmanuel Msigwa', 'Senior Safari Guide', 'https://i.pravatar.cc/400?img=12'],
-                    ['Grace Massawe', 'Guest Relations', 'https://i.pravatar.cc/400?img=32'],
+                    ['Amani Mwakalinga', 'Founder & Head Guide', asset('images/03.jpeg')],
+                    ['Neema Kileo', 'Trip Designer', asset('images/04.jpeg')],
+                    ['Emmanuel Msigwa', 'Senior Safari Guide', asset('images/05.jpeg')],
+                    ['Grace Massawe', 'Guest Relations', asset('images/06.jpeg')],
                 ] as [$name, $role, $img])
                     <div class="team-card">
                         <img src="{{ $img }}" alt="" />

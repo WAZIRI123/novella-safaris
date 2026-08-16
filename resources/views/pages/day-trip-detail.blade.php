@@ -9,7 +9,7 @@
         'package' => $package,
         'typeLabel' => 'Day Trips',
         'listRoute' => 'day-trips',
-        'typeBanner' => 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1920&q=80',
+        'typeBanner' => asset('images/22.jpeg'),
         'destination' => 'Tanzania',
         'relatedTours' => $relatedTours,
     ])

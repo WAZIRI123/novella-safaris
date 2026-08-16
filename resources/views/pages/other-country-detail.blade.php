@@ -9,7 +9,7 @@
         'package' => $package,
         'typeLabel' => 'East Africa',
         'listRoute' => 'other-country',
-        'typeBanner' => 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80',
+        'typeBanner' => asset('images/23.jpeg'),
         'destination' => $package->country ?? 'East Africa',
         'relatedTours' => $relatedTours,
     ])

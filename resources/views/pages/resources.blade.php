@@ -4,7 +4,7 @@
 ])
 
 @section('content')
-    <section class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1920&q=80');">
+    <section class="page-banner" style="background-image:url('{{ asset('images/24.jpeg') }}');">
         <div class="container">
             <h1>Resources</h1>
             <div class="breadcrumb"><a href="{{ route('home') }}">Home</a> <i class="bi bi-chevron-right"></i> <span>Resources</span></div>

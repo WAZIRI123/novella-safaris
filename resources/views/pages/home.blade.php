@@ -11,11 +11,11 @@
                 $slides = $heroSlides->pluck('image')->all();
                 if (empty($slides)) {
                     $slides = [
-                        'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80',
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1920&q=80',
-                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1920&q=80',
-                        'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1920&q=80',
-                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1920&q=80',
+                        asset('images/25.jpeg'),
+                        asset('images/27.jpeg'),
+                        asset('images/28.jpeg'),
+                        asset('images/22.jpeg'),
+                        asset('images/24.jpeg'),
                     ];
                 }
             @endphp
@@ -111,9 +111,9 @@
                     </article>
                 @empty
                     @foreach ([
-                        ['7-Day Great Migration Safari', 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=700&q=80'],
-                        ['8-Day Kilimanjaro Lemosho Trek', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=700&q=80'],
-                        ['10-Day Safari & Zanzibar Combo', 'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?auto=format&fit=crop&w=700&q=80'],
+                        ['7-Day Great Migration Safari', asset('images/07.jpeg')],
+                        ['8-Day Kilimanjaro Lemosho Trek', asset('images/08.jpeg')],
+                        ['10-Day Safari & Zanzibar Combo', asset('images/09.jpeg')],
                     ] as [$title, $img])
                         <article class="special-card">
                             <div class="special-img" style="background-image:url('{{ $img }}');"></div>
@@ -135,12 +135,12 @@
             </div>
             <div class="top-grid">
                 @foreach ([
-                    ['4 Days', 'Tanzania Safari', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=800&q=80'],
-                    ['6 Days', 'Northern Circuit Safari', 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=800&q=80'],
-                    ['10 Days', 'Luxury Fly-In Safari', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=800&q=80'],
-                    ['8 Days', 'Kilimanjaro Lemosho', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80'],
-                    ['6 Days', 'Kilimanjaro Marangu', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80'],
-                    ['7 Days', 'Kilimanjaro Machame', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=800&q=80'],
+                    ['4 Days', 'Tanzania Safari', asset('images/28.jpeg')],
+                    ['6 Days', 'Northern Circuit Safari', asset('images/29.jpeg')],
+                    ['10 Days', 'Luxury Fly-In Safari', asset('images/22.jpeg')],
+                    ['8 Days', 'Kilimanjaro Lemosho', asset('images/27.jpeg')],
+                    ['6 Days', 'Kilimanjaro Marangu', asset('images/15.jpeg')],
+                    ['7 Days', 'Kilimanjaro Machame', asset('images/20.jpeg')],
                 ] as [$days, $title, $img])
                     <a href="{{ route('safari') }}" class="top-card" style="background-image:url('{{ $img }}');">
                         <div class="top-card-overlay">
@@ -174,9 +174,9 @@
     <section class="group-trips">
         <div class="container">
             @foreach ([
-                ['7 Days', 'Machame Route Kilimanjaro Climb', '$1,969', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80', false],
-                ['8 Days', 'Lemosho Route Kilimanjaro Climb', '$2,251', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80', true],
-                ['7 Days', 'Serengeti Migration Safari', '$2,651', 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=800&q=80', false],
+                ['7 Days', 'Machame Route Kilimanjaro Climb', '$1,969', asset('images/27.jpeg'), false],
+                ['8 Days', 'Lemosho Route Kilimanjaro Climb', '$2,251', asset('images/15.jpeg'), true],
+                ['7 Days', 'Serengeti Migration Safari', '$2,651', asset('images/25.jpeg'), false],
             ] as [$days, $title, $price, $img, $reverse])
                 <article class="trip-row{{ $reverse ? ' reverse' : '' }}">
                     @if ($reverse)
@@ -209,7 +209,7 @@
                     <span class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
                     <strong>EXCELLENT</strong>
                     <span>Based on 1,087 reviews</span>
-                    <img src="https://static.tacdn.com/img2/branding/tripadvisor_logo_transp_340x84.png" alt="TripAdvisor" class="tripadvisor-logo" />
+                    <img src="{{ asset('images/13.jpeg') }}" alt="TripAdvisor" class="tripadvisor-logo" />
                 </div>
             </div>
             <div class="reviews-grid">
@@ -227,10 +227,10 @@
                     </article>
                 @empty
                     @foreach ([
-                        ['Sarah W.', 'London, UK', 'Trip of a lifetime', 'From airport pickup to the last sundowner, Novella made us feel like family. Our guide Emmanuel is a living encyclopedia of the bush.', 'https://i.pravatar.cc/60?img=47'],
-                        ['Michael T.', 'Tokyo, Japan', 'Summited Kilimanjaro!', 'The Lemosho crew was extraordinary. Porters, food, safety briefings — every day I felt looked after. We all reached Uhuru Peak.', 'https://i.pravatar.cc/60?img=12'],
-                        ['The Hansens', 'Oslo, Norway', 'Perfect family safari', 'Traveled with our 8 and 11 year olds. Pace was perfect, lodges were kid-friendly. Truly the trip of a lifetime.', 'https://i.pravatar.cc/60?img=32'],
-                        ['Anna K.', 'Berlin, Germany', 'Photography dream', 'Private vehicle, off-road permits, golden hour after golden hour. My best-ever wildlife portfolio came from this trip.', 'https://i.pravatar.cc/60?img=68'],
+                        ['Sarah W.', 'London, UK', 'Trip of a lifetime', 'From airport pickup to the last sundowner, Novella made us feel like family. Our guide Emmanuel is a living encyclopedia of the bush.', asset('images/03.jpeg')],
+                        ['Michael T.', 'Tokyo, Japan', 'Summited Kilimanjaro!', 'The Lemosho crew was extraordinary. Porters, food, safety briefings — every day I felt looked after. We all reached Uhuru Peak.', asset('images/04.jpeg')],
+                        ['The Hansens', 'Oslo, Norway', 'Perfect family safari', 'Traveled with our 8 and 11 year olds. Pace was perfect, lodges were kid-friendly. Truly the trip of a lifetime.', asset('images/05.jpeg')],
+                        ['Anna K.', 'Berlin, Germany', 'Photography dream', 'Private vehicle, off-road permits, golden hour after golden hour. My best-ever wildlife portfolio came from this trip.', asset('images/06.jpeg')],
                     ] as [$name, $loc, $title, $quote, $avatar])
                         <article class="review-card">
                             <div class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
@@ -256,10 +256,10 @@
             </div>
             <div class="videos-grid">
                 @foreach ([
-                    'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=600&q=80',
+                    asset('images/25.jpeg'),
+                    asset('images/29.jpeg'),
+                    asset('images/27.jpeg'),
+                    asset('images/28.jpeg'),
                 ] as $img)
                     <a href="#" class="video-card" style="background-image:url('{{ $img }}');">
                         <i class="bi bi-play-fill"></i>
@@ -286,8 +286,8 @@
                     </article>
                 @empty
                     @foreach ([
-                        ['Safari Tips', 'When is the best time to see the Great Migration?', 'Month-by-month guide to following the wildebeest across the Serengeti-Mara ecosystem.', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80'],
-                        ['Kilimanjaro', 'Which Kilimanjaro route should you choose?', 'Machame vs Lemosho vs Marangu — a climber\'s honest breakdown of every route.', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=600&q=80'],
+                        ['Safari Tips', 'When is the best time to see the Great Migration?', 'Month-by-month guide to following the wildebeest across the Serengeti-Mara ecosystem.', asset('images/25.jpeg')],
+                        ['Kilimanjaro', 'Which Kilimanjaro route should you choose?', 'Machame vs Lemosho vs Marangu — a climber\'s honest breakdown of every route.', asset('images/27.jpeg')],
                     ] as [$cat, $title, $blurb, $img])
                         <article class="news-card">
                             <div class="news-img" style="background-image:url('{{ $img }}');"></div>
@@ -324,9 +324,9 @@
             </div>
             <div class="cats-grid">
                 @foreach ([
-                    ['Climbing', '66 Articles', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80'],
-                    ['Safari', '14 Articles', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80'],
-                    ['Zanzibar', '4 Articles', 'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?auto=format&fit=crop&w=800&q=80'],
+                    ['Climbing', '66 Articles', asset('images/27.jpeg')],
+                    ['Safari', '14 Articles', asset('images/25.jpeg')],
+                    ['Zanzibar', '4 Articles', asset('images/28.jpeg')],
                 ] as [$name, $count, $img])
                     <a href="{{ route('blog') }}" class="cat-card" style="background-image:url('{{ $img }}');">
                         <div class="cat-overlay">

@@ -9,7 +9,7 @@
         'package' => $package,
         'typeLabel' => 'Safari',
         'listRoute' => 'safari',
-        'typeBanner' => 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80',
+        'typeBanner' => asset('images/25.jpeg'),
         'relatedTours' => $relatedTours,
     ])
 @endsection

@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <section class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1920&q=80');">
+    <section class="page-banner" style="background-image:url('{{ asset('images/22.jpeg') }}');">
         <div class="container">
             <h1>Day Trips</h1>
             <div class="breadcrumb"><a href="{{ route('home') }}">Home</a> <i class="bi bi-chevron-right"></i> <span>Day Trips</span></div>
@@ -44,12 +44,12 @@
                     </article>
                 @empty
                     @foreach ([
-                        ['Ngorongoro Crater Day Trip', 'Descend into the world\'s largest intact caldera for a full-day game drive — Big 5 possible in a single day.', ['Big 5', 'Guided'], '420', 'Full day', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=800&q=80'],
-                        ['Lake Manyara Day Trip', 'Tree-climbing lions, hippo pools, flocks of pink flamingos and a groundwater forest.', ['Tree lions', 'Birds'], '280', 'Full day', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=800&q=80'],
-                        ['Tarangire Day Trip', 'Elephants under the baobabs — one of Africa\'s most photogenic elephant destinations.', ['Elephants', 'Baobabs'], '260', 'Full day', 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=800&q=80'],
-                        ['Materuni Waterfalls & Coffee Tour', 'Hike through banana plantations to a hidden waterfall, then roast your own coffee with a Chagga family.', ['Coffee', 'Waterfall'], '90', 'Half day', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80'],
-                        ['Maasai Village Cultural Day', 'Learn ceremonial dance, jump with the warriors, share a meal — an unstaged cultural exchange.', ['Culture', 'Community'], '140', 'Full day', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80'],
-                        ['Arusha National Park', 'Overlooked gem right on Arusha\'s doorstep — giraffe, buffalo, colobus monkeys and canoe safaris.', ['Canoe safari', 'Giraffe'], '180', 'Half day', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80'],
+                        ['Ngorongoro Crater Day Trip', 'Descend into the world\'s largest intact caldera for a full-day game drive — Big 5 possible in a single day.', ['Big 5', 'Guided'], '420', 'Full day', asset('images/22.jpeg')],
+                        ['Lake Manyara Day Trip', 'Tree-climbing lions, hippo pools, flocks of pink flamingos and a groundwater forest.', ['Tree lions', 'Birds'], '280', 'Full day', asset('images/28.jpeg')],
+                        ['Tarangire Day Trip', 'Elephants under the baobabs — one of Africa\'s most photogenic elephant destinations.', ['Elephants', 'Baobabs'], '260', 'Full day', asset('images/29.jpeg')],
+                        ['Materuni Waterfalls & Coffee Tour', 'Hike through banana plantations to a hidden waterfall, then roast your own coffee with a Chagga family.', ['Coffee', 'Waterfall'], '90', 'Half day', asset('images/24.jpeg')],
+                        ['Maasai Village Cultural Day', 'Learn ceremonial dance, jump with the warriors, share a meal — an unstaged cultural exchange.', ['Culture', 'Community'], '140', 'Full day', asset('images/25.jpeg')],
+                        ['Arusha National Park', 'Overlooked gem right on Arusha\'s doorstep — giraffe, buffalo, colobus monkeys and canoe safaris.', ['Canoe safari', 'Giraffe'], '180', 'Half day', asset('images/15.jpeg')],
                     ] as [$name, $desc, $features, $price, $duration, $img])
                         <article class="dest-card">
                             <div class="dest-image" style="background-image:url('{{ $img }}');">

@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <section class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80');">
+    <section class="page-banner" style="background-image:url('{{ asset('images/25.jpeg') }}');">
         <div class="container">
             <h1>Tanzania Safaris</h1>
             <div class="breadcrumb"><a href="{{ route('home') }}">Home</a> <i class="bi bi-chevron-right"></i> <span>Safari</span></div>
@@ -44,12 +44,12 @@
                     </article>
                 @empty
                     @foreach ([
-                        ['serengeti', 'Serengeti National Park', 'Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.', ['Big Cats', 'Migration', 'Balloon safaris'], '2,890', 'Best seller', 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=800&q=80'],
-                        ['ngorongoro', 'Ngorongoro Crater', 'The world\'s largest intact caldera — an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.', ['Big 5', 'UNESCO', 'Day trip'], '1,950', 'UNESCO', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=800&q=80'],
-                        ['tarangire', 'Tarangire National Park', 'Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania\'s northern circuit parks.', ['Elephants', 'Baobabs', 'Quiet'], '1,420', 'Elephants', 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=800&q=80'],
-                        ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], '980', 'Flamingos', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=800&q=80'],
-                        ['ruaha', 'Ruaha National Park', 'Tanzania\'s largest park — remote southern wilderness with wild dog, greater kudu and huge lion prides.', ['Fly-in only', 'Wild dogs'], '4,180', 'Remote', 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&w=800&q=80'],
-                        ['nyerere', 'Nyerere / Selous', 'Africa\'s largest game reserve — boat safaris on the Rufiji, walking safaris and no crowds.', ['Boat safaris', 'Walking'], '3,650', 'Southern', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80'],
+                        ['serengeti', 'Serengeti National Park', 'Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.', ['Big Cats', 'Migration', 'Balloon safaris'], '2,890', 'Best seller', asset('images/25.jpeg')],
+                        ['ngorongoro', 'Ngorongoro Crater', 'The world\'s largest intact caldera — an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.', ['Big 5', 'UNESCO', 'Day trip'], '1,950', 'UNESCO', asset('images/22.jpeg')],
+                        ['tarangire', 'Tarangire National Park', 'Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania\'s northern circuit parks.', ['Elephants', 'Baobabs', 'Quiet'], '1,420', 'Elephants', asset('images/29.jpeg')],
+                        ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], '980', 'Flamingos', asset('images/28.jpeg')],
+                        ['ruaha', 'Ruaha National Park', 'Tanzania\'s largest park — remote southern wilderness with wild dog, greater kudu and huge lion prides.', ['Fly-in only', 'Wild dogs'], '4,180', 'Remote', asset('images/23.jpeg')],
+                        ['nyerere', 'Nyerere / Selous', 'Africa\'s largest game reserve — boat safaris on the Rufiji, walking safaris and no crowds.', ['Boat safaris', 'Walking'], '3,650', 'Southern', asset('images/24.jpeg')],
                     ] as [$id, $name, $desc, $features, $price, $badge, $img])
                         <article class="dest-card" id="{{ $id }}">
                             <div class="dest-image" style="background-image:url('{{ $img }}');">

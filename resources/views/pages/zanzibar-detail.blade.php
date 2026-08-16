@@ -9,7 +9,7 @@
         'package' => $package,
         'typeLabel' => 'Zanzibar',
         'listRoute' => 'zanzibar',
-        'typeBanner' => 'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?auto=format&fit=crop&w=1920&q=80',
+        'typeBanner' => asset('images/28.jpeg'),
         'relatedTours' => $relatedTours,
     ])
 @endsection

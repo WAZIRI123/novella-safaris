@@ -58,7 +58,7 @@ include __DIR__ . "/partials/header.php";
                 <a href="#" class="btn btn-navy">Read Our Story <i class="bi bi-arrow-right"></i></a>
             </div>
             <div class="why-portrait">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80" alt="Founder portrait" />
+                <img src="images/07.jpeg" alt="Founder portrait" />
                 <div class="portrait-badge">
                     <strong>19+</strong>
                     <span>Years serving travellers</span>
@@ -98,7 +98,7 @@ include __DIR__ . "/partials/header.php";
                 <span class="eyebrow">Corporate Social Responsibility</span>
                 <h2>Novella Foundation</h2>
                 <p>A portion of every booking funds classrooms, clean water and porter welfare in the villages around Kilimanjaro and the Serengeti.</p>
-                <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=700&q=80" alt="Community project" />
+                <img src="images/08.jpeg" alt="Community project" />
                 <a href="#" class="btn btn-yellow"><i class="bi bi-heart"></i> Donate Now</a>
             </div>
         </div>
@@ -113,7 +113,7 @@ include __DIR__ . "/partials/header.php";
             </div>
             <div class="special-grid">
                 <article class="special-card">
-                    <div class="special-img" style="background-image:url('https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=700&q=80');"></div>
+                    <div class="special-img" style="background-image:url('images/09.jpeg');"></div>
                     <div class="special-body">
                         <h4>7-Day Great Migration Safari</h4>
                         <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>

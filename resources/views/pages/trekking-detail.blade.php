@@ -9,7 +9,7 @@
         'package' => $package,
         'typeLabel' => 'Trekking',
         'listRoute' => 'trekking',
-        'typeBanner' => 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1920&q=80',
+        'typeBanner' => asset('images/27.jpeg'),
         'relatedTours' => $relatedTours,
     ])
 @endsection
