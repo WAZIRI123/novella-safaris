@@ -104,6 +104,27 @@ class PageController extends Controller
     public function trekkingShow(string $slug)
     {
         $package = TrekkingRoute::query()->where('slug', $slug)->where('is_published', true)->firstOrFail();
+
+        // Build a list of related routes (variants) for the same base route.
+        $baseName = preg_replace('/\s*Route$/i', '', $package->name);
+        $variants = TrekkingRoute::query()
+            ->where('is_published', true)
+            ->where(function ($q) use ($slug, $baseName) {
+                $q->where('slug', 'like', $slug . '%')
+                  ->orWhere('name', 'like', '%' . $baseName . '%')
+                  ->orWhere('slug', 'like', '%-' . $slug . '-%');
+            })
+            ->orderBy('sort_order')
+            ->get();
+
+        // If multiple variants exist, show a grouped listing page for that route.
+        if ($variants->count() > 1) {
+            return view('pages.trekking-group', [
+                'routes' => $variants,
+                'base' => $package,
+            ]);
+        }
+
         $relatedTours = TrekkingRoute::query()->where('is_published', true)->where('id', '!=', $package->id)->orderBy('sort_order')->limit(3)->get();
 
         return view('pages.trekking-detail', compact('package', 'relatedTours'));

@@ -30,11 +30,11 @@
                 <li class="has-dropdown">
                     <a href="{{ route('trekking') }}"{!! $navActive('trekking') !!}>Trekking <i class="bi bi-chevron-down"></i></a>
                     <ul class="dropdown">
-                        <li><a href="{{ route('trekking') }}#machame">Machame Route</a></li>
-                        <li><a href="{{ route('trekking') }}#lemosho">Lemosho Route</a></li>
-                        <li><a href="{{ route('trekking') }}#marangu">Marangu Route</a></li>
-                        <li><a href="{{ route('trekking') }}#rongai">Rongai Route</a></li>
-                        <li><a href="{{ route('trekking') }}#meru">Mount Meru</a></li>
+                        <li><a href="{{ route('trekking.show', 'machame') }}">Machame Route</a></li>
+                        <li><a href="{{ route('trekking.show', 'lemosho') }}">Lemosho Route</a></li>
+                        <li><a href="{{ route('trekking.show', 'marangu') }}">Marangu Route</a></li>
+                        <li><a href="{{ route('trekking.show', 'rongai') }}">Rongai Route</a></li>
+                        <li><a href="{{ route('trekking.show', 'meru') }}">Mount Meru</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">
