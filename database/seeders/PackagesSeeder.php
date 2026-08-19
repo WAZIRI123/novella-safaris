@@ -57,10 +57,12 @@ class PackagesSeeder extends Seeder
             ['rongai', 'Rongai Route', 'The only northern approach. Drier, quieter, and the go-to route during the rainy season.', ['Quiet', 'Rainy-season option'], 1870, 7, 'Moderate', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
             ['northern-circuit', 'Northern Circuit', 'The longest route on the mountain — highest summit success, and stunning 360° panoramas.', ['Longest route', 'Highest success'], 2590, 9, 'Strenuous', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1600&q=80'],
             ['meru', 'Mount Meru Trek', "Kilimanjaro's little sister at 4,566m — a perfect warm-up climb, wildlife-filled and dramatic.", ['Warm-up climb', 'Wildlife'], 1120, 4, 'Moderate', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
+            ['6-day-lemosho-route-climb', '6 Days Lemosho Route Climb – Habari Adventure', 'The 6 Days Lemosho Route is a scenic and adventurous Kilimanjaro trek starting from the western side of the mountain.', ['Strong fitness', 'Less crowded', 'Summit push'], 2150, 6, 'Challenging', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
+            ['8-day-lemosho-route-climb-kosovo-camp', '8 Days Lemosho Route Climb – Kosovo Camp', 'The 8 Days Lemosho Kosovo Route is designed for trekkers seeking the scenery and acclimatisation profile of the Lemosho Route with the advantage of Kosovo Camp before the summit push.', ['Kosovo Camp', 'Shorter summit night', 'Excellent acclimatisation'], 2600, 8, 'Moderate to Challenging', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $days, $difficulty, $img]) {
-            TrekkingRoute::updateOrCreate(['slug' => $slug], [
+            $route = TrekkingRoute::updateOrCreate(['slug' => $slug], [
                 'name' => $name,
                 'description' => $desc,
                 'features' => $features,
@@ -73,6 +75,109 @@ class PackagesSeeder extends Seeder
                 'sort_order' => $i,
                 'is_published' => true,
             ]);
+
+            if ($slug === '8-day-lemosho-route-climb-kosovo-camp') {
+                $route->update([
+                    'overview' => "The 8 Days Lemosho Kosovo Route is designed for trekkers seeking the scenery and acclimatisation profile of the Lemosho Route, combined with the advantage of spending the night at Kosovo Camp (4,800 m / 15,748 ft) instead of the lower Barafu Camp before the final summit push.\n\nThis route balances dramatic scenery, steady altitude gain and a shorter summit night. It starts on Kilimanjaro's quieter western side through rainforest, moorland, the Shira Plateau, Lava Tower and the Barranco Wall before reaching the high camp for the final push to Uhuru Peak.",
+                    'duration_days' => 8,
+                    'duration_nights' => 7,
+                    'theme' => 'High-altitude trekking',
+                    'skill_level' => 'Moderate to Challenging',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 2600],
+                        ['persons' => 5, 'price' => 2400],
+                        ['persons' => 10, 'price' => 2350],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Londorossi Gate to Mti Mkubwa / Forest Camp', 'description' => 'Drive from hotel to Londorossi Gate for registration, then trek through rainforest to Mti Mkubwa Camp.', 'accommodation' => 'Forest camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Mti Mkubwa Camp to Shira 1 Camp', 'description' => 'Trek through moorland and heather across volcanic rock formations, opening up views of Kibo and the Shira Plateau.', 'accommodation' => 'Moorland camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Shira 1 Camp to Shira 2 Camp / Moir Hut', 'description' => 'Explore the vast Shira Plateau with gentle elevation gain for continuous acclimatisation.', 'accommodation' => 'Shira plateau camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Shira Camp to Lava Tower to Barranco Camp', 'description' => 'Climb high and sleep low as you ascend toward Lava Tower for altitude exposure before descending to Barranco Camp under the Great Barranco Wall.', 'accommodation' => 'Barranco camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Barranco Camp to Karanga Camp', 'description' => 'Scramble up the Barranco Wall and continue through the Karanga Valley for a short, dedicated acclimatisation stage.', 'accommodation' => 'Karanga camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Karanga Camp to Kosovo Camp', 'description' => 'Connect to the Mweka Trail and pass Barafu Camp as you ascend higher directly to Kosovo Camp. Early dinner and rest prepare you for the summit attempt.', 'accommodation' => 'Kosovo Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 7, 'title' => 'Kosovo Camp to Uhuru Peak to Mweka Camp', 'description' => 'Begin the summit push early under the stars to reach Stella Point and Uhuru Peak. After celebrating at the summit, descend past Kosovo and Barafu to Mweka Camp.', 'accommodation' => 'Mweka camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 8, 'title' => 'Mweka Camp to Mweka Gate', 'description' => 'Final descent through lush rainforest to Mweka Park Gate to receive summit certificates before transport back to the hotel in Moshi or Arusha.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        'Accommodation in mountain tents',
+                        'Park fees and camping fees',
+                        'Professional English-speaking guide',
+                        'Experienced summit team and porters',
+                        'Meals on the mountain',
+                        'Transport from Moshi/Arusha to the trailhead and back',
+                        'Oxygen and emergency equipment',
+                        'Sleeping tents and dining tent',
+                    ],
+                    'excludes' => [
+                        'International flights',
+                        'Visa fees',
+                        'Personal trekking gear',
+                        'Travel and medical insurance',
+                        'Tips and gratuities',
+                        'Personal expenses and laundry',
+                        'Items of a personal nature',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'All nights are spent in comfortable mountain tents with a team of cooks and porters handling camp setup, meals and daily logistics.', 'image' => 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80'],
+                    ],
+                    'gallery' => [
+                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
+                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
+                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                    ],
+                ]);
+            }
+
+            if ($slug === '6-day-lemosho-route-climb') {
+                $route->update([
+                    'overview' => "The 6 Days Lemosho Route is a scenic and adventurous Kilimanjaro trek starting from the western side of the mountain. It offers rainforest trails, wide views across the Shira Plateau, and a summit push to Uhuru Peak. This shorter Lemosho itinerary is best suited for fit trekkers who want a less crowded, visually impressive route at a faster climbing pace.\n\nIt begins at Londorossi Gate, traverses rainforest, heath and moorland, and reaches the high-altitude alpine zones before the summit push. With a more demanding pace and a strong acclimatisation strategy, it is ideal for trekkers with strong fitness levels who want the Lemosho experience in a condensed format.",
+                    'duration_days' => 6,
+                    'duration_nights' => 5,
+                    'theme' => 'Fast-paced Lemosho climb',
+                    'skill_level' => 'Challenging',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 2150],
+                        ['persons' => 2, 'price' => 2050],
+                        ['persons' => 5, 'price' => 2000],
+                        ['persons' => 10, 'price' => 1950],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Lemosho Gate to Mti Mkubwa Camp', 'description' => "Drive from Moshi to Londorossi Gate for registration and park formalities. Begin trekking through the lush rainforest of Kilimanjaro's western slopes to Mti Mkubwa Camp.", 'accommodation' => 'Rainforest camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Mti Mkubwa Camp to Shira II Camp', 'description' => 'Leave the forest zone behind, climb along Shira Ridge, and cross the vast Shira Plateau with views of Kibo.', 'accommodation' => 'Shira II camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Shira II Camp to Barranco Camp', 'description' => 'An important acclimatisation day as you climb high to Lava Tower before descending into Barranco Valley beneath the Great Barranco Wall.', 'accommodation' => 'Barranco camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Barranco Camp to Barafu Camp', 'description' => 'Scramble up the steep Barranco Wall for views across the mountain, then continue toward Karanga Camp for lunch before trekking to Barafu Camp for the summit prep.', 'accommodation' => 'Barafu camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Barafu Camp to Uhuru Peak, then down to Mweka Camp', 'description' => 'Begin the summit push around midnight over scree to Stella Point for sunrise, then continue to Uhuru Peak (5,895 m). Descend back to Barafu Camp for lunch and rest, then continue down to Mweka Camp.', 'accommodation' => 'Mweka camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Mweka Camp to Mweka Gate', 'description' => 'Descend through the Mweka rainforest to the park gate, complete formalities, receive summit certificates, and transfer back to hotel in Moshi.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        '2 nights hotel accommodation in Moshi (bed & breakfast)',
+                        'Private airport transfers',
+                        'Qualified mountain guides and mountain crew',
+                        'National Park entry and rescue fees',
+                        '18% VAT on tour fees and services',
+                        'All camping accommodations and mountain tents',
+                        'Sleeping mats and sleeping bags',
+                        'All meals on the mountain',
+                        'Treated water',
+                        'Pulse oximeter, first aid kit, and emergency oxygen',
+                        'Fair wages for guides and porters approved by Kilimanjaro National Park Authority',
+                    ],
+                    'excludes' => [
+                        'Flights and visa fees',
+                        'Tips for the mountain crew',
+                        'Private toilet tent ($120 per group)',
+                        'Laundry services',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'All nights are spent in mountain tents with full camp setup, cooked meals, and a dedicated support crew across the route.', 'image' => 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80'],
+                    ],
+                    'gallery' => [
+                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
+                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
+                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                    ],
+                ]);
+            }
         }
     }
 
