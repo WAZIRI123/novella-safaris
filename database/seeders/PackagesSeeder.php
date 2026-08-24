@@ -61,6 +61,8 @@ class PackagesSeeder extends Seeder
             
             ['rongai', 'Rongai Route', 'The only northern approach. Drier, quieter, and the go-to route during the rainy season.', ['Quiet', 'Rainy-season option'], 1870, 7, 'Moderate', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
             ['rongai-6-day', '6 Days Rongai Route', 'Shorter Rongai itinerary with good acclimatisation profile.', ['Quiet', 'Less-crowded'], 1720, 6, 'Moderate', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
+            ['umbwe', 'Umbwe Route', 'Steep, direct, and highly adventurous — one of the most demanding and less-crowded routes on Kilimanjaro.', ['Steep ascent', 'Less crowded', 'Experienced climbers'], 1890, 6, 'Very Challenging', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
+            ['6-day-umbwe-route-climb', '6 Day Umbwe Route Climb', 'A direct and demanding Kilimanjaro ascent through rainforest, steep ridges, and the southern circuit to the summit.', ['Steep', 'Direct ascent', 'Experienced route'], 2100, 6, 'Very Challenging', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
             ['northern-circuit', 'Northern Circuit Route', 'The longest route on the mountain — highest summit success, and stunning 360° panoramas.', ['Longest route', 'Highest success'], 2590, 9, 'Strenuous', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1600&q=80']  ,
             ['9-days-northern-circuit-route', '9 Days Northern Circuit Route', 'Longer and highly scenic Kilimanjaro climb with excellent acclimatisation and quieter northern slopes.', ['Longer route', 'Quieter', 'Excellent acclimatisation'], 2550, 9, 'Moderate to Challenging', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1600&q=80'],
             ['8-days-northern-circuit-route', '8 Days Northern Circuit Route', 'A scenic and quieter Kilimanjaro climb with excellent panoramic views, remote northern-slope trails, and strong acclimatisation.', ['Quieter', 'Panoramic views', 'Strong acclimatisation'], 2400, 8, 'Moderate to Challenging', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1600&q=80'],
@@ -194,6 +196,289 @@ class PackagesSeeder extends Seeder
                         'https://development-habari.habariadventure.com/uploads/packages/08-jpg-1780245560582-728325554.jpeg',
                         'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245571275-241518849.jpg',
                         'https://development-habari.habariadventure.com/uploads/packages/Icons-01-1780171888480-157525336.png',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'rongai-6-day') {
+                $route->update([
+                    'overview' => "Rongai is the only Kilimanjaro route starting on the northern slope of the mountain. This route begins from the Kenya side, climbs up the flanks of Mawenzi, crosses the barren saddle between Mawenzi and Kibo, and finally reaches the summit via the Marangu route.\n\nThe 6 Days Rongai Route is a quieter Kilimanjaro climb from the northern side, offering a steady ascent, remote landscapes, and beautiful Kibo views. It is ideal for fit trekkers who want a less crowded route with a shorter, more direct summit journey to Uhuru Peak.\n\nQuick facts: Duration 6 Days / 5 Nights; Starting point Rongai Gate; Ending point Marangu Gate; Difficulty Moderate to challenging; Distance Approx. 73 km / 45 miles; Best for fit trekkers who want a quieter northern-side route; Scenery farmland, forest, moorland, alpine desert, Kibo views, summit glaciers; Accommodation mountain camping; Summit Uhuru Peak - 5,895m / 19,341ft; Best time January-March and June-October; Route style less crowded northern approach with a steady ascent and faster 6-day pace.",
+                    'duration_days' => 6,
+                    'duration_nights' => 5,
+                    'theme' => 'Quieter northern route',
+                    'skill_level' => 'Moderate to challenging',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 2100],
+                        ['persons' => 2, 'price' => 2000],
+                        ['persons' => 5, 'price' => 1950],
+                        ['persons' => 10, 'price' => 1900],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Nalemoru Gate (1990m) to Simba Camp (2570m)', 'description' => 'A guide and mountain support crew will meet you at the hotel in the morning for a briefing before driving to the northern entrance: Nalemuru Gate (2,020m / 6627ft). After permits and rescue registration, the group starts trekking up to Simba Camp (2,671m / 8612ft). The trail is moderate and passes through coniferous forest on Kilimanjaro’s northern slope. By the time you reach camp, the crew will have set up tents and started preparing dinner.', 'accommodation' => 'Simba Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Simba Camp (2570m) to Kikelelwa Camp (3700m)', 'description' => 'Another beautiful day with superb views of the eastern ice field on the crater rims of Kibo. It takes around 3 hours to cross the moorland zone on a smaller path toward the jagged peaks of Mawenzi to reach Kikelelwa for lunch and overnight.', 'accommodation' => 'Kikelelwa Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Kikelelwa Camp (3630m) to Mawenzi Tarn Hut (4330m)', 'description' => 'This is a short but steep day on grassy slopes, rewarding you with stunning all-round views and a strong sense of wilderness. The camp is spectacularly located in a cirque beneath the towering spires of Mawenzi. You have free time in the afternoon to rest or explore the surrounding area for acclimatisation.', 'accommodation' => 'Mawenzi Tarn Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Mawenzi Tarn Hut (4330m) to Kibo Hut (4700m)', 'description' => 'Today you cross the lunar desert of the saddle between Kibo and Mawenzi to reach Kibo Hut. Spend the afternoon resting and preparing for the final ascent at midnight.', 'accommodation' => 'Kibo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Summit Day: Kibo Hut to Uhuru Peak and down to Horombo Hut', 'description' => 'The final ascent begins around 00:00. This is the steepest and most demanding section, and your guide will set a slow, steady pace. In darkness, it takes about 5 hours to reach the crater rim at Gilman’s Point (5685m), where you take a short rest and enjoy the sunrise over Mawenzi. After a further hour, you reach Uhuru Peak (5895m). After photos on the summit, descend to Kibo Hut for a short rest and hot lunch before continuing down to Horombo Hut for the overnight.', 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Horombo Hut (3720m) to Marangu Gate (1860m)', 'description' => 'On the last day, pass through heath and moorland to Mandara Hut (2700m) and enjoy a hot lunch there. Continue descending through the tropical rainforest to the Kilimanjaro National Park gate, collect your certificates, and transfer back to your hotel in Moshi for a well-earned celebration.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        '2 Nights hotel in Moshi: bed & breakfast',
+                        'Private transport to / from Kilimanjaro International Airport to your hotel in Moshi',
+                        'Qualified guides with mountain crew',
+                        'National Park fees',
+                        '18% VAT on tour fees and services',
+                        'All camping accommodations',
+                        'Mountain tents',
+                        'Transport',
+                        'Rescue fees',
+                        'All needs on the mountain (breakfast, lunch and dinner)',
+                        'Guides and porters’ accommodations and their entry fees on the mountain',
+                        'Pulse oximeter',
+                        'First aid kit',
+                        'Emergency oxygen',
+                        'Sleeping mats and sleeping bags',
+                        'Treated water through the trek',
+                        'Fair wages to guides and porters as approved by Kilimanjaro National Park authority',
+                    ],
+                    'excludes' => [
+                        'Flights',
+                        'Visa',
+                        'Tips to mountain crew',
+                        'Private toilet ($120 per group)',
+                        'Laundry services',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Sleep in quality mountain tents while trekking through varied landscapes, with a dedicated crew handling camp setup, meals, and support throughout the route.', 'image' => 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80'],
+                    ],
+                    'gallery' => [
+                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80',
+                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'meru') {
+                $route->update([
+                    'overview' => "The 4 Days Mount Meru Climb is a scenic and well-paced trek through Arusha National Park, offering lush forests, wildlife encounters, volcanic ridges, and stunning summit views. With an extra day for better acclimatisation, this route gives trekkers a more comfortable and rewarding way to experience Tanzania’s second-highest mountain.\n\nThis route is ideal for trekkers who want an excellent pre-Kilimanjaro acclimatisation climb, quieter trails, and a strong mountain adventure with hut-based accommodation. It combines forest scenery, wildlife, crater views, and a memorable sunrise at Socialist Peak.\n\nQuick facts: Duration 4 Days / 3 Nights; Starting point Momella Gate; Ending point Momella Gate; Difficulty Moderate to challenging; Summit Socialist Peak - 4,566m / 14,980ft; Best for trekkers wanting better acclimatisation and a scenic pre-Kilimanjaro climb; Scenery forest, wildlife zones, crater rim, alpine landscapes, and summit views; Accommodation mountain huts; Location Arusha National Park, Tanzania; Best time January-March and June-October; Route style scenic ridge climb with strong acclimatisation and unforgettable sunrise views.",
+                    'duration_days' => 4,
+                    'duration_nights' => 3,
+                    'theme' => 'Scenic acclimatisation climb',
+                    'skill_level' => 'Moderate to challenging',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 1400],
+                        ['persons' => 2, 'price' => 1350],
+                        ['persons' => 5, 'price' => 1300],
+                        ['persons' => 10, 'price' => 1150],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Momella Gate to Miriakamba Hut', 'description' => 'After breakfast, depart for Momella Gate and begin the first walking day through Arusha National Park. Expect rainforest trails, wildlife sightings, and a gentle but steady climb to Miriakamba Hut for dinner and overnight.', 'accommodation' => 'Miriakamba Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Miriakamba Hut to Saddle Hut', 'description' => 'The route continues through the forest and ridge lines, with dramatic views of the Meru crater and the ash cone. After arriving at Saddle Hut, you have lunch, rest, and an acclimatisation walk before dinner.', 'accommodation' => 'Saddle Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Saddle Hut to Socialist Peak and back to Miriakamba Hut', 'description' => 'Wake around midnight for the summit push. The climb is steep and demanding, but the reward is a sunrise at Socialist Peak with breathtaking views over the crater and across to Kilimanjaro before descending to Miriakamba Hut.', 'accommodation' => 'Miriakamba Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Miriakamba Hut to Momella Gate', 'description' => 'The final descent follows the rainforest trail back to Momella Gate, where you sign out and transfer back to Moshi for celebration and rest.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        'Hotel in Moshi: bed & breakfast',
+                        'Private transport to / from Kilimanjaro International Airport to your hotel in Moshi',
+                        'Qualified guides with mountain crew',
+                        'National Park fees',
+                        '18% VAT on tour fees and services',
+                        'All hut accommodations',
+                        'Hut fees',
+                        'Transport',
+                        'Rescue fees',
+                        'All needs on the mountain (breakfast, lunch and dinner)',
+                        'Guides and porters accommodations and their entry fees on the mountain',
+                        'Pulse oximeter',
+                        'First aid kit',
+                        'Emergency oxygen',
+                        'Treated water through the trek',
+                        'Fair wages to guides and porters as approved by Kilimanjaro National Park authority',
+                    ],
+                    'excludes' => [
+                        'Flights',
+                        'Visa',
+                        'Tips to mountain crew',
+                        'Private toilet ($120 per group)',
+                        'Laundry services',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Mountain Huts', 'description' => 'Stay in mountain huts instead of tents for a more sheltered and comfortable overnight experience while trekking through Arusha National Park.', 'image' => 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80'],
+                    ],
+                    'gallery' => [
+                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
+                        'https://development-habari.habariadventure.com/uploads/packages/13-jpg-1780245992801-494952478.jpeg',
+                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245817759-398673153.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'mount-meru-3-day') {
+                $route->update([
+                    'overview' => "The 3 Days Mount Meru Climb is a scenic and adventurous trek through Arusha National Park, combining forest trails, wildlife encounters, dramatic crater landscapes, and a rewarding sunrise summit at Socialist Peak. It is ideal for trekkers seeking a shorter mountain adventure or a quick acclimatisation climb before Kilimanjaro.\n\nThis route is perfect for travelers with limited time, while still delivering a complete mountain trekking experience. With hut accommodation, fewer crowds, and incredible views of Kilimanjaro, Mount Meru offers a peaceful and adventurous experience in one of Tanzania’s most scenic parks.\n\nQuick facts: Duration 3 Days / 2 Nights; Starting point Momella Gate; Ending point Momella Gate; Difficulty Moderate to challenging; Summit Socialist Peak - 4,566m / 14,980ft; Best for trekkers wanting a shorter mountain adventure or Kilimanjaro acclimatisation trek; Scenery forest, wildlife zones, crater rim, alpine landscapes, and summit views; Accommodation mountain huts; Location Arusha National Park, Tanzania; Best time January-March and June-October; Route style short, scenic, and highly rewarding summit climb with strong wildlife appeal.",
+                    'duration_days' => 3,
+                    'duration_nights' => 2,
+                    'theme' => 'Short but rewarding adventure',
+                    'skill_level' => 'Moderate to challenging',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 1100],
+                        ['persons' => 2, 'price' => 1050],
+                        ['persons' => 5, 'price' => 1000],
+                        ['persons' => 10, 'price' => 950],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Momella Gate to Miriakamba Hut', 'description' => 'After breakfast, transfer to Momella Gate and begin the first hiking section through the rainforest and wildlife-rich lower slopes of Arusha National Park. Overnight at Miriakamba Hut.', 'accommodation' => 'Miriakamba Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Miriakamba Hut to Saddle Hut', 'description' => 'Continue uphill through the forest and ridge trails to Saddle Hut, enjoying views of the Meru crater and Ash Cone before resting and preparing for the summit push.', 'accommodation' => 'Saddle Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Saddle Hut to Socialist Peak and down to Momella Gate', 'description' => 'Wake before midnight and climb to Socialist Peak for sunrise. After taking in panoramic views of the crater and Mount Kilimanjaro, descend back down to Miriakamba and then continue to Momella Gate for your finish.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        'Hotel in Moshi: bed & breakfast',
+                        'Private transport to / from Kilimanjaro International Airport to your hotel in Moshi',
+                        'Qualified guides with mountain crew',
+                        'National Park fees',
+                        '18% VAT on tour fees and services',
+                        'All hut accommodations',
+                        'Hut fees',
+                        'Transport',
+                        'Rescue fees',
+                        'All needs on the mountain (breakfast, lunch and dinner)',
+                        'Guides and porters accommodations and their entry fees on the mountain',
+                        'Pulse oximeter',
+                        'First aid kit',
+                        'Emergency oxygen',
+                        'Treated water through the trek',
+                        'Fair wages to guides and porters as approved by Kilimanjaro National Park authority',
+                    ],
+                    'excludes' => [
+                        'Flights',
+                        'Visa',
+                        'Tips to mountain crew',
+                        'Private toilet ($120 per group)',
+                        'Laundry services',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Mountain Huts', 'description' => 'Enjoy a comfortable hut-based overnight experience with warm shelter and scenic surroundings in Arusha National Park.', 'image' => 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80'],
+                    ],
+                    'gallery' => [
+                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
+                        'https://development-habari.habariadventure.com/uploads/packages/14-jpg-1780246031192-527643818.jpeg',
+                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245817759-398673153.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'umbwe') {
+                $route->update([
+                    'overview' => "The 6 Day Umbwe Route is a steep, direct, and highly adventurous Kilimanjaro climb designed for experienced trekkers who want a demanding route with fewer crowds and a stronger wilderness feel. Starting from Umbwe Gate, the trail climbs quickly through dense rainforest and steep ridges before joining the southern circuit toward the summit. This route offers dramatic scenery, a rapid elevation gain, and a very rewarding summit journey to Uhuru Peak.\n\nQuick facts: Duration 6 Days / 5 Nights; Starting point Umbwe Gate; Ending point Mweka Gate; Difficulty Very challenging; Distance Approx. 53 km / 33 miles; Best for experienced and very fit trekkers; Scenery dense rainforest, steep ridges, Barranco Valley, alpine desert, summit glaciers; Accommodation mountain camping; Summit Uhuru Peak - 5,895m / 19,341ft; Best time January-March and June-October; Route style steep, direct, less crowded route with a demanding ascent profile.",
+                    'duration_days' => 6,
+                    'duration_nights' => 5,
+                    'theme' => 'Steep and adventurous',
+                    'skill_level' => 'Very challenging',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 2100],
+                        ['persons' => 2, 'price' => 2000],
+                        ['persons' => 5, 'price' => 1950],
+                        ['persons' => 10, 'price' => 1900],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Umbwe Gate to Umbwe Cave Camp', 'description' => 'Begin your climb from Umbwe Gate and head through dense rainforest on a steep, demanding trail toward Umbwe Cave Camp. The route is physically demanding from the start and sets the tone for the rest of the ascent.', 'accommodation' => 'Umbwe Cave Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Umbwe Cave Camp to Barranco Camp', 'description' => 'Continue climbing through moorland and ridge lines with increasingly dramatic views. By mid-afternoon you reach Barranco Camp, where the scenery opens up and the acclimatisation process begins.', 'accommodation' => 'Barranco Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Barranco Camp to Karanga Camp', 'description' => 'The group ascends the Barranco Wall and continues across rugged terrain to Karanga Camp. This day is steep but rewarding, with strong views of Kibo and the surrounding volcanic landscape.', 'accommodation' => 'Karanga Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Karanga Camp to Barafu Camp', 'description' => 'A short but demanding push carries you into the alpine desert and final camp before summit night. Rest well, hydrate, and prepare for the early mountain push ahead.', 'accommodation' => 'Barafu Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Summit day to Uhuru Peak and down to Millennium Camp', 'description' => 'Set off before midnight in one of the most demanding summit pushes on the mountain. Climb over scree and rock to Stella Point and finally Uhuru Peak, then descend to Millennium Camp for a well-earned rest.', 'accommodation' => 'Millennium Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Millennium Camp to Mweka Gate', 'description' => 'The final descent follows the forested trail back to Mweka Gate, where the trek ends and the group transfers back to Moshi for a celebratory finish.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        '2 nights hotel in Moshi: bed & breakfast',
+                        'Private transport to / from Kilimanjaro International Airport to your hotel in Moshi',
+                        'Qualified guides with mountain crew',
+                        'National Park fees',
+                        '18% VAT on tour fees and services',
+                        'All camping accommodations',
+                        'Mountain tents',
+                        'Transport',
+                        'Rescue fees',
+                        'All needs on the mountain (breakfast, lunch and dinner)',
+                        'Guides and porters accommodations and their entry fees on the mountain',
+                        'Pulse oximeter',
+                        'First aid kit',
+                        'Emergency oxygen',
+                        'Sleeping mats and sleeping bags',
+                        'Treated water through the trek',
+                        'Fair wages to guides and porters as approved by Kilimanjaro National Park authority',
+                    ],
+                    'excludes' => [
+                        'Flights',
+                        'Visa',
+                        'Tips to mountain crew',
+                        'Private toilet ($120 per group)',
+                        'Laundry services',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Camp under the high-altitude sky in mountain tents while your support crew handles the equipment, meals, and route logistics.', 'image' => 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80'],
+                    ],
+                    'gallery' => [
+                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
+                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
+                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245817759-398673153.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === '6-day-umbwe-route-climb') {
+                $route->update([
+                    'overview' => "The 6 Day Umbwe Route is a steep, fast-paced Kilimanjaro climb designed for adventurous trekkers seeking a more demanding route. It follows a direct trail through dense rainforest, narrow ridges, and dramatic high-altitude scenery before joining the southern circuit toward the summit. This route is best for fit climbers with previous trekking experience.\n\nThe route begins at Umbwe Gate and quickly gains altitude, making it one of the mountain's most direct and challenging climbs. It is ideal for experienced, fit trekkers wanting a quieter route, dramatic forest scenery, and a tough but rewarding summit journey to Uhuru Peak.\n\nQuick facts: Duration 6 Days / 5 Nights; Starting point Umbwe Gate; Ending point Mweka Gate; Difficulty Very challenging; Distance Approx. 53 km / 33 miles; Best for experienced and very fit trekkers; Scenery dense rainforest, steep ridges, Barranco Valley, alpine desert, summit glaciers; Accommodation mountain camping; Summit Uhuru Peak - 5,895m / 19,341ft; Best time January-March and June-October; Route style steep, direct, less crowded route with a demanding ascent profile.",
+                    'duration_days' => 6,
+                    'duration_nights' => 5,
+                    'theme' => 'Steepest and most adventurous',
+                    'skill_level' => 'Very challenging',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 2100],
+                        ['persons' => 2, 'price' => 2000],
+                        ['persons' => 5, 'price' => 1950],
+                        ['persons' => 10, 'price' => 1900],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Umbwe Gate to Umbwe Cave Camp', 'description' => 'Your guide and support crew will meet you at the hotel before driving to Umbwe Gate. After registration, the trek begins through forested slopes and steep trails toward Umbwe Cave Camp, where your first night on the mountain begins.', 'accommodation' => 'Umbwe Cave Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Umbwe Cave Camp to Barranco Camp', 'description' => 'The rainforest gives way to moorland and a tougher ascent as the trail climbs toward Barranco Camp. This day is demanding but scenic, with beautiful views and a strong acclimatisation rhythm.', 'accommodation' => 'Barranco Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Barranco Camp to Karanga Camp', 'description' => 'After climbing the Barranco Wall, the route continues over rocky ridges and uneven ground toward Karanga Camp. This stage helps the body acclimatise and readies you for the final ascent section.', 'accommodation' => 'Karanga Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Karanga Camp to Barafu Camp', 'description' => 'The route continues through alpine desert terrain to Barafu Camp, where you rest and prepare for the summit push. A shorter day helps you recover and stay strong for the final challenge.', 'accommodation' => 'Barafu Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Barafu Camp to Uhuru Peak and down to Millennium Camp', 'description' => 'Wake around midnight for the summit attempt. The climb is steep and demanding, but the route eventually reaches Stella Point before moving on to Uhuru Peak. After taking in the sunrise, descend to Millennium Camp for recovery.', 'accommodation' => 'Millennium Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Millennium Camp to Mweka Gate', 'description' => 'The final descent follows the rainforested trail back to Mweka Gate, where you collect your certificates, sign out of the park, and return to Moshi for a celebration.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        '2 nights hotel in Moshi: bed & breakfast',
+                        'Private transport to / from Kilimanjaro International Airport to your hotel in Moshi',
+                        'Qualified guides with mountain crew',
+                        'National Park fees',
+                        '18% VAT on tour fees and services',
+                        'All camping accommodations',
+                        'Mountain tents',
+                        'Transport',
+                        'Rescue fees',
+                        'All needs on the mountain (breakfast, lunch and dinner)',
+                        'Guides and porters accommodation and their entry fees on the mountain',
+                        'Pulse oximeter',
+                        'First aid kit',
+                        'Emergency oxygen',
+                        'Sleeping mats and sleeping bags',
+                        'Treated water through the trek',
+                        'Fair wages to guides and porters as approved by Kilimanjaro National Park authority',
+                    ],
+                    'excludes' => [
+                        'Flights',
+                        'Visa',
+                        'Tips to mountain crew',
+                        'Private toilet ($120 per group)',
+                        'Laundry services',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Spend your nights in quality mountain tents with a dedicated crew managing camp setup, meals, and route support.', 'image' => 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80'],
+                    ],
+                    'gallery' => [
+                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
+                        'https://development-habari.habariadventure.com/uploads/packages/11-jpg-1780245809842-237503420.jpeg',
+                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245817759-398673153.jpg',
                     ],
                 ]);
             }

@@ -35,6 +35,7 @@
                         <li><a href="{{ route('trekking.show', 'lemosho') }}">Lemosho Route</a></li>
                         <li><a href="{{ route('trekking.show', 'marangu') }}">Marangu Route</a></li>
                         <li><a href="{{ route('trekking.show', 'rongai') }}">Rongai Route</a></li>
+                        <li><a href="{{ route('trekking.show', 'umbwe') }}">Umbwe Route</a></li>
                         <li><a href="{{ route('trekking.show', 'meru') }}">Mount Meru</a></li>
                     </ul>
                 </li>
