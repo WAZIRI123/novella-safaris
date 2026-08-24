@@ -48,7 +48,7 @@
                         ['lemosho', 'Lemosho Route', 'Approach from the west — remote, quiet, and the best acclimatisation profile of any route.', ['Best acclimatisation', 'Remote'], '2,251', '8', asset('images/15.jpeg')],
                         ['marangu', 'Marangu Route', 'The Coca-Cola Route — the only route with mountain huts. Gentler, and comfortable for first-timers.', ['Huts', 'Beginner-friendly'], '1,556', '6', asset('images/25.jpeg')],
                         ['rongai', 'Rongai Route', 'The only northern approach. Drier, quieter, and the go-to route during the rainy season.', ['Quiet', 'Rainy-season option'], '1,870', '7', asset('images/28.jpeg')],
-                        ['northern-circuit', 'Northern Circuit', 'The longest route on the mountain — highest summit success, and stunning 360° panoramas.', ['Longest route', 'Highest success'], '2,590', '9', asset('images/20.jpeg')],
+                        ['northern-circuit', 'Northern Circuit', 'One of the most scenic and remote routes on the mountain — big panoramas, excellent acclimatisation, and a classic summit profile.', ['Longest route', '360° views', 'Excellent acclimatisation'], '2,590', '9', asset('images/20.jpeg')],
                         ['meru', 'Mount Meru Trek', 'Kilimanjaro\'s little sister at 4,566m — a perfect warm-up climb, wildlife-filled and dramatic.', ['Warm-up climb', 'Wildlife'], '1,120', '4', asset('images/15.jpeg')],
                     ] as [$id, $name, $desc, $features, $price, $days, $img])
                         <article class="dest-card" id="{{ $id }}">

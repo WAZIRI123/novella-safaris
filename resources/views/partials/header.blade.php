@@ -31,6 +31,7 @@
                     <a href="{{ route('trekking') }}"{!! $navActive('trekking') !!}>Trekking <i class="bi bi-chevron-down"></i></a>
                     <ul class="dropdown">
                         <li><a href="{{ route('trekking.show', 'machame') }}">Machame Route</a></li>
+                        <li><a href="{{ route('trekking.show', 'northern-circuit') }}">Northern Circuit</a></li>
                         <li><a href="{{ route('trekking.show', 'lemosho') }}">Lemosho Route</a></li>
                         <li><a href="{{ route('trekking.show', 'marangu') }}">Marangu Route</a></li>
                         <li><a href="{{ route('trekking.show', 'rongai') }}">Rongai Route</a></li>

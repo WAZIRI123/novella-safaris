@@ -109,6 +109,7 @@ class PageController extends Controller
         $baseName = preg_replace('/\s*Route$/i', '', $package->name);
         $variants = TrekkingRoute::query()
             ->where('is_published', true)
+            ->where('slug', '!=', $slug)
             ->where(function ($q) use ($slug, $baseName) {
                 $q->where('slug', 'like', $slug . '%')
                   ->orWhere('name', 'like', '%' . $baseName . '%')
@@ -118,7 +119,7 @@ class PageController extends Controller
             ->get();
 
         // If multiple variants exist, show a grouped listing page for that route.
-        if ($variants->count() > 1) {
+        if ($variants->count() >= 1) {
             return view('pages.trekking-group', [
                 'routes' => $variants,
                 'base' => $package,
