@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <section class="page-banner" style="background-image:url('{{ $base->image ?? asset('images/27.jpeg') }}');">
+    <section class="page-banner" style="background-image:url('{{ asset($base->image ?? 'images/27.jpeg') }}');">
         <div class="container">
             <h1>{{ $base->name }}</h1>
             <div class="breadcrumb"><a href="{{ route('home') }}">Home</a> <i class="bi bi-chevron-right"></i> <a href="{{ route('trekking') }}">Trekking</a> <i class="bi bi-chevron-right"></i> <span>{{ $base->name }}</span></div>
