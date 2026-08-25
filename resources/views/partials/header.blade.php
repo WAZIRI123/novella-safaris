@@ -39,16 +39,7 @@
                         <li><a href="{{ route('trekking.show', 'meru') }}">Mount Meru</a></li>
                     </ul>
                 </li>
-                <li class="has-dropdown">
-                    <a href="{{ route('tanzania-safaris') }}"{!! $navActive('safari') !!}>Safari <i class="bi bi-chevron-down"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="{{ route('tanzania-safaris') }}">Tanzania Safaris</a></li>
-                        <li><a href="{{ route('tanzania-safaris') }}#serengeti">Serengeti National Park</a></li>
-                        <li><a href="{{ route('tanzania-safaris') }}#ngorongoro">Ngorongoro Crater</a></li>
-                        <li><a href="{{ route('tanzania-safaris') }}#tarangire">Tarangire National Park</a></li>
-                        <li><a href="{{ route('tanzania-safaris') }}#manyara">Lake Manyara</a></li>
-                    </ul>
-                </li>
+                <li><a href="{{ route('tanzania-safaris') }}"{!! $navActive('safari') !!}>Safari</a></li>
                 <li><a href="{{ route('zanzibar') }}"{!! $navActive('zanzibar') !!}>Zanzibar</a></li>
                 <li><a href="{{ route('day-trips') }}"{!! $navActive('day-trips') !!}>Day Trips</a></li>
                 <li><a href="{{ route('other-country') }}"{!! $navActive('other-country') !!}>Other Country</a></li>

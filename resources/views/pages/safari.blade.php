@@ -23,7 +23,7 @@
     <section class="dest-list">
         <div class="container">
             <div class="dest-cards">
-                @forelse ($safaris as $s)
+                @foreach ($safaris as $s)
                     <article class="dest-card" id="{{ $s->slug }}">
                         <div class="dest-image" style="background-image:url('{{ asset($s->image) }}');">
                             @if ($s->badge)<span class="dest-days-tag">{{ $s->badge }}</span>@endif
@@ -42,33 +42,7 @@
                             </div>
                         </div>
                     </article>
-                @empty
-                    @foreach ([
-                        ['serengeti', 'Serengeti National Park', 'Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.', ['Big Cats', 'Migration', 'Balloon safaris'], '2,890', 'Best seller', asset('images/safaris/serengeti-migration.jpg')],
-                        ['ngorongoro', 'Ngorongoro Crater', 'The world\'s largest intact caldera — an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.', ['Big 5', 'UNESCO', 'Day trip'], '1,950', 'UNESCO', asset('images/safaris/elephant.jpg')],
-                        ['tarangire', 'Tarangire National Park', 'Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania\'s northern circuit parks.', ['Elephants', 'Baobabs', 'Quiet'], '1,420', 'Elephants', asset('images/safaris/equ4uykn1gd2kjipvio0dyzph4wpr65ri.webp')],
-                        ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], '980', 'Flamingos', asset('images/safaris/0dm0ar81eyposgb2jehzwuyus6cx82zr.webp')],
-                        ['ruaha', 'Ruaha National Park', 'Tanzania\'s largest park — remote southern wilderness with wild dog, greater kudu and huge lion prides.', ['Fly-in only', 'Wild dogs'], '4,180', 'Remote', asset('images/safaris/wildbeet.jpg')],
-                        ['nyerere', 'Nyerere / Selous', 'Africa\'s largest game reserve — boat safaris on the Rufiji, walking safaris and no crowds.', ['Boat safaris', 'Walking'], '3,650', 'Southern', asset('images/safaris/safari-pack.jpg')],
-                    ] as [$id, $name, $desc, $features, $price, $badge, $img])
-                        <article class="dest-card" id="{{ $id }}">
-                            <div class="dest-image" style="background-image:url('{{ $img }}');">
-                                <span class="dest-days-tag">{{ $badge }}</span>
-                            </div>
-                            <div class="dest-body">
-                                <h3>{{ $name }}</h3>
-                                <p>{{ $desc }}</p>
-                                <div class="dest-features">
-                                    @foreach ($features as $f)<span>{{ $f }}</span>@endforeach
-                                </div>
-                                <div class="dest-foot">
-                                    <div class="dest-price">From <strong>${{ $price }}</strong></div>
-                                    <a href="{{ route('safari.show', $s->slug) }}" class="btn btn-outline btn-sm">View Details</a>
-                                </div>
-                            </div>
-                        </article>
-                    @endforeach
-                @endforelse
+                @endforeach
             </div>
         </div>
     </section>

@@ -25,12 +25,6 @@ class PackagesSeeder extends Seeder
     private function safaris(): void
     {
         $data = [
-            ['serengeti', 'Serengeti National Park', "Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.", ['Big Cats', 'Migration', 'Balloon safaris'], 2890, 'Best seller', 'images/safaris/serengeti-migration.jpg'],
-            ['ngorongoro', 'Ngorongoro Crater', "The world's largest intact caldera  an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.", ['Big 5', 'UNESCO', 'Day trip'], 1950, 'UNESCO', 'images/safaris/elephant.jpg'],
-            ['tarangire', 'Tarangire National Park', "Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania's northern circuit parks.", ['Elephants', 'Baobabs', 'Quiet'], 1420, 'Elephants', 'images/safaris/equ4uykn1gd2kjipvio0dyzph4wpr65ri.webp'],
-            ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], 980, 'Flamingos', 'images/safaris/0dm0ar81eyposgb2jehzwuyus6cx82zr.webp'],
-            ['ruaha', 'Ruaha National Park', "Tanzania's largest park  remote southern wilderness with wild dog, greater kudu and huge lion prides.", ['Fly-in only', 'Wild dogs'], 4180, 'Remote', 'images/safaris/wildbeet.jpg'],
-            ['nyerere-selous', 'Nyerere / Selous', "Africa's largest game reserve  boat safaris on the Rufiji, walking safaris and no crowds.", ['Boat safaris', 'Walking'], 3650, 'Southern', 'images/safaris/safari-pack.jpg'],
             ['5-days-safari-expedition', '5 Days Safari Expedition', 'An Immersive Wildlife Adventure Through Tanzania Most Iconic Parks. A remarkable 5 Day Tarangire, Serengeti & Ngorongoro Crater Safari offering extended game drives across Tanzania premier wildlife destinations.', ['Extended game drives', 'Big Five', 'Multiple parks'], 1600, '5 Days', 'images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg'],
         ];
 
