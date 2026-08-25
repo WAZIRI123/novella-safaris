@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <section class="page-banner" style="background-image:url('{{ asset('images/25.jpeg') }}');">
+    <section class="page-banner" style="background-image:url('{{ asset('images/safaris/IMG-1402-1780110475334-118582944.jpg') }}');">
         <div class="container">
             <h1>Tanzania Safaris</h1>
             <div class="breadcrumb"><a href="{{ route('home') }}">Home</a> <i class="bi bi-chevron-right"></i> <span>Safari</span></div>
@@ -44,12 +44,12 @@
                     </article>
                 @empty
                     @foreach ([
-                        ['serengeti', 'Serengeti National Park', 'Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.', ['Big Cats', 'Migration', 'Balloon safaris'], '2,890', 'Best seller', asset('images/25.jpeg')],
-                        ['ngorongoro', 'Ngorongoro Crater', 'The world\'s largest intact caldera — an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.', ['Big 5', 'UNESCO', 'Day trip'], '1,950', 'UNESCO', asset('images/22.jpeg')],
-                        ['tarangire', 'Tarangire National Park', 'Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania\'s northern circuit parks.', ['Elephants', 'Baobabs', 'Quiet'], '1,420', 'Elephants', asset('images/29.jpeg')],
-                        ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], '980', 'Flamingos', asset('images/28.jpeg')],
-                        ['ruaha', 'Ruaha National Park', 'Tanzania\'s largest park — remote southern wilderness with wild dog, greater kudu and huge lion prides.', ['Fly-in only', 'Wild dogs'], '4,180', 'Remote', asset('images/23.jpeg')],
-                        ['nyerere', 'Nyerere / Selous', 'Africa\'s largest game reserve — boat safaris on the Rufiji, walking safaris and no crowds.', ['Boat safaris', 'Walking'], '3,650', 'Southern', asset('images/24.jpeg')],
+                        ['serengeti', 'Serengeti National Park', 'Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.', ['Big Cats', 'Migration', 'Balloon safaris'], '2,890', 'Best seller', asset('images/safaris/serengeti-migration.jpg')],
+                        ['ngorongoro', 'Ngorongoro Crater', 'The world\'s largest intact caldera — an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.', ['Big 5', 'UNESCO', 'Day trip'], '1,950', 'UNESCO', asset('images/safaris/elephant.jpg')],
+                        ['tarangire', 'Tarangire National Park', 'Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania\'s northern circuit parks.', ['Elephants', 'Baobabs', 'Quiet'], '1,420', 'Elephants', asset('images/safaris/equ4uykn1gd2kjipvio0dyzph4wpr65ri.webp')],
+                        ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], '980', 'Flamingos', asset('images/safaris/0dm0ar81eyposgb2jehzwuyus6cx82zr.webp')],
+                        ['ruaha', 'Ruaha National Park', 'Tanzania\'s largest park — remote southern wilderness with wild dog, greater kudu and huge lion prides.', ['Fly-in only', 'Wild dogs'], '4,180', 'Remote', asset('images/safaris/wildbeet.jpg')],
+                        ['nyerere', 'Nyerere / Selous', 'Africa\'s largest game reserve — boat safaris on the Rufiji, walking safaris and no crowds.', ['Boat safaris', 'Walking'], '3,650', 'Southern', asset('images/safaris/safari-pack.jpg')],
                     ] as [$id, $name, $desc, $features, $price, $badge, $img])
                         <article class="dest-card" id="{{ $id }}">
                             <div class="dest-image" style="background-image:url('{{ $img }}');">

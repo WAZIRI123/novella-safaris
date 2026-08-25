@@ -23,7 +23,7 @@
         <div class="footer-col">
             <h5>POPULAR EXPERIENCES</h5>
             <ul>
-                <li><a href="{{ route('safari') }}#serengeti">Great Migration Safari</a></li>
+                <li><a href="{{ route('tanzania-safaris') }}#serengeti">Great Migration Safari</a></li>
                 <li><a href="{{ route('trekking') }}#machame">Kilimanjaro Machame Route</a></li>
                 <li><a href="{{ route('day-trips') }}">Ngorongoro Crater Day Trip</a></li>
                 <li><a href="{{ route('zanzibar') }}">Zanzibar Beach Escape</a></li>

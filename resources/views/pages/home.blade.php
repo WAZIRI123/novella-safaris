@@ -29,7 +29,7 @@
             <p class="hero-sub">TO SEE A BEAUTIFUL COUNTRY WITH ITS LANDSCAPES AND WILDERNESS.</p>
 
             <div class="dual-buttons">
-                <a href="{{ route('safari') }}" class="dual-btn">
+                <a href="{{ route('tanzania-safaris') }}" class="dual-btn">
                     <div class="dual-icon">
                         <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 40 L25 40 L28 30 L72 30 L75 40 L85 40 L88 45 L88 50 L12 50 L12 45 Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
@@ -142,7 +142,7 @@
                     ['6 Days', 'Kilimanjaro Marangu', asset('images/15.jpeg')],
                     ['7 Days', 'Kilimanjaro Machame', asset('images/20.jpeg')],
                 ] as [$days, $title, $img])
-                    <a href="{{ route('safari') }}" class="top-card" style="background-image:url('{{ $img }}');">
+                    <a href="{{ route('tanzania-safaris') }}" class="top-card" style="background-image:url('{{ $img }}');">
                         <div class="top-card-overlay">
                             <span class="top-days">{{ $days }}</span>
                             <h4>{{ $title }}</h4>

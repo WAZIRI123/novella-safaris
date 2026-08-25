@@ -40,13 +40,13 @@
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="{{ route('safari') }}"{!! $navActive('safari') !!}>Safari <i class="bi bi-chevron-down"></i></a>
+                    <a href="{{ route('tanzania-safaris') }}"{!! $navActive('safari') !!}>Safari <i class="bi bi-chevron-down"></i></a>
                     <ul class="dropdown">
-                        <li><a href="{{ route('safari') }}">Tanzania Safaris</a></li>
-                        <li><a href="{{ route('safari') }}#serengeti">Serengeti National Park</a></li>
-                        <li><a href="{{ route('safari') }}#ngorongoro">Ngorongoro Crater</a></li>
-                        <li><a href="{{ route('safari') }}#tarangire">Tarangire National Park</a></li>
-                        <li><a href="{{ route('safari') }}#manyara">Lake Manyara</a></li>
+                        <li><a href="{{ route('tanzania-safaris') }}">Tanzania Safaris</a></li>
+                        <li><a href="{{ route('tanzania-safaris') }}#serengeti">Serengeti National Park</a></li>
+                        <li><a href="{{ route('tanzania-safaris') }}#ngorongoro">Ngorongoro Crater</a></li>
+                        <li><a href="{{ route('tanzania-safaris') }}#tarangire">Tarangire National Park</a></li>
+                        <li><a href="{{ route('tanzania-safaris') }}#manyara">Lake Manyara</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('zanzibar') }}"{!! $navActive('zanzibar') !!}>Zanzibar</a></li>

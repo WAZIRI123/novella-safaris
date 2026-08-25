@@ -15,7 +15,7 @@
     .pkg-crumb a { color: var(--amber-light); text-decoration: none; }
     .pkg-crumb a:hover { text-decoration: underline; }
     .pkg-hero .eyebrow { display: inline-block; background: var(--amber); color: var(--white); padding: 6px 14px; border-radius: 30px; font-size: .72rem; letter-spacing: 2px; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
-    .pkg-hero h1 { font-size: 2.7rem; font-weight: 800; margin: 0 0 22px; line-height: 1.15; max-width: 900px; }
+    .pkg-hero h1 { font-size: 2.7rem; font-weight: 800; margin: 0 0 22px; line-height: 1.15; max-width: 900px; color: var(--white); }
     .pkg-hero-meta { display: flex; flex-wrap: wrap; gap: 10px; }
     .pkg-hero-meta .chip { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.10); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.22); padding: 8px 16px; border-radius: 24px; font-size: .88rem; font-weight: 600; }
     .pkg-hero-meta .chip i { color: var(--amber-light); }
@@ -84,15 +84,6 @@
     .inc-exc-grid .excluded li::before { content: '✕'; position: absolute; left: 0; top: 10px; width: 22px; height: 22px; border-radius: 50%; background: var(--amber-dark); color: var(--white); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: .75rem; }
     .inc-exc-grid h4 { color: var(--forest); margin: 0 0 12px; font-size: 1.05rem; }
     @media (max-width: 640px) { .inc-exc-grid { grid-template-columns: 1fr; } }
-
-    /* Accommodations */
-    .accom-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
-    .accom-card { background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--line-2); transition: var(--transition); }
-    .accom-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .accom-card .accom-img { height: 180px; background-size: cover; background-position: center; background-color: var(--sand); }
-    .accom-card .accom-body { padding: 18px; }
-    .accom-card h4 { margin: 0 0 8px; color: var(--forest); font-size: 1rem; }
-    .accom-card p { margin: 0; font-size: .88rem; color: var(--muted); line-height: 1.55; }
 
     /* Gallery */
     .pkg-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
@@ -189,7 +180,6 @@
         <a href="#pricing">Pricing</a>
         <a href="#itinerary">Itinerary</a>
         <a href="#includes">Includes</a>
-        <a href="#accommodations">Stay</a>
         <a href="#gallery">Gallery</a>
         <a href="#travel-info">Travel Info</a>
         <a href="#booking">Book Now</a>
@@ -306,29 +296,6 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-
-            {{-- Accommodations --}}
-            @if (! empty($package->accommodations))
-                <div class="pkg-card" id="accommodations">
-                    <div class="pkg-card-head">
-                        <i class="bi bi-house-door-fill"></i>
-                        <h2>Where You'll Stay</h2>
-                    </div>
-                    <div class="pkg-card-body">
-                        <div class="accom-grid">
-                            @foreach ($package->accommodations as $acc)
-                                <div class="accom-card">
-                                    <div class="accom-img" style="background-image:url('{{ asset($acc['image'] ?? '') }}');"></div>
-                                    <div class="accom-body">
-                                        <h4>{{ $acc['name'] ?? '' }}</h4>
-                                        <p>{{ $acc['description'] ?? '' }}</p>
-                                    </div>
-                                </div>
-                            @endforeach
                         </div>
                     </div>
                 </div>

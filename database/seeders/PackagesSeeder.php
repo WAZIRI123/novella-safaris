@@ -25,13 +25,13 @@ class PackagesSeeder extends Seeder
     private function safaris(): void
     {
         $data = [
-            ['serengeti', 'Serengeti National Park', "Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.", ['Big Cats', 'Migration', 'Balloon safaris'], 2890, 'Best seller', 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1600&q=80'],
-            ['ngorongoro', 'Ngorongoro Crater', "The world's largest intact caldera  an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.", ['Big 5', 'UNESCO', 'Day trip'], 1950, 'UNESCO', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1600&q=80'],
-            ['tarangire', 'Tarangire National Park', "Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania's northern circuit parks.", ['Elephants', 'Baobabs', 'Quiet'], 1420, 'Elephants', 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
-            ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], 980, 'Flamingos', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
-            ['ruaha', 'Ruaha National Park', "Tanzania's largest park  remote southern wilderness with wild dog, greater kudu and huge lion prides.", ['Fly-in only', 'Wild dogs'], 4180, 'Remote', 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&w=1600&q=80'],
-            ['nyerere-selous', 'Nyerere / Selous', "Africa's largest game reserve  boat safaris on the Rufiji, walking safaris and no crowds.", ['Boat safaris', 'Walking'], 3650, 'Southern', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
-            ['5-days-safari-expedition', '5 Days Safari Expedition', 'An Immersive Wildlife Adventure Through Tanzania Most Iconic Parks. A remarkable 5 Day Tarangire, Serengeti & Ngorongoro Crater Safari offering extended game drives across Tanzania premier wildlife destinations.', ['Extended game drives', 'Big Five', 'Multiple parks'], 1600, '5 Days', 'images/29.jpeg'],
+            ['serengeti', 'Serengeti National Park', "Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.", ['Big Cats', 'Migration', 'Balloon safaris'], 2890, 'Best seller', 'images/safaris/serengeti-migration.jpg'],
+            ['ngorongoro', 'Ngorongoro Crater', "The world's largest intact caldera  an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.", ['Big 5', 'UNESCO', 'Day trip'], 1950, 'UNESCO', 'images/safaris/elephant.jpg'],
+            ['tarangire', 'Tarangire National Park', "Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania's northern circuit parks.", ['Elephants', 'Baobabs', 'Quiet'], 1420, 'Elephants', 'images/safaris/equ4uykn1gd2kjipvio0dyzph4wpr65ri.webp'],
+            ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], 980, 'Flamingos', 'images/safaris/0dm0ar81eyposgb2jehzwuyus6cx82zr.webp'],
+            ['ruaha', 'Ruaha National Park', "Tanzania's largest park  remote southern wilderness with wild dog, greater kudu and huge lion prides.", ['Fly-in only', 'Wild dogs'], 4180, 'Remote', 'images/safaris/wildbeet.jpg'],
+            ['nyerere-selous', 'Nyerere / Selous', "Africa's largest game reserve  boat safaris on the Rufiji, walking safaris and no crowds.", ['Boat safaris', 'Walking'], 3650, 'Southern', 'images/safaris/safari-pack.jpg'],
+            ['5-days-safari-expedition', '5 Days Safari Expedition', 'An Immersive Wildlife Adventure Through Tanzania Most Iconic Parks. A remarkable 5 Day Tarangire, Serengeti & Ngorongoro Crater Safari offering extended game drives across Tanzania premier wildlife destinations.', ['Extended game drives', 'Big Five', 'Multiple parks'], 1600, '5 Days', 'images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $badge, $img]) {
@@ -86,12 +86,12 @@ class PackagesSeeder extends Seeder
                         'Tips to safari guides',
                     ],
                     'accommodations' => [
-                        ['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full board meals throughout the safari.', 'image' => 'images/29.jpeg'],
+                        ['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full board meals throughout the safari.', 'image' => 'images/safaris/IMG-4419-1780110169806-65108106.jpg'],
                     ],
                     'gallery' => [
-                        'images/29.jpeg',
-                        'images/25.jpeg',
-                        'images/28.jpeg',
+                        'images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg',
+                        'images/safaris/serengeti-migration.jpg',
+                        'images/safaris/elephant.jpg',
                     ],
                 ]);
             }

@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/tanzania-safaris', [PageController::class, 'safari'])->name('tanzania-safaris');
 Route::get('/safari', [PageController::class, 'safari'])->name('safari');
 Route::get('/safari/{slug}', [PageController::class, 'safariShow'])->name('safari.show');
 Route::get('/trekking', [PageController::class, 'trekking'])->name('trekking');
