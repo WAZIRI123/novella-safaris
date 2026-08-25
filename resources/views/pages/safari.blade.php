@@ -25,7 +25,7 @@
             <div class="dest-cards">
                 @forelse ($safaris as $s)
                     <article class="dest-card" id="{{ $s->slug }}">
-                        <div class="dest-image" style="background-image:url('{{ $s->image }}');">
+                        <div class="dest-image" style="background-image:url('{{ asset($s->image) }}');">
                             @if ($s->badge)<span class="dest-days-tag">{{ $s->badge }}</span>@endif
                         </div>
                         <div class="dest-body">

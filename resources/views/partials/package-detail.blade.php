@@ -146,7 +146,7 @@
 </style>
 
 {{-- HERO --}}
-<section class="pkg-hero" style="background-image:url('{{ $package->image ?? $typeBanner }}');">
+<section class="pkg-hero" style="background-image:url('{{ asset($package->image ?? $typeBanner) }}');">
     <div class="pkg-hero-inner container">
         <div class="pkg-crumb">
             <a href="{{ route('home') }}">Home</a>
@@ -322,7 +322,7 @@
                         <div class="accom-grid">
                             @foreach ($package->accommodations as $acc)
                                 <div class="accom-card">
-                                    <div class="accom-img" style="background-image:url('{{ $acc['image'] ?? '' }}');"></div>
+                                    <div class="accom-img" style="background-image:url('{{ asset($acc['image'] ?? '') }}');"></div>
                                     <div class="accom-body">
                                         <h4>{{ $acc['name'] ?? '' }}</h4>
                                         <p>{{ $acc['description'] ?? '' }}</p>
@@ -344,7 +344,7 @@
                     <div class="pkg-card-body">
                         <div class="pkg-gallery-grid">
                             @foreach ($package->gallery as $img)
-                                <div class="g-img" style="background-image:url('{{ is_array($img) ? ($img['url'] ?? '') : $img }}');"></div>
+                                <div class="g-img" style="background-image:url('{{ asset(is_array($img) ? ($img['url'] ?? '') : $img) }}');"></div>
                             @endforeach
                         </div>
                     </div>
@@ -553,7 +553,7 @@
                     <div class="related-grid">
                         @foreach ($relatedTours as $rel)
                             <a href="{{ route($listRoute . '.show', $rel->slug) }}" class="related-card">
-                                <div class="r-img" style="background-image:url('{{ $rel->image }}');"></div>
+                                <div class="r-img" style="background-image:url('{{ asset($rel->image) }}');"></div>
                                 <div class="r-body">
                                     @if ($rel->duration_days)<span class="r-days">{{ $rel->duration_days }} Days</span>@endif
                                     <h4>{{ $rel->name }}</h4>

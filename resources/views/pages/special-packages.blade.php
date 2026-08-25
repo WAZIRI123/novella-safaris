@@ -25,7 +25,7 @@
             <div class="dest-cards">
                 @forelse ($packages as $p)
                     <article class="dest-card">
-                        <div class="dest-image" style="background-image:url('{{ $p->image }}');">
+                        <div class="dest-image" style="background-image:url('{{ asset($p->image) }}');">
                             @if ($p->duration)<span class="dest-days-tag">{{ $p->duration }}</span>@endif
                         </div>
                         <div class="dest-body">

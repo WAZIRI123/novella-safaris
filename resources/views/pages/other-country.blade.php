@@ -25,7 +25,7 @@
             <div class="dest-cards">
                 @forelse ($trips as $t)
                     <article class="dest-card">
-                        <div class="dest-image" style="background-image:url('{{ $t->image }}');">
+                        <div class="dest-image" style="background-image:url('{{ asset($t->image) }}');">
                             <span class="dest-days-tag">{{ $t->country }}</span>
                         </div>
                         <div class="dest-body">

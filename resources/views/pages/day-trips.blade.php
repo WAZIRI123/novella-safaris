@@ -25,7 +25,7 @@
             <div class="dest-cards">
                 @forelse ($dayTrips as $t)
                     <article class="dest-card">
-                        <div class="dest-image" style="background-image:url('{{ $t->image }}');">
+                        <div class="dest-image" style="background-image:url('{{ asset($t->image) }}');">
                             @if ($t->duration)<span class="dest-days-tag">{{ $t->duration }}</span>@endif
                         </div>
                         <div class="dest-body">

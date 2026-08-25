@@ -26,11 +26,11 @@ class PackagesSeeder extends Seeder
     {
         $data = [
             ['serengeti', 'Serengeti National Park', "Home to the Great Migration and one of the highest concentrations of lion, leopard and cheetah anywhere on earth.", ['Big Cats', 'Migration', 'Balloon safaris'], 2890, 'Best seller', 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1600&q=80'],
-            ['ngorongoro', 'Ngorongoro Crater', "The world's largest intact caldera — an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.", ['Big 5', 'UNESCO', 'Day trip'], 1950, 'UNESCO', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1600&q=80'],
+            ['ngorongoro', 'Ngorongoro Crater', "The world's largest intact caldera  an unbroken ecosystem home to black rhino, lion prides and 30,000 animals.", ['Big 5', 'UNESCO', 'Day trip'], 1950, 'UNESCO', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1600&q=80'],
             ['tarangire', 'Tarangire National Park', "Ancient baobabs, epic herds of elephant, and the least-crowded of Tanzania's northern circuit parks.", ['Elephants', 'Baobabs', 'Quiet'], 1420, 'Elephants', 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
             ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], 980, 'Flamingos', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
-            ['ruaha', 'Ruaha National Park', "Tanzania's largest park — remote southern wilderness with wild dog, greater kudu and huge lion prides.", ['Fly-in only', 'Wild dogs'], 4180, 'Remote', 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&w=1600&q=80'],
-            ['nyerere-selous', 'Nyerere / Selous', "Africa's largest game reserve — boat safaris on the Rufiji, walking safaris and no crowds.", ['Boat safaris', 'Walking'], 3650, 'Southern', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
+            ['ruaha', 'Ruaha National Park', "Tanzania's largest park  remote southern wilderness with wild dog, greater kudu and huge lion prides.", ['Fly-in only', 'Wild dogs'], 4180, 'Remote', 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&w=1600&q=80'],
+            ['nyerere-selous', 'Nyerere / Selous', "Africa's largest game reserve  boat safaris on the Rufiji, walking safaris and no crowds.", ['Boat safaris', 'Walking'], 3650, 'Southern', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $badge, $img]) {
@@ -51,26 +51,25 @@ class PackagesSeeder extends Seeder
     private function trekkingRoutes(): void
     {
         $data = [
-            ['machame', 'Machame Route', 'The Whiskey Route — steeper, more scenic, and the most popular route on the mountain.', ['Moderate', 'Best success', 'Scenic'], 1969, 7, 'Moderate', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=80'],
-            ['7-day-machame-route', '7 Days Machame Route', 'Classic 7-day Machame itinerary — balanced acclimatisation and scenic sections.', ['Moderate', 'Popular'], 1969, 7, 'Moderate', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=80'],
-            ['6-day-machame-route', '6 Days Machame Route', 'The Whiskey Route Challenge — scenic Machame route with a shorter, high-adventure summit push.', ['Popular', 'Scenic', 'Challenge'], 2100, 6, 'Challenging', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=80'],
-            ['5-day-machame-express', '5 Days Machame Express', 'Shorter Machame option for experienced trekkers who want a quicker summit push.', ['Express', 'Fitness required'], 1599, 5, 'Strenuous', 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=80'],
-            ['lemosho', 'Lemosho Route', 'Approach from the west — remote, quiet, and the best acclimatisation profile of any route.', ['Best acclimatisation', 'Remote'], 2251, 8, 'Moderate', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
-            ['marangu', 'Marangu Route', 'The Coca-Cola Route — the only route with mountain huts. Gentler, and comfortable for first-timers.', ['Huts', 'Beginner-friendly'], 1556, 6, 'Easy', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
-            ['6-day-marangu-huts', '6 Days Marangu Route (Huts)', 'Marangu 6-day with hut stays for a comfortable ascent.', ['Huts', 'Beginner-friendly'], 1556, 6, 'Easy', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
-            
-            ['rongai', 'Rongai Route', 'The only northern approach. Drier, quieter, and the go-to route during the rainy season.', ['Quiet', 'Rainy-season option'], 1870, 7, 'Moderate', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
-            ['rongai-6-day', '6 Days Rongai Route', 'Shorter Rongai itinerary with good acclimatisation profile.', ['Quiet', 'Less-crowded'], 1720, 6, 'Moderate', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
-            ['umbwe', 'Umbwe Route', 'Steep, direct, and highly adventurous — one of the most demanding and less-crowded routes on Kilimanjaro.', ['Steep ascent', 'Less crowded', 'Experienced climbers'], 1890, 6, 'Very Challenging', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
-            ['6-day-umbwe-route-climb', '6 Day Umbwe Route Climb', 'A direct and demanding Kilimanjaro ascent through rainforest, steep ridges, and the southern circuit to the summit.', ['Steep', 'Direct ascent', 'Experienced route'], 2100, 6, 'Very Challenging', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
-            ['northern-circuit', 'Northern Circuit Route', 'The longest route on the mountain — highest summit success, and stunning 360° panoramas.', ['Longest route', 'Highest success'], 2590, 9, 'Strenuous', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1600&q=80']  ,
-            ['9-days-northern-circuit-route', '9 Days Northern Circuit Route', 'Longer and highly scenic Kilimanjaro climb with excellent acclimatisation and quieter northern slopes.', ['Longer route', 'Quieter', 'Excellent acclimatisation'], 2550, 9, 'Moderate to Challenging', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1600&q=80'],
-            ['8-days-northern-circuit-route', '8 Days Northern Circuit Route', 'A scenic and quieter Kilimanjaro climb with excellent panoramic views, remote northern-slope trails, and strong acclimatisation.', ['Quieter', 'Panoramic views', 'Strong acclimatisation'], 2400, 8, 'Moderate to Challenging', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1600&q=80'],
-            ['meru', 'Mount Meru Trek', "Kilimanjaro's little sister at 4,566m — a perfect warm-up climb, wildlife-filled and dramatic.", ['Warm-up climb', 'Wildlife'], 1120, 4, 'Moderate', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
-            ['mount-meru-3-day', '3 Days Mount Meru Trek', 'Short Mount Meru option for tighter schedules.', ['Warm-up', 'Wildlife'], 920, 3, 'Moderate', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
-            ['7-day-lemosho-route-climb', '7 Days Lemosho Route Climb', 'The 7-day Lemosho Route is one of Kilimanjaro’s most scenic routes — rainforest, Shira Plateau and the southern circuit to the summit.', ['Scenic', 'Great acclimatisation'], 2300, 7, 'Moderate to Challenging', 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1600&q=80'],
-            ['6-day-lemosho-route-climb', '6 Days Lemosho Route Climb – Novella Tanzanian Safaris & Trekking', 'The 6 Days Lemosho Route is a scenic and adventurous Kilimanjaro trek starting from the western side of the mountain.', ['Strong fitness', 'Less crowded', 'Summit push'], 2150, 6, 'Challenging', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
-            ['8-day-lemosho-route-climb-kosovo-camp', '8 Days Lemosho Route Climb – Kosovo Camp', 'The 8 Days Lemosho Kosovo Route is designed for trekkers seeking the scenery and acclimatisation profile of the Lemosho Route with the advantage of Kosovo Camp before the summit push.', ['Kosovo Camp', 'Shorter summit night', 'Excellent acclimatisation'], 2600, 8, 'Moderate to Challenging', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
+            ['machame', 'Machame Route', 'The Whiskey Route  steeper, more scenic, and the most popular route on the mountain.', ['Moderate', 'Best success', 'Scenic'], 1969, 7, 'Moderate', 'images/kilimanjaro images/machame-route-6-days-2.jpeg'],
+            ['7-day-machame-route', '7 Days Machame Route', 'Classic 7-day Machame itinerary  balanced acclimatisation and scenic sections.', ['Moderate', 'Popular'], 1969, 7, 'Moderate', 'images/kilimanjaro images/machame-group.jpg'],
+            ['6-day-machame-route', '6 Days Machame Route', 'The Whiskey Route Challenge  scenic Machame route with a shorter, high-adventure summit push.', ['Popular', 'Scenic', 'Challenge'], 2100, 6, 'Challenging', 'images/kilimanjaro images/machame-group.jpg'],
+            ['5-day-machame-express', '5 Days Machame Express', 'Shorter Machame option for experienced trekkers who want a quicker summit push.', ['Express', 'Fitness required'], 1599, 5, 'Strenuous', 'images/kilimanjaro images/machame-group.jpg'],
+            ['lemosho', 'Lemosho Route', 'Approach from the west  remote, quiet, and the best acclimatisation profile of any route.', ['Best acclimatisation', 'Remote'], 2251, 8, 'Moderate', 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
+            ['marangu', 'Marangu Route', 'The Coca-Cola Route  the only route with mountain huts. Gentler, and comfortable for first-timers.', ['Huts', 'Beginner-friendly'], 1556, 6, 'Easy', 'images/kilimanjaro images/Marangu3.jpg'],
+            ['6-day-marangu-huts', '6 Days Marangu Route (Huts)', 'Marangu 6-day with hut stays for a comfortable ascent.', ['Huts', 'Beginner-friendly'], 1556, 6, 'Easy', 'images/kilimanjaro images/marangu-5.jpg'],
+            ['rongai', 'Rongai Route', 'The only northern approach. Drier, quieter, and the go-to route during the rainy season.', ['Quiet', 'Rainy-season option'], 1870, 7, 'Moderate', 'images/kilimanjaro images/kili2.jpg'],
+            ['rongai-6-day', '6 Days Rongai Route', 'Shorter Rongai itinerary with good acclimatisation profile.', ['Quiet', 'Less-crowded'], 1720, 6, 'Moderate', 'images/kilimanjaro images/kili2.jpg'],
+            ['umbwe', 'Umbwe Route', 'Steep, direct, and highly adventurous  one of the most demanding and less-crowded routes on Kilimanjaro.', ['Steep ascent', 'Less crowded', 'Experienced climbers'], 1890, 6, 'Very Challenging', 'images/kilimanjaro images/Kilimanjaro.jpeg'],
+            ['6-day-umbwe-route-climb', '6 Day Umbwe Route Climb', 'A direct and demanding Kilimanjaro ascent through rainforest, steep ridges, and the southern circuit to the summit.', ['Steep', 'Direct ascent', 'Experienced route'], 2100, 6, 'Very Challenging', 'images/kilimanjaro images/Kilimanjaro.jpeg'],
+            ['northern-circuit', 'Northern Circuit Route', 'The longest route on the mountain  highest summit success, and stunning 360Â° panoramas.', ['Longest route', 'Highest success'], 2590, 9, 'Strenuous', 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
+            ['9-days-northern-circuit-route', '9 Days Northern Circuit Route', 'Longer and highly scenic Kilimanjaro climb with excellent acclimatisation and quieter northern slopes.', ['Longer route', 'Quieter', 'Excellent acclimatisation'], 2550, 9, 'Moderate to Challenging', 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
+            ['8-days-northern-circuit-route', '8 Days Northern Circuit Route', 'A scenic and quieter Kilimanjaro climb with excellent panoramic views, remote northern-slope trails, and strong acclimatisation.', ['Quieter', 'Panoramic views', 'Strong acclimatisation'], 2400, 8, 'Moderate to Challenging', 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
+            ['meru', 'Mount Meru Trek', "Kilimanjaro's little sister at 4,566m  a perfect warm-up climb, wildlife-filled and dramatic.", ['Warm-up climb', 'Wildlife'], 1120, 4, 'Moderate', 'images/kilimanjaro images/Kilimanjaro.jpeg'],
+            ['mount-meru-3-day', '3 Days Mount Meru Trek', 'Short Mount Meru option for tighter schedules.', ['Warm-up', 'Wildlife'], 920, 3, 'Moderate', 'images/kilimanjaro images/Kilimanjaro.jpeg'],
+            ['7-day-lemosho-route-climb', '7 Days Lemosho Route Climb', 'The 7-day Lemosho Route is one of Kilimanjaro most scenic routes  rainforest, Shira Plateau and the southern circuit to the summit.', ['Scenic', 'Great acclimatisation'], 2300, 7, 'Moderate to Challenging', 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
+            ['6-day-lemosho-route-climb', '6 Days Lemosho Route Climb   Novella Tanzanian Safaris & Trekking', 'The 6 Days Lemosho Route is a scenic and adventurous Kilimanjaro trek starting from the western side of the mountain.', ['Strong fitness', 'Less crowded', 'Summit push'], 2150, 6, 'Challenging', 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
+            ['8-day-lemosho-route-climb-kosovo-camp', '8 Days Lemosho Route Climb   Kosovo Camp', 'The 8 Days Lemosho Kosovo Route is designed for trekkers seeking the scenery and acclimatisation profile of the Lemosho Route with the advantage of Kosovo Camp before the summit push.', ['Kosovo Camp', 'Shorter summit night', 'Excellent acclimatisation'], 2600, 8, 'Moderate to Challenging', 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $days, $difficulty, $img]) {
@@ -133,12 +132,12 @@ class PackagesSeeder extends Seeder
                         'Personal expenses',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'All nights are spent in comfortable mountain tents with a dedicated support crew, hot meals, and full camp setup throughout the route.', 'image' => 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'All nights are spent in comfortable mountain tents with a dedicated support crew, hot meals, and full camp setup throughout the route.', 'image' => 'images/kilimanjaro images/machame-group.jpg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                        'images/kilimanjaro images/machame-group.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
                     ],
                 ]);
             }
@@ -161,7 +160,7 @@ class PackagesSeeder extends Seeder
                         ['day' => 2, 'title' => 'Mandara Hut (2700m) to Horombo Hut (3720m)', 'description' => 'After breakfast, start the trek to Horombo Hut. Approximately 4-6 hours later, the hut comes into sight at an altitude of 3700m. From the hut you can enjoy fantastic views of Kibo and Mawenzi.', 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 3, 'title' => 'Horombo Acclimatisation', 'description' => 'You spend a second night at Horombo, with an extra acclimatisation day added to improve your chances of reaching the peak. In the morning, walk for about 3 hours up to Zebra Rock before descending back to base for lunch. After lunch, relax and enjoy a gentle walk in the valley before dinner and overnight at Horombo Hut.', 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 4, 'title' => 'Horombo Hut (3720m) to Kibo Hut (4700m)', 'description' => 'After breakfast, begin another beautiful day. The first part of the hike passes through dwindling heathland and then into a moonlike alpine desert as you enter the sweeping saddle connecting Mawenzi and Kibo. After lunch and crossing this large saddle, you can examine the summit climb up Kibo that you will start in just a few hours. Have an early dinner and then get a long rest before the summit.', 'accommodation' => 'Kibo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
-                        ['day' => 5, 'title' => 'Kibo Hut (4700m) to Uhuru Peak (5895m) and down to Horombo Hut (3720m)', 'description' => 'Wake up at 1:00 am to begin the summit push. It takes about 4-5 hours to reach Gilman’s Point at 5681m on the crater rim of Kilimanjaro, where the first light begins to warm the land. After a further hike of around 1 hour and 30 minutes, you reach Uhuru Peak at 5895m, spend time taking photos and watching the African sunrise, then descend to Kibo Hut for a warm lunch and short rest. Continue back to Horombo Hut for your last overnight on the mountain.', 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Kibo Hut (4700m) to Uhuru Peak (5895m) and down to Horombo Hut (3720m)', 'description' => 'Wake up at 1:00 am to begin the summit push. It takes about 4-5 hours to reach Gilman Point at 5681m on the crater rim of Kilimanjaro, where the first light begins to warm the land. After a further hike of around 1 hour and 30 minutes, you reach Uhuru Peak at 5895m, spend time taking photos and watching the African sunrise, then descend to Kibo Hut for a warm lunch and short rest. Continue back to Horombo Hut for your last overnight on the mountain.', 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 6, 'title' => 'Horombo Hut (3720m) to Marangu Gate (1860m)', 'description' => 'Wake up as usual and descend through the moorland to Mandara Hut. Enjoy a hot lunch there and continue down through the tropical rainforest to the park gate. A vehicle will take you to the hotel in Moshi where it is time to celebrate.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
                     ],
                     'includes' => [
@@ -190,12 +189,12 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Huts', 'description' => 'Stay in shared mountain huts along the route, offering a more comfortable and sheltered overnight experience compared to camping routes.', 'image' => 'https://development-habari.habariadventure.com/uploads/packages/08-jpg-1780245560582-728325554.jpeg'],
+                        ['name' => 'Mountain Huts', 'description' => 'Stay in shared mountain huts along the route, offering a more comfortable and sheltered overnight experience compared to camping routes.', 'image' => 'images/kilimanjaro images/marangu-5.jpg'],
                     ],
                     'gallery' => [
-                        'https://development-habari.habariadventure.com/uploads/packages/08-jpg-1780245560582-728325554.jpeg',
-                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245571275-241518849.jpg',
-                        'https://development-habari.habariadventure.com/uploads/packages/Icons-01-1780171888480-157525336.png',
+                        'images/kilimanjaro images/Marangu3.jpg',
+                        'images/kilimanjaro images/marangu-5.jpg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
                     ],
                 ]);
             }
@@ -214,11 +213,11 @@ class PackagesSeeder extends Seeder
                         ['persons' => 10, 'price' => 1900],
                     ],
                     'itinerary' => [
-                        ['day' => 1, 'title' => 'Nalemoru Gate (1990m) to Simba Camp (2570m)', 'description' => 'A guide and mountain support crew will meet you at the hotel in the morning for a briefing before driving to the northern entrance: Nalemuru Gate (2,020m / 6627ft). After permits and rescue registration, the group starts trekking up to Simba Camp (2,671m / 8612ft). The trail is moderate and passes through coniferous forest on Kilimanjaro’s northern slope. By the time you reach camp, the crew will have set up tents and started preparing dinner.', 'accommodation' => 'Simba Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 1, 'title' => 'Nalemoru Gate (1990m) to Simba Camp (2570m)', 'description' => 'A guide and mountain support crew will meet you at the hotel in the morning for a briefing before driving to the northern entrance: Nalemuru Gate (2,020m / 6627ft). After permits and rescue registration, the group starts trekking up to Simba Camp (2,671m / 8612ft). The trail is moderate and passes through coniferous forest on Kilimanjaro northern slope. By the time you reach camp, the crew will have set up tents and started preparing dinner.', 'accommodation' => 'Simba Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 2, 'title' => 'Simba Camp (2570m) to Kikelelwa Camp (3700m)', 'description' => 'Another beautiful day with superb views of the eastern ice field on the crater rims of Kibo. It takes around 3 hours to cross the moorland zone on a smaller path toward the jagged peaks of Mawenzi to reach Kikelelwa for lunch and overnight.', 'accommodation' => 'Kikelelwa Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 3, 'title' => 'Kikelelwa Camp (3630m) to Mawenzi Tarn Hut (4330m)', 'description' => 'This is a short but steep day on grassy slopes, rewarding you with stunning all-round views and a strong sense of wilderness. The camp is spectacularly located in a cirque beneath the towering spires of Mawenzi. You have free time in the afternoon to rest or explore the surrounding area for acclimatisation.', 'accommodation' => 'Mawenzi Tarn Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 4, 'title' => 'Mawenzi Tarn Hut (4330m) to Kibo Hut (4700m)', 'description' => 'Today you cross the lunar desert of the saddle between Kibo and Mawenzi to reach Kibo Hut. Spend the afternoon resting and preparing for the final ascent at midnight.', 'accommodation' => 'Kibo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
-                        ['day' => 5, 'title' => 'Summit Day: Kibo Hut to Uhuru Peak and down to Horombo Hut', 'description' => 'The final ascent begins around 00:00. This is the steepest and most demanding section, and your guide will set a slow, steady pace. In darkness, it takes about 5 hours to reach the crater rim at Gilman’s Point (5685m), where you take a short rest and enjoy the sunrise over Mawenzi. After a further hour, you reach Uhuru Peak (5895m). After photos on the summit, descend to Kibo Hut for a short rest and hot lunch before continuing down to Horombo Hut for the overnight.', 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Summit Day: Kibo Hut to Uhuru Peak and down to Horombo Hut', 'description' => 'The final ascent begins around 00:00. This is the steepest and most demanding section, and your guide will set a slow, steady pace. In darkness, it takes about 5 hours to reach the crater rim at Gilman Point (5685m), where you take a short rest and enjoy the sunrise over Mawenzi. After a further hour, you reach Uhuru Peak (5895m). After photos on the summit, descend to Kibo Hut for a short rest and hot lunch before continuing down to Horombo Hut for the overnight.', 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 6, 'title' => 'Horombo Hut (3720m) to Marangu Gate (1860m)', 'description' => 'On the last day, pass through heath and moorland to Mandara Hut (2700m) and enjoy a hot lunch there. Continue descending through the tropical rainforest to the Kilimanjaro National Park gate, collect your certificates, and transfer back to your hotel in Moshi for a well-earned celebration.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
                     ],
                     'includes' => [
@@ -232,7 +231,7 @@ class PackagesSeeder extends Seeder
                         'Transport',
                         'Rescue fees',
                         'All needs on the mountain (breakfast, lunch and dinner)',
-                        'Guides and porters’ accommodations and their entry fees on the mountain',
+                        'Guides and portersaccommodations and their entry fees on the mountain',
                         'Pulse oximeter',
                         'First aid kit',
                         'Emergency oxygen',
@@ -248,19 +247,19 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'Sleep in quality mountain tents while trekking through varied landscapes, with a dedicated crew handling camp setup, meals, and support throughout the route.', 'image' => 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'Sleep in quality mountain tents while trekking through varied landscapes, with a dedicated crew handling camp setup, meals, and support throughout the route.', 'image' => 'images/kilimanjaro images/kili2.jpg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80',
-                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
+                        'images/kilimanjaro images/kili2.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
                     ],
                 ]);
             }
 
             if ($slug === 'meru') {
                 $route->update([
-                    'overview' => "The 4 Days Mount Meru Climb is a scenic and well-paced trek through Arusha National Park, offering lush forests, wildlife encounters, volcanic ridges, and stunning summit views. With an extra day for better acclimatisation, this route gives trekkers a more comfortable and rewarding way to experience Tanzania’s second-highest mountain.\n\nThis route is ideal for trekkers who want an excellent pre-Kilimanjaro acclimatisation climb, quieter trails, and a strong mountain adventure with hut-based accommodation. It combines forest scenery, wildlife, crater views, and a memorable sunrise at Socialist Peak.\n\nQuick facts: Duration 4 Days / 3 Nights; Starting point Momella Gate; Ending point Momella Gate; Difficulty Moderate to challenging; Summit Socialist Peak - 4,566m / 14,980ft; Best for trekkers wanting better acclimatisation and a scenic pre-Kilimanjaro climb; Scenery forest, wildlife zones, crater rim, alpine landscapes, and summit views; Accommodation mountain huts; Location Arusha National Park, Tanzania; Best time January-March and June-October; Route style scenic ridge climb with strong acclimatisation and unforgettable sunrise views.",
+                    'overview' => "The 4 Days Mount Meru Climb is a scenic and well-paced trek through Arusha National Park, offering lush forests, wildlife encounters, volcanic ridges, and stunning summit views. With an extra day for better acclimatisation, this route gives trekkers a more comfortable and rewarding way to experience Tanzania second-highest mountain.\n\nThis route is ideal for trekkers who want an excellent pre-Kilimanjaro acclimatisation climb, quieter trails, and a strong mountain adventure with hut-based accommodation. It combines forest scenery, wildlife, crater views, and a memorable sunrise at Socialist Peak.\n\nQuick facts: Duration 4 Days / 3 Nights; Starting point Momella Gate; Ending point Momella Gate; Difficulty Moderate to challenging; Summit Socialist Peak - 4,566m / 14,980ft; Best for trekkers wanting better acclimatisation and a scenic pre-Kilimanjaro climb; Scenery forest, wildlife zones, crater rim, alpine landscapes, and summit views; Accommodation mountain huts; Location Arusha National Park, Tanzania; Best time January-March and June-October; Route style scenic ridge climb with strong acclimatisation and unforgettable sunrise views.",
                     'duration_days' => 4,
                     'duration_nights' => 3,
                     'theme' => 'Scenic acclimatisation climb',
@@ -303,19 +302,19 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Huts', 'description' => 'Stay in mountain huts instead of tents for a more sheltered and comfortable overnight experience while trekking through Arusha National Park.', 'image' => 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Huts', 'description' => 'Stay in mountain huts instead of tents for a more sheltered and comfortable overnight experience while trekking through Arusha National Park.', 'image' => 'images/kilimanjaro images/Kilimanjaro.jpeg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
-                        'https://development-habari.habariadventure.com/uploads/packages/13-jpg-1780245992801-494952478.jpeg',
-                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245817759-398673153.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/denis-digital-77.jpg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
                     ],
                 ]);
             }
 
             if ($slug === 'mount-meru-3-day') {
                 $route->update([
-                    'overview' => "The 3 Days Mount Meru Climb is a scenic and adventurous trek through Arusha National Park, combining forest trails, wildlife encounters, dramatic crater landscapes, and a rewarding sunrise summit at Socialist Peak. It is ideal for trekkers seeking a shorter mountain adventure or a quick acclimatisation climb before Kilimanjaro.\n\nThis route is perfect for travelers with limited time, while still delivering a complete mountain trekking experience. With hut accommodation, fewer crowds, and incredible views of Kilimanjaro, Mount Meru offers a peaceful and adventurous experience in one of Tanzania’s most scenic parks.\n\nQuick facts: Duration 3 Days / 2 Nights; Starting point Momella Gate; Ending point Momella Gate; Difficulty Moderate to challenging; Summit Socialist Peak - 4,566m / 14,980ft; Best for trekkers wanting a shorter mountain adventure or Kilimanjaro acclimatisation trek; Scenery forest, wildlife zones, crater rim, alpine landscapes, and summit views; Accommodation mountain huts; Location Arusha National Park, Tanzania; Best time January-March and June-October; Route style short, scenic, and highly rewarding summit climb with strong wildlife appeal.",
+                    'overview' => "The 3 Days Mount Meru Climb is a scenic and adventurous trek through Arusha National Park, combining forest trails, wildlife encounters, dramatic crater landscapes, and a rewarding sunrise summit at Socialist Peak. It is ideal for trekkers seeking a shorter mountain adventure or a quick acclimatisation climb before Kilimanjaro.\n\nThis route is perfect for travelers with limited time, while still delivering a complete mountain trekking experience. With hut accommodation, fewer crowds, and incredible views of Kilimanjaro, Mount Meru offers a peaceful and adventurous experience in one of Tanzania most scenic parks.\n\nQuick facts: Duration 3 Days / 2 Nights; Starting point Momella Gate; Ending point Momella Gate; Difficulty Moderate to challenging; Summit Socialist Peak - 4,566m / 14,980ft; Best for trekkers wanting a shorter mountain adventure or Kilimanjaro acclimatisation trek; Scenery forest, wildlife zones, crater rim, alpine landscapes, and summit views; Accommodation mountain huts; Location Arusha National Park, Tanzania; Best time January-March and June-October; Route style short, scenic, and highly rewarding summit climb with strong wildlife appeal.",
                     'duration_days' => 3,
                     'duration_nights' => 2,
                     'theme' => 'Short but rewarding adventure',
@@ -357,12 +356,12 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Huts', 'description' => 'Enjoy a comfortable hut-based overnight experience with warm shelter and scenic surroundings in Arusha National Park.', 'image' => 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Huts', 'description' => 'Enjoy a comfortable hut-based overnight experience with warm shelter and scenic surroundings in Arusha National Park.', 'image' => 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
-                        'https://development-habari.habariadventure.com/uploads/packages/14-jpg-1780246031192-527643818.jpeg',
-                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245817759-398673153.jpg',
+                        'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg',
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
                     ],
                 ]);
             }
@@ -415,12 +414,12 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'Camp under the high-altitude sky in mountain tents while your support crew handles the equipment, meals, and route logistics.', 'image' => 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'Camp under the high-altitude sky in mountain tents while your support crew handles the equipment, meals, and route logistics.', 'image' => 'images/kilimanjaro images/machame-group.jpg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
-                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245817759-398673153.jpg',
+                        'images/kilimanjaro images/machame-group.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
                     ],
                 ]);
             }
@@ -473,19 +472,19 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'Spend your nights in quality mountain tents with a dedicated crew managing camp setup, meals, and route support.', 'image' => 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'Spend your nights in quality mountain tents with a dedicated crew managing camp setup, meals, and route support.', 'image' => 'images/kilimanjaro images/machame-route-6-days-2.jpeg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
-                        'https://development-habari.habariadventure.com/uploads/packages/11-jpg-1780245809842-237503420.jpeg',
-                        'https://development-habari.habariadventure.com/uploads/packages/elevation-1780245817759-398673153.jpg',
+                        'images/kilimanjaro images/machame-route-6-days-2.jpeg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
                     ],
                 ]);
             }
 
             if ($slug === 'machame') {
                 $route->update([
-                    'overview' => "A popular and scenic Kilimanjaro climb, the 7 Days Machame Route offers excellent acclimatisation, varied landscapes, and a rewarding summit approach. Known as the 'Whiskey Route', it is ideal for trekkers seeking a challenging but well-paced adventure to Uhuru Peak.\n\nThis 7-day itinerary gives better acclimatisation than the shorter 6-day Machame option, making the climb more manageable and improving the overall summit experience. It is ideal for adventurous hikers who want a classic Kilimanjaro route with strong scenery, good pacing, and a rewarding journey to Uhuru Peak.\n\nThe route follows a strong acclimatisation pattern, especially around Lava Tower and Barranco Camp, helping prepare you for summit night. With good pacing, proper preparation, and the 7-day schedule, the Machame Route offers a solid chance of reaching Uhuru Peak.\n\nQuick Facts: Duration 7 Days / 6 Nights; Starting Point Machame Gate; Ending Point Mweka Gate; Difficulty Challenging; Distance Approx. 62 km / 39 miles; Best For Adventurous trekkers with good fitness; Scenery Rainforest, moorland, Shira Plateau, Lava Tower, Barranco Wall, alpine desert, summit glaciers; Accommodation Mountain camping; Summit Uhuru Peak – 5,895m / 19,341ft; Best Time January–March and June–October; Route Style Scenic 'climb high, sleep low' route with strong acclimatisation profile.",
+                    'overview' => "A popular and scenic Kilimanjaro climb, the 7 Days Machame Route offers excellent acclimatisation, varied landscapes, and a rewarding summit approach. Known as the 'Whiskey Route', it is ideal for trekkers seeking a challenging but well-paced adventure to Uhuru Peak.\n\nThis 7-day itinerary gives better acclimatisation than the shorter 6-day Machame option, making the climb more manageable and improving the overall summit experience. It is ideal for adventurous hikers who want a classic Kilimanjaro route with strong scenery, good pacing, and a rewarding journey to Uhuru Peak.\n\nThe route follows a strong acclimatisation pattern, especially around Lava Tower and Barranco Camp, helping prepare you for summit night. With good pacing, proper preparation, and the 7-day schedule, the Machame Route offers a solid chance of reaching Uhuru Peak.\n\nQuick Facts: Duration 7 Days / 6 Nights; Starting Point Machame Gate; Ending Point Mweka Gate; Difficulty Challenging; Distance Approx. 62 km / 39 miles; Best For Adventurous trekkers with good fitness; Scenery Rainforest, moorland, Shira Plateau, Lava Tower, Barranco Wall, alpine desert, summit glaciers; Accommodation Mountain camping; Summit Uhuru Peak   5,895m / 19,341ft; Best Time January March and June October; Route Style Scenic 'climb high, sleep low' route with strong acclimatisation profile.",
                     'duration_days' => 7,
                     'duration_nights' => 6,
                     'theme' => 'Most popular and busiest route',
@@ -532,19 +531,19 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'Enjoy a classic mountain camping experience throughout the route, surrounded by dramatic volcanic landscapes, hot meals, and a dedicated climbing crew.', 'image' => 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'Enjoy a classic mountain camping experience throughout the route, surrounded by dramatic volcanic landscapes, hot meals, and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/machame-group.jpg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                        'images/kilimanjaro images/machame-group.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/machame-route-6-days-2.jpeg',
                     ],
                 ]);
             }
 
             if ($slug === '7-day-machame-route') {
                 $route->update([
-                    'overview' => "A popular and scenic Kilimanjaro climb, the 7 Days Machame Route offers excellent acclimatisation, varied landscapes, and a rewarding summit approach. Known as the 'Whiskey Route', it is ideal for trekkers seeking a challenging but well-paced adventure to Uhuru Peak.\n\nThis 7-day itinerary gives better acclimatisation than the shorter 6-day Machame option, making the climb more manageable and improving the overall summit experience. It is ideal for adventurous hikers who want a classic Kilimanjaro route with strong scenery, good pacing, and a rewarding journey to Uhuru Peak.\n\nThe route follows a strong acclimatisation pattern, especially around Lava Tower and Barranco Camp, helping prepare you for summit night. With good pacing, proper preparation, and the 7-day schedule, the Machame Route offers a solid chance of reaching Uhuru Peak.\n\nQuick Facts: Duration 7 Days / 6 Nights; Starting Point Machame Gate; Ending Point Mweka Gate; Difficulty Challenging; Distance Approx. 62 km / 39 miles; Best For Adventurous trekkers with good fitness; Scenery Rainforest, moorland, Shira Plateau, Lava Tower, Barranco Wall, alpine desert, summit glaciers; Accommodation Mountain camping; Summit Uhuru Peak – 5,895m / 19,341ft; Best Time January–March and June–October; Route Style Scenic 'climb high, sleep low' route with strong acclimatisation profile.",
+                    'overview' => "A popular and scenic Kilimanjaro climb, the 7 Days Machame Route offers excellent acclimatisation, varied landscapes, and a rewarding summit approach. Known as the 'Whiskey Route', it is ideal for trekkers seeking a challenging but well-paced adventure to Uhuru Peak.\n\nThis 7-day itinerary gives better acclimatisation than the shorter 6-day Machame option, making the climb more manageable and improving the overall summit experience. It is ideal for adventurous hikers who want a classic Kilimanjaro route with strong scenery, good pacing, and a rewarding journey to Uhuru Peak.\n\nThe route follows a strong acclimatisation pattern, especially around Lava Tower and Barranco Camp, helping prepare you for summit night. With good pacing, proper preparation, and the 7-day schedule, the Machame Route offers a solid chance of reaching Uhuru Peak.\n\nQuick Facts: Duration 7 Days / 6 Nights; Starting Point Machame Gate; Ending Point Mweka Gate; Difficulty Challenging; Distance Approx. 62 km / 39 miles; Best For Adventurous trekkers with good fitness; Scenery Rainforest, moorland, Shira Plateau, Lava Tower, Barranco Wall, alpine desert, summit glaciers; Accommodation Mountain camping; Summit Uhuru Peak   5,895m / 19,341ft; Best Time January March and June October; Route Style Scenic 'climb high, sleep low' route with strong acclimatisation profile.",
                     'duration_days' => 7,
                     'duration_nights' => 6,
                     'theme' => 'Most popular and busiest route',
@@ -591,19 +590,19 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'Enjoy a classic mountain camping experience throughout the route, surrounded by dramatic volcanic landscapes, hot meals, and a dedicated climbing crew.', 'image' => 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'Enjoy a classic mountain camping experience throughout the route, surrounded by dramatic volcanic landscapes, hot meals, and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/machame-group.jpg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                        'images/kilimanjaro images/machame-group.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/machame-route-6-days-2.jpeg',
                     ],
                 ]);
             }
 
             if ($slug === '6-day-machame-route') {
                 $route->update([
-                    'overview' => "The 6 Days Machame Route is one of the most scenic and popular trails on Mount Kilimanjaro, offering a challenging but rewarding ascent through diverse landscapes including rainforest, moorland, and alpine desert. Known as the 'Whiskey Route,' it provides excellent acclimatisation opportunities and a high summit success rate.\n\nThis route is a great choice for climbers who want a scenic, adventurous, and rewarding Kilimanjaro experience within a shorter timeframe. Known as the 'Whiskey Route,' Machame is one of the most popular routes on Mount Kilimanjaro because of its beautiful landscapes, varied terrain, and exciting trail experience.\n\nThe route takes you through lush rainforest, open moorland, the dramatic Lava Tower, the famous Barranco Wall, and the high alpine desert before the final summit push to Uhuru Peak. It is ideal for fit and determined climbers who want a classic Kilimanjaro route with strong adventure value.\n\nQuick Facts: Duration 6 Days / 5 Nights; Starting Point Machame Gate; Ending Point Mweka Gate; Difficulty Challenging; Distance Approx. 62 km / 38 miles; Best For Fit trekkers seeking a scenic and popular Kilimanjaro ascent; Scenery Rainforest, moorland, alpine desert, Barranco Valley, glaciers, and summit views; Accommodation Mountain camping; Summit Uhuru Peak – 5,895m / 19,341ft; Best Time January–March and June–October; Route Style Scenic and varied southern circuit with good acclimatisation and high summit success rate.",
+                    'overview' => "The 6 Days Machame Route is one of the most scenic and popular trails on Mount Kilimanjaro, offering a challenging but rewarding ascent through diverse landscapes including rainforest, moorland, and alpine desert. Known as the 'Whiskey Route,' it provides excellent acclimatisation opportunities and a high summit success rate.\n\nThis route is a great choice for climbers who want a scenic, adventurous, and rewarding Kilimanjaro experience within a shorter timeframe. Known as the 'Whiskey Route,' Machame is one of the most popular routes on Mount Kilimanjaro because of its beautiful landscapes, varied terrain, and exciting trail experience.\n\nThe route takes you through lush rainforest, open moorland, the dramatic Lava Tower, the famous Barranco Wall, and the high alpine desert before the final summit push to Uhuru Peak. It is ideal for fit and determined climbers who want a classic Kilimanjaro route with strong adventure value.\n\nQuick Facts: Duration 6 Days / 5 Nights; Starting Point Machame Gate; Ending Point Mweka Gate; Difficulty Challenging; Distance Approx. 62 km / 38 miles; Best For Fit trekkers seeking a scenic and popular Kilimanjaro ascent; Scenery Rainforest, moorland, alpine desert, Barranco Valley, glaciers, and summit views; Accommodation Mountain camping; Summit Uhuru Peak   5,895m / 19,341ft; Best Time January March and June October; Route Style Scenic and varied southern circuit with good acclimatisation and high summit success rate.",
                     'duration_days' => 6,
                     'duration_nights' => 5,
                     'theme' => 'The Whiskey Route Challenge',
@@ -649,19 +648,19 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'Enjoy a classic mountain camping experience throughout the route, surrounded by dramatic volcanic landscapes, hot meals, and a dedicated climbing crew.', 'image' => 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'Enjoy a classic mountain camping experience throughout the route, surrounded by dramatic volcanic landscapes, hot meals, and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
                     ],
                 ]);
             }
 
             if ($slug === '9-days-northern-circuit-route') {
                 $route->update([
-                    'overview' => "A longer and highly scenic Kilimanjaro climb, the 9 Days Northern Circuit Route offers excellent acclimatisation, quieter trails, panoramic mountain views, and a full wilderness-style journey around Kilimanjaro before the final summit push to Uhuru Peak.\n\nThis route follows Kilimanjaro’s quieter northern slopes, offering a more remote wilderness feel compared to the busier southern trails. Along the way, you will experience rainforest, the Shira Plateau, open alpine desert, peaceful valleys, wide mountain views, and a rewarding final ascent to Uhuru Peak.\n\nIt is ideal for climbers who want a premium, less crowded Kilimanjaro adventure with strong acclimatisation and some of the most panoramic views on the mountain.\n\nQuick Facts: Duration 9 Days / 8 Nights; Starting Point Londorossi Gate; Ending Point Mweka Gate; Difficulty Moderate to Challenging; Distance Approx. 90 km / 56 miles; Best For Trekkers who want excellent acclimatisation, quieter trails, and a longer scenic climb; Scenery Rainforest, Shira Plateau, northern slopes, alpine desert, remote valleys, summit glaciers; Accommodation Mountain camping; Summit Uhuru Peak – 5,895m / 19,341ft; Best Time January–March and June–October; Route Style Long, scenic, low-traffic route with one of the best acclimatisation profiles on Kilimanjaro.",
+                    'overview' => "A longer and highly scenic Kilimanjaro climb, the 9 Days Northern Circuit Route offers excellent acclimatisation, quieter trails, panoramic mountain views, and a full wilderness-style journey around Kilimanjaro before the final summit push to Uhuru Peak.\n\nThis route follows Kilimanjaro quieter northern slopes, offering a more remote wilderness feel compared to the busier southern trails. Along the way, you will experience rainforest, the Shira Plateau, open alpine desert, peaceful valleys, wide mountain views, and a rewarding final ascent to Uhuru Peak.\n\nIt is ideal for climbers who want a premium, less crowded Kilimanjaro adventure with strong acclimatisation and some of the most panoramic views on the mountain.\n\nQuick Facts: Duration 9 Days / 8 Nights; Starting Point Londorossi Gate; Ending Point Mweka Gate; Difficulty Moderate to Challenging; Distance Approx. 90 km / 56 miles; Best For Trekkers who want excellent acclimatisation, quieter trails, and a longer scenic climb; Scenery Rainforest, Shira Plateau, northern slopes, alpine desert, remote valleys, summit glaciers; Accommodation Mountain camping; Summit Uhuru Peak   5,895m / 19,341ft; Best Time January March and June October; Route Style Long, scenic, low-traffic route with one of the best acclimatisation profiles on Kilimanjaro.",
                     'duration_days' => 9,
                     'duration_nights' => 8,
                     'theme' => 'Longest Route',
@@ -680,7 +679,7 @@ class PackagesSeeder extends Seeder
                         ['day' => 5, 'title' => 'Moir Camp (4200m) to Pofu Camp (4000m)', 'description' => 'The route follows a series of inclines and declines, skirting around the northern slopes of Kibo to Pofu (Buffalo) Camp (4000m). The trek gives great vistas out across the plains north of Kilimanjaro and you arrive at Pofu Camp after midday for lunch, dinner and overnight.', 'accommodation' => 'Pofu camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 6, 'title' => 'Pofu Camp (4000m) to Rongai Third Cave Camp (3800m)', 'description' => 'Day six starts with a climb up the Buffalo ridge and then continues east along the northern slopes to the Rongai Third Cave at 3800m. The trek is shorter than the day before and by now you should feel well acclimatised to the altitude.', 'accommodation' => 'Rongai Third Cave camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 7, 'title' => 'Rongai Third Cave Camp (3800m) to School Hut (4800m)', 'description' => 'This day involves a steady incline up and over the Saddle between the peaks of Kibo and Mawenzi. Trekkers continue walking southwest up to School Hut (4800m). After arriving, you have an early dinner and then try to sleep before the summit attempt.', 'accommodation' => 'School Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
-                        ['day' => 8, 'title' => 'School Hut (4800m) to Uhuru Peak (5895m) then down to Millennium Camp (3950m)', 'description' => 'You are awoken before midnight and have breakfast before starting the summit around 6am. The climb steepens as you approach Gilman’s Point (5681m); from there you continue to Uhuru Peak (5895m), then descend around the crater rim to Stella Point and down to Millennium Camp for your final night on the mountain.', 'accommodation' => 'Millennium camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 8, 'title' => 'School Hut (4800m) to Uhuru Peak (5895m) then down to Millennium Camp (3950m)', 'description' => 'You are awoken before midnight and have breakfast before starting the summit around 6am. The climb steepens as you approach Gilman Point (5681m); from there you continue to Uhuru Peak (5895m), then descend around the crater rim to Stella Point and down to Millennium Camp for your final night on the mountain.', 'accommodation' => 'Millennium camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 9, 'title' => 'Millennium Camp (3900m) to Mweka Gate (1630m)', 'description' => 'The final day is a short hike through the dense montane rainforest from Millennium Camp to Mweka Gate. At the gate you sign out, collect your certificate and then transfer back to your hotel in Moshi.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
                     ],
                     'includes' => [
@@ -710,19 +709,19 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'Enjoy a classic mountain camping experience throughout the route, surrounded by dramatic volcanic landscapes, hot meals, and a dedicated climbing crew.', 'image' => 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'Enjoy a classic mountain camping experience throughout the route, surrounded by dramatic volcanic landscapes, hot meals, and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/denis-digital-77.jpg',
                     ],
                 ]);
             }
 
             if ($slug === '8-days-northern-circuit-route') {
                 $route->update([
-                    'overview' => "A scenic and quieter Kilimanjaro climb, the 8 Days Northern Circuit Route offers excellent panoramic views, remote northern-slope trails, and strong acclimatisation. It is ideal for trekkers who want a less crowded, wilderness-style route with a rewarding summit journey to Uhuru Peak.\n\nThis route follows the remote northern side of the mountain, offering wide panoramic views, peaceful trails, and a strong sense of wilderness. With 8 days on the mountain, the itinerary provides good acclimatisation and a more balanced climbing pace than shorter routes. It is ideal for adventurous trekkers who want beautiful landscapes, fewer crowds, and a rewarding summit journey to Uhuru Peak.\n\nQuick Facts: Duration 8 Days / 7 Nights; Starting Point Londorossi Gate; Ending Point Mweka Gate; Difficulty Moderate to Challenging; Distance Approx. 90 km / 56 miles; Best For Trekkers who want quieter trails, panoramic views, and strong acclimatisation; Scenery Rainforest, Shira Plateau, northern slopes, alpine desert, remote valleys, summit glaciers; Accommodation Mountain camping; Summit Uhuru Peak – 5,895m / 19,341ft; Best Time January–March and June–October; Route Style Scenic northern circuit route with fewer crowds and a wilderness trekking feel.",
+                    'overview' => "A scenic and quieter Kilimanjaro climb, the 8 Days Northern Circuit Route offers excellent panoramic views, remote northern-slope trails, and strong acclimatisation. It is ideal for trekkers who want a less crowded, wilderness-style route with a rewarding summit journey to Uhuru Peak.\n\nThis route follows the remote northern side of the mountain, offering wide panoramic views, peaceful trails, and a strong sense of wilderness. With 8 days on the mountain, the itinerary provides good acclimatisation and a more balanced climbing pace than shorter routes. It is ideal for adventurous trekkers who want beautiful landscapes, fewer crowds, and a rewarding summit journey to Uhuru Peak.\n\nQuick Facts: Duration 8 Days / 7 Nights; Starting Point Londorossi Gate; Ending Point Mweka Gate; Difficulty Moderate to Challenging; Distance Approx. 90 km / 56 miles; Best For Trekkers who want quieter trails, panoramic views, and strong acclimatisation; Scenery Rainforest, Shira Plateau, northern slopes, alpine desert, remote valleys, summit glaciers; Accommodation Mountain camping; Summit Uhuru Peak   5,895m / 19,341ft; Best Time January March and June October; Route Style Scenic northern circuit route with fewer crowds and a wilderness trekking feel.",
                     'duration_days' => 8,
                     'duration_nights' => 7,
                     'theme' => 'Best alternate route to Lemosho',
@@ -740,7 +739,7 @@ class PackagesSeeder extends Seeder
                         ['day' => 4, 'title' => 'Moir Camp (4200m) to Pofu Camp (4000m)', 'description' => 'Today it is a moderately steep climb out of Moir Valley. Trekkers can take a small detour to climb Little Lent Hill at 4375m before returning to the Grand Traverse trail. From here the route follows a series of inclines and declines, skirting around the northern slopes of Kibo to Pofu (Buffalo) Camp (4000m).', 'accommodation' => 'Pofu camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 5, 'title' => 'Pofu Camp (4000m) to Rongai Third Cave Camp (3800m)', 'description' => 'Day five starts with a climb up the Buffalo ridge and then continues east along the northern slopes to the Rongai Third Cave at 3800m. The trek is shorter than the day before and by now you should be feeling well acclimatised to the altitude.', 'accommodation' => 'Rongai Third Cave camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 6, 'title' => 'Rongai Third Cave Camp (3800m) to School Hut (4800m)', 'description' => 'This day involves a steady incline up and over the Saddle between the peaks of Kibo and Mawenzi. Trekkers continue walking southwest up to School Hut (4800m). After arriving, you are served an early dinner and then you should sleep before the summit attempt.', 'accommodation' => 'School Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
-                        ['day' => 7, 'title' => 'School Hut (4800m) to Uhuru Peak (5895m) and then down to Millennium Camp (3950m)', 'description' => 'You are awoken at 5am and have a full breakfast before starting the summit around 6am. The climb steepens as you approach Gilman’s Point (5681m). From here you gather all your energy and determination to reach Uhuru Peak (5895m). After summiting, you descend around the crater rim to Stella Point and then down to Millennium Camp for the final night on the mountain.', 'accommodation' => 'Millennium camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 7, 'title' => 'School Hut (4800m) to Uhuru Peak (5895m) and then down to Millennium Camp (3950m)', 'description' => 'You are awoken at 5am and have a full breakfast before starting the summit around 6am. The climb steepens as you approach Gilman Point (5681m). From here you gather all your energy and determination to reach Uhuru Peak (5895m). After summiting, you descend around the crater rim to Stella Point and then down to Millennium Camp for the final night on the mountain.', 'accommodation' => 'Millennium camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
                         ['day' => 8, 'title' => 'Millennium Camp (3900m) to Mweka Gate (1630m)', 'description' => 'The final day is a short hike through the dense montane rainforest from Millennium Camp to Mweka Gate. At the gate you sign out, collect your official certificate, and are transferred back to Moshi.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
                     ],
                     'includes' => [
@@ -822,12 +821,12 @@ class PackagesSeeder extends Seeder
                         'Laundry services',
                     ],
                     'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'All nights are spent in mountain tents with full camp setup, cooked meals, and a dedicated support crew across the route.', 'image' => 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80'],
+                        ['name' => 'Mountain Camping', 'description' => 'All nights are spent in mountain tents with full camp setup, cooked meals, and a dedicated support crew across the route.', 'image' => 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
                     ],
                     'gallery' => [
-                        'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=1200&q=80',
-                        'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1200&q=80',
+                        'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg',
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
                     ],
                 ]);
             }
@@ -837,8 +836,8 @@ class PackagesSeeder extends Seeder
     private function zanzibarPackages(): void
     {
         $data = [
-            ['stone-town-getaway', 'Stone Town Getaway', 'Wander UNESCO-listed alleys of coral stone, spice markets and ornate wooden doors — history at every turn.', ['UNESCO', 'History'], 890, 3, 'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?auto=format&fit=crop&w=1600&q=80'],
-            ['nungwi-beach-escape', 'Nungwi Beach Escape', 'Powdery white sand, warm shallow water and Zanzibar\'s best sunsets — the northern tip is home to the finest beach hotels.', ['Beach', 'Boutique'], 1240, 5, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80'],
+            ['stone-town-getaway', 'Stone Town Getaway', 'Wander UNESCO-listed alleys of coral stone, spice markets and ornate wooden doors  history at every turn.', ['UNESCO', 'History'], 890, 3, 'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?auto=format&fit=crop&w=1600&q=80'],
+            ['nungwi-beach-escape', 'Nungwi Beach Escape', 'Powdery white sand, warm shallow water and Zanzibar\'s best sunsets  the northern tip is home to the finest beach hotels.', ['Beach', 'Boutique'], 1240, 5, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80'],
             ['spice-and-sea', 'Spice Tours & Sea Life', 'A half-day plantation walk, Prison Island tortoises and the famous Safari Blue snorkel & seafood cruise.', ['Culture', 'Snorkel'], 1080, 4, 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1600&q=80'],
         ];
 
@@ -861,12 +860,12 @@ class PackagesSeeder extends Seeder
     private function dayTrips(): void
     {
         $data = [
-            ['ngorongoro-day-trip', 'Ngorongoro Crater Day Trip', "Descend into the world's largest intact caldera for a full-day game drive — Big 5 possible in a single day.", ['Big 5', 'Guided'], 420, 'Full day', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1600&q=80'],
+            ['ngorongoro-day-trip', 'Ngorongoro Crater Day Trip', "Descend into the world's largest intact caldera for a full-day game drive  Big 5 possible in a single day.", ['Big 5', 'Guided'], 420, 'Full day', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1600&q=80'],
             ['lake-manyara-day-trip', 'Lake Manyara Day Trip', 'Tree-climbing lions, hippo pools, flocks of pink flamingos and a groundwater forest.', ['Tree lions', 'Birds'], 280, 'Full day', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
-            ['tarangire-day-trip', 'Tarangire Day Trip', "Elephants under the baobabs — one of Africa's most photogenic elephant destinations.", ['Elephants', 'Baobabs'], 260, 'Full day', 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
+            ['tarangire-day-trip', 'Tarangire Day Trip', "Elephants under the baobabs  one of Africa's most photogenic elephant destinations.", ['Elephants', 'Baobabs'], 260, 'Full day', 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
             ['materuni-waterfalls-coffee', 'Materuni Waterfalls & Coffee Tour', 'Hike through banana plantations to a hidden waterfall, then roast your own coffee with a Chagga family.', ['Coffee', 'Waterfall'], 90, 'Half day', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80'],
-            ['maasai-village-cultural', 'Maasai Village Cultural Day', 'Learn ceremonial dance, jump with the warriors, share a meal — an unstaged cultural exchange.', ['Culture', 'Community'], 140, 'Full day', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
-            ['arusha-national-park', 'Arusha National Park', "Overlooked gem right on Arusha's doorstep — giraffe, buffalo, colobus monkeys and canoe safaris.", ['Canoe safari', 'Giraffe'], 180, 'Half day', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
+            ['maasai-village-cultural', 'Maasai Village Cultural Day', 'Learn ceremonial dance, jump with the warriors, share a meal  an unstaged cultural exchange.', ['Culture', 'Community'], 140, 'Full day', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
+            ['arusha-national-park', 'Arusha National Park', "Overlooked gem right on Arusha's doorstep  giraffe, buffalo, colobus monkeys and canoe safaris.", ['Canoe safari', 'Giraffe'], 180, 'Half day', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $duration, $img]) {
@@ -887,12 +886,12 @@ class PackagesSeeder extends Seeder
     private function specialPackages(): void
     {
         $data = [
-            ['safari-zanzibar-combo', 'Safari & Zanzibar Combo', 'Five days on safari — Serengeti, Ngorongoro, Tarangire — then a flight straight to a Nungwi beach villa.', 4780, '10 Days', 10, 9, 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1600&q=80'],
-            ['luxury-fly-in-safari', 'Luxury Fly-In Safari', 'Private aircraft between the Serengeti, Ruaha and Nyerere — tented luxury under a canopy of stars.', 8450, '12 Days', 12, 11, 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
+            ['safari-zanzibar-combo', 'Safari & Zanzibar Combo', 'Five days on safari  Serengeti, Ngorongoro, Tarangire  then a flight straight to a Nungwi beach villa.', 4780, '10 Days', 10, 9, 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1600&q=80'],
+            ['luxury-fly-in-safari', 'Luxury Fly-In Safari', 'Private aircraft between the Serengeti, Ruaha and Nyerere  tented luxury under a canopy of stars.', 8450, '12 Days', 12, 11, 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
             ['family-adventure-safari', 'Family Adventure Safari', 'Slower pace, kid-friendly lodges, junior ranger badges and Maasai visits designed for families.', 2340, '8 Days', 8, 7, 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&w=1600&q=80'],
             ['honeymoon-journey', 'Honeymoon Journey', 'Private plunge-pool suites, champagne dinners under the stars, and a barefoot beach finale on Mnemba.', 6890, '11 Days', 11, 10, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80'],
-            ['pro-photography-expedition', 'Pro Photography Expedition', 'Private vehicles, beanbags, off-road permits, golden-hour drives — led by a wildlife photographer.', 7890, '14 Days', 14, 13, 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
-            ['kili-safari-zanzibar', 'Kilimanjaro + Safari + Zanzibar', 'The full Tanzania experience — summit Uhuru, then safari, then unwind on the beach.', 5890, '15 Days', 15, 14, 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=80'],
+            ['pro-photography-expedition', 'Pro Photography Expedition', 'Private vehicles, beanbags, off-road permits, golden-hour drives  led by a wildlife photographer.', 7890, '14 Days', 14, 13, 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
+            ['kili-safari-zanzibar', 'Kilimanjaro + Safari + Zanzibar', 'The full Tanzania experience  summit Uhuru, then safari, then unwind on the beach.', 5890, '15 Days', 15, 14, 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1600&q=80'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $price, $duration, $days, $nights, $img]) {
@@ -914,12 +913,12 @@ class PackagesSeeder extends Seeder
     private function otherCountryTrips(): void
     {
         $data = [
-            ['kenya-maasai-mara', 'Kenya', 'Kenya — Maasai Mara', 'The northern extension of the Serengeti — Mara River crossings, big cat drama and open plains.', 3290, '7 Days', 7, 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
-            ['rwanda-gorilla-trekking', 'Rwanda', 'Rwanda — Gorilla Trekking', 'Come face-to-face with mountain gorillas in Volcanoes National Park — a once-in-a-lifetime encounter.', 4180, '4 Days', 4, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80'],
-            ['uganda-bwindi-nile', 'Uganda', 'Uganda — Bwindi & the Nile', "Half of the world's remaining mountain gorillas live here. Combine with chimp trekking in Kibale and the source of the Nile.", 3890, '8 Days', 8, 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
-            ['amboseli-tsavo', 'Kenya', 'Amboseli & Tsavo', 'Elephants against the backdrop of Kilimanjaro — Amboseli is the classic African postcard.', 2180, '6 Days', 6, 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
+            ['kenya-maasai-mara', 'Kenya', 'Kenya  Maasai Mara', 'The northern extension of the Serengeti  Mara River crossings, big cat drama and open plains.', 3290, '7 Days', 7, 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
+            ['rwanda-gorilla-trekking', 'Rwanda', 'Rwanda  Gorilla Trekking', 'Come face-to-face with mountain gorillas in Volcanoes National Park  a once-in-a-lifetime encounter.', 4180, '4 Days', 4, 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80'],
+            ['uganda-bwindi-nile', 'Uganda', 'Uganda  Bwindi & the Nile', "Half of the world's remaining mountain gorillas live here. Combine with chimp trekking in Kibale and the source of the Nile.", 3890, '8 Days', 8, 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
+            ['amboseli-tsavo', 'Kenya', 'Amboseli & Tsavo', 'Elephants against the backdrop of Kilimanjaro  Amboseli is the classic African postcard.', 2180, '6 Days', 6, 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
             ['queen-elizabeth-np', 'Uganda', 'Queen Elizabeth NP', 'Tree-climbing lions in the Ishasha sector, boat cruises on the Kazinga Channel, and volcanic craters.', 1890, '5 Days', 5, 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
-            ['three-country-combo', 'Multi-country', '3-Country Combo', 'Tanzania safari + Rwanda gorillas + Zanzibar beach — the ultimate East African journey.', 8290, '12 Days', 12, 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&w=1600&q=80'],
+            ['three-country-combo', 'Multi-country', '3-Country Combo', 'Tanzania safari + Rwanda gorillas + Zanzibar beach  the ultimate East African journey.', 8290, '12 Days', 12, 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&w=1600&q=80'],
         ];
 
         foreach ($data as $i => [$slug, $country, $name, $desc, $price, $duration, $days, $img]) {
@@ -938,3 +937,4 @@ class PackagesSeeder extends Seeder
         }
     }
 }
+

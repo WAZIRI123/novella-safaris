@@ -75,7 +75,7 @@
                 <div class="dest-cards" style="margin-top:40px;">
                     @foreach ($packages as $p)
                         <article class="dest-card">
-                            <div class="dest-image" style="background-image:url('{{ $p->image }}');">
+                            <div class="dest-image" style="background-image:url('{{ asset($p->image) }}');">
                                 @if ($p->days)<span class="dest-days-tag">{{ $p->days }} Days</span>@endif
                             </div>
                             <div class="dest-body">

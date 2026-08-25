@@ -24,7 +24,7 @@
             <div class="dest-cards">
                 @foreach ($routes as $r)
                     <article class="dest-card" id="{{ $r->slug }}">
-                        <div class="dest-image" style="background-image:url('{{ $r->image }}');">
+                        <div class="dest-image" style="background-image:url('{{ asset($r->image) }}');">
                             @if ($r->days)<span class="dest-days-tag">{{ $r->days }} Days</span>@endif
                         </div>
                         <div class="dest-body">
