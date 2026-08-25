@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northern Circuit Route — Novella Safaris</title>
+    <meta name="description" content="Available variations and itineraries for Northern Circuit Route" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css" />
+</head>
+<body>
+    <div class="header-top">
+    <div class="container header-top-inner">
+        <a href="http://127.0.0.1:8000" class="brand">
+            <img src="http://127.0.0.1:8000/assets/logo.png" alt="Novella Tanzania — Safaris &amp; Trekking" />
+        </a>
+        <div class="tagline">The number one Tour Operator in Tanzania</div>
+        <div class="header-top-right">
+            <div class="quick-strip">
+                <a href="http://127.0.0.1:8000/about"><i class="bi bi-people-fill"></i> About Us</a>
+                <a href="http://127.0.0.1:8000/contact"><i class="bi bi-telephone-fill"></i> Contact Us</a>
+                <a href="http://127.0.0.1:8000/resources"><i class="bi bi-file-earmark-pdf-fill"></i> Resources</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="main-nav" id="mainNav">
+    <div class="container main-nav-inner">
+        <a href="http://127.0.0.1:8000" class="brand brand-mobile">
+            <img src="http://127.0.0.1:8000/assets/logo.png" alt="Novella Tanzania" />
+        </a>
+        <nav class="primary-nav" id="primaryNav">
+            <ul>
+                <li><a href="http://127.0.0.1:8000">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="http://127.0.0.1:8000/trekking" class="active">Trekking <i class="bi bi-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="http://127.0.0.1:8000/trekking/machame">Machame Route</a></li>
+                        <li><a href="http://127.0.0.1:8000/trekking/northern-circuit">Northern Circuit</a></li>
+                        <li><a href="http://127.0.0.1:8000/trekking/lemosho">Lemosho Route</a></li>
+                        <li><a href="http://127.0.0.1:8000/trekking/marangu">Marangu Route</a></li>
+                        <li><a href="http://127.0.0.1:8000/trekking/rongai">Rongai Route</a></li>
+                        <li><a href="http://127.0.0.1:8000/trekking/meru">Mount Meru</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="http://127.0.0.1:8000/safari">Safari <i class="bi bi-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="http://127.0.0.1:8000/safari#serengeti">Serengeti National Park</a></li>
+                        <li><a href="http://127.0.0.1:8000/safari#ngorongoro">Ngorongoro Crater</a></li>
+                        <li><a href="http://127.0.0.1:8000/safari#tarangire">Tarangire National Park</a></li>
+                        <li><a href="http://127.0.0.1:8000/safari#manyara">Lake Manyara</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://127.0.0.1:8000/zanzibar">Zanzibar</a></li>
+                <li><a href="http://127.0.0.1:8000/day-trips">Day Trips</a></li>
+                <li><a href="http://127.0.0.1:8000/other-country">Other Country</a></li>
+                <li><a href="http://127.0.0.1:8000/special-packages">Special Packages</a></li>
+                <li><a href="http://127.0.0.1:8000/blog">Blog</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="http://127.0.0.1:8000/contact" class="btn-plan"><i class="bi bi-briefcase-fill"></i> LET'S PLAN A TRIP</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+        <section class="page-banner" style="background-image:url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&amp;fit=crop&amp;w=1600&amp;q=80');">
+        <div class="container">
+            <h1>Northern Circuit Route</h1>
+            <div class="breadcrumb"><a href="http://127.0.0.1:8000">Home</a> <i class="bi bi-chevron-right"></i> <a href="http://127.0.0.1:8000/trekking">Trekking</a> <i class="bi bi-chevron-right"></i> <span>Northern Circuit Route</span></div>
+        </div>
+    </section>
+
+    <section class="page-intro">
+        <div class="container">
+            <h2>Available options for Northern Circuit Route</h2>
+            <p>Choose a variation below to view full details and itinerary.</p>
+        </div>
+    </section>
+
+    <section class="dest-list">
+        <div class="container">
+            <div class="dest-cards">
+                                    <article class="dest-card" id="northern-circuit">
+                        <div class="dest-image" style="background-image:url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&amp;fit=crop&amp;w=1600&amp;q=80');">
+                            <span class="dest-days-tag">9 Days</span>                        </div>
+                        <div class="dest-body">
+                            <h3>Northern Circuit Route</h3>
+                            <p>The longest route on the mountain — highest summit success, and stunning 360° panoramas.</p>
+                                                            <div class="dest-features">
+                                    <span>Longest route</span><span>Highest success</span>                                </div>
+                                                        <div class="dest-foot">
+                                <div class="dest-price">From <strong>$2,590</strong></div>                                <a href="http://127.0.0.1:8000/trekking/northern-circuit" class="btn btn-outline btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+                                    <article class="dest-card" id="9-days-northern-circuit-route">
+                        <div class="dest-image" style="background-image:url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&amp;fit=crop&amp;w=1600&amp;q=80');">
+                            <span class="dest-days-tag">9 Days</span>                        </div>
+                        <div class="dest-body">
+                            <h3>9 Days Northern Circuit Route</h3>
+                            <p>Longer and highly scenic Kilimanjaro climb with excellent acclimatisation and quieter northern slopes.</p>
+                                                            <div class="dest-features">
+                                    <span>Longer route</span><span>Quieter</span><span>Excellent acclimatisation</span>                                </div>
+                                                        <div class="dest-foot">
+                                <div class="dest-price">From <strong>$2,550</strong></div>                                <a href="http://127.0.0.1:8000/trekking/9-days-northern-circuit-route" class="btn btn-outline btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+                                    <article class="dest-card" id="8-days-northern-circuit-route">
+                        <div class="dest-image" style="background-image:url('https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&amp;fit=crop&amp;w=1600&amp;q=80');">
+                            <span class="dest-days-tag">8 Days</span>                        </div>
+                        <div class="dest-body">
+                            <h3>8 Days Northern Circuit Route</h3>
+                            <p>A scenic and quieter Kilimanjaro climb with excellent panoramic views, remote northern-slope trails, and strong acclimatisation.</p>
+                                                            <div class="dest-features">
+                                    <span>Quieter</span><span>Panoramic views</span><span>Strong acclimatisation</span>                                </div>
+                                                        <div class="dest-foot">
+                                <div class="dest-price">From <strong>$2,400</strong></div>                                <a href="http://127.0.0.1:8000/trekking/8-days-northern-circuit-route" class="btn btn-outline btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+
+    <footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-col">
+            <a href="http://127.0.0.1:8000" class="brand light">
+                <img src="http://127.0.0.1:8000/assets/logo-light.png" alt="Novella Tanzania — Safaris &amp; Trekking" />
+            </a>
+            <p>Handcrafted Tanzania adventures since 2005. Licensed by TALA &amp; TATO. Proud KPAP partner.</p>
+            <div class="socials">
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h5>USEFUL LINKS</h5>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
+                <li><a href="http://127.0.0.1:8000/about#team">Our Team</a></li>
+                <li><a href="http://127.0.0.1:8000/blog">Blog &amp; News</a></li>
+                <li><a href="http://127.0.0.1:8000/about#sustainability">Sustainability</a></li>
+                <li><a href="http://127.0.0.1:8000/resources">Resources</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>POPULAR EXPERIENCES</h5>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/safari#serengeti">Great Migration Safari</a></li>
+                <li><a href="http://127.0.0.1:8000/trekking#machame">Kilimanjaro Machame Route</a></li>
+                <li><a href="http://127.0.0.1:8000/day-trips">Ngorongoro Crater Day Trip</a></li>
+                <li><a href="http://127.0.0.1:8000/zanzibar">Zanzibar Beach Escape</a></li>
+                <li><a href="http://127.0.0.1:8000/special-packages">Northern Circuit Fly-in</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>OUR CONTACTS</h5>
+            <ul class="contact-list">
+                <li><i class="bi bi-geo-alt"></i> Boma Road, Arusha, Tanzania</li>
+                <li><i class="bi bi-telephone"></i> +255 754 000 000</li>
+                <li><i class="bi bi-envelope"></i> info@novellasafaris.com</li>
+                <li><i class="bi bi-clock"></i> 24/7 emergency line</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+            <span>&copy; 2026 Novella Safaris Ltd. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="fixed-side">
+    <a href="http://127.0.0.1:8000/contact" class="fixed-btn book-now"><i class="bi bi-calendar-check"></i> Book Now</a>
+</div>
+
+<a href="https://wa.me/255754000000" class="wa-float" aria-label="WhatsApp us"><i class="bi bi-whatsapp"></i> <span>WhatsApp us</span></a>
+
+    <script src="http://127.0.0.1:8000/js/main.js"></script>
+</body>
+</html>
