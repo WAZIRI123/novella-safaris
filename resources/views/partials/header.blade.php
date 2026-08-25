@@ -42,6 +42,7 @@
                 <li class="has-dropdown">
                     <a href="{{ route('safari') }}"{!! $navActive('safari') !!}>Safari <i class="bi bi-chevron-down"></i></a>
                     <ul class="dropdown">
+                        <li><a href="{{ route('safari') }}">Tanzania Safaris</a></li>
                         <li><a href="{{ route('safari') }}#serengeti">Serengeti National Park</a></li>
                         <li><a href="{{ route('safari') }}#ngorongoro">Ngorongoro Crater</a></li>
                         <li><a href="{{ route('safari') }}#tarangire">Tarangire National Park</a></li>

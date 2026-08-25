@@ -31,10 +31,11 @@ class PackagesSeeder extends Seeder
             ['manyara', 'Lake Manyara', 'Groundwater forest, pink flamingos on the lake, and famous tree-climbing lions.', ['Tree lions', 'Birds', 'Half-day'], 980, 'Flamingos', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
             ['ruaha', 'Ruaha National Park', "Tanzania's largest park  remote southern wilderness with wild dog, greater kudu and huge lion prides.", ['Fly-in only', 'Wild dogs'], 4180, 'Remote', 'https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&w=1600&q=80'],
             ['nyerere-selous', 'Nyerere / Selous', "Africa's largest game reserve  boat safaris on the Rufiji, walking safaris and no crowds.", ['Boat safaris', 'Walking'], 3650, 'Southern', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
+            ['5-days-safari-expedition', '5 Days Safari Expedition', 'An Immersive Wildlife Adventure Through Tanzania Most Iconic Parks. A remarkable 5 Day Tarangire, Serengeti & Ngorongoro Crater Safari offering extended game drives across Tanzania premier wildlife destinations.', ['Extended game drives', 'Big Five', 'Multiple parks'], 1600, '5 Days', 'images/29.jpeg'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $badge, $img]) {
-            Safari::updateOrCreate(['slug' => $slug], [
+            $safari = Safari::updateOrCreate(['slug' => $slug], [
                 'name' => $name,
                 'description' => $desc,
                 'features' => $features,
@@ -45,6 +46,55 @@ class PackagesSeeder extends Seeder
                 'sort_order' => $i,
                 'is_published' => true,
             ]);
+
+            if ($slug === '5-days-safari-expedition') {
+                $safari->update([
+                    'overview' => "A thrilling 5 Days Tanzania Safari offering extended wildlife viewing, diverse landscapes, and unforgettable game drives across some of Tanzania most iconic national parks. Ideal for travelers seeking a deeper safari adventure with more time to explore and experience Africa incredible wildlife.\n\nOver five days, you can explore iconic destinations such as Serengeti National Park, Ngorongoro Crater, Tarangire National Park, and Lake Manyara National Park while searching for lions, elephants, leopards, cheetahs, giraffes, zebras, buffalo, wildebeest, and many other animals.\n\nThis safari is ideal for travelers who want a balanced mix of adventure, comfort, scenic beauty, and unforgettable wildlife encounters without feeling rushed.",
+                    'duration_days' => 5,
+                    'duration_nights' => 4,
+                    'theme' => 'Immersive Wildlife Adventure',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 2200],
+                        ['persons' => 4, 'price' => 1600],
+                        ['persons' => 9, 'price' => 1400],
+                        ['persons' => 10, 'price' => 1250],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Tarangire National Park', 'description' => 'Leave at hotel at 06:00 am and transfer to the Tarangire National Park via Arusha city, the drive cover approximately covers around 4 hours to the park gate. You will spend a 7 - 8 hours drive within the park that is famous in having a big number of elephants and huge scattered baobab trees. Other mammals like giraffes, antelopes, lions and cheetahs can be seen. At 05:00 pm you will leave the park and drive to the hotel for your dinner and overnight.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Serengeti National Park', 'description' => 'After breakfast we head towards the Serengeti National Park, via the beautiful high lying farmland of Karatu and the Ngorongoro Conservation Area. Leaving the highlands behind, we descend into the heart of wild Africa the Serengeti National Park with its endless plains, rolling into the distance as far as the eye can see and it the best place in Tanzania to see thousand of wildlife. We head to the central park area, known as the Seronera area, one of the richest wildlife habitats in the park.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Serengeti National Park - Full Day Game Drives', 'description' => 'Full Day in Serengeti to experience the wildebeest migration or calving season. Enjoy extended game drives with more opportunities for Big Five sightings and exploring the vast Serengeti plains.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Serengeti Game Drives & Maasai Tribe Visit', 'description' => 'The early morning game drive takes you again into the protected Serengeti refuge. The breathtaking savannahs are a stunning backdrop to a diverse and abundant wildlife population throughout the entire year. A leisurely lunch and time to relax before setting out and start to drive back to Ngorongoro area. On the way to Ngorongoro Crater we will visit the Maasai tribe.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Ngorongoro Crater', 'description' => 'Today you will be picked up at Lodge after an early breakfast; we plan to start very early in order to experience a beautiful sunrise. The Ngorongoro Crater is one of the few areas in Tanzania where you can find such a breathtaking blend of scenery and wildlife coupled with a fascinating historical and cultural element. Today we expect to see rhino, elephants, lions, giraffes, pink flamingos, hyenas, etc. Later on will start to drive back to Hotel.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        'Transport 4x4 safari land cruiser',
+                        'Transfer to and from the airport',
+                        'Professional guide/driver',
+                        'All parks and entrance fees',
+                        'Lodges/Hotel/Camping accommodation',
+                        'Camping equipments and accommodation',
+                        'Fruits',
+                        'Bottled water in safari vehicle',
+                        '24 hours support',
+                        'Current government taxes and levies',
+                        'Salaries',
+                    ],
+                    'excludes' => [
+                        'Entry visa to Tanzania',
+                        'Laundry services',
+                        'Tips to safari guides',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full board meals throughout the safari.', 'image' => 'images/29.jpeg'],
+                    ],
+                    'gallery' => [
+                        'images/29.jpeg',
+                        'images/25.jpeg',
+                        'images/28.jpeg',
+                    ],
+                ]);
+            }
         }
     }
 
