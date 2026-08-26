@@ -1024,13 +1024,11 @@ class PackagesSeeder extends Seeder
     private function zanzibarPackages(): void
     {
         $data = [
-            ['stone-town-getaway', 'Stone Town Getaway', 'Wander UNESCO-listed alleys of coral stone, spice markets and ornate wooden doors  history at every turn.', ['UNESCO', 'History'], 890, 3, 'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?auto=format&fit=crop&w=1600&q=80'],
-            ['nungwi-beach-escape', 'Nungwi Beach Escape', 'Powdery white sand, warm shallow water and Zanzibar\'s best sunsets  the northern tip is home to the finest beach hotels.', ['Beach', 'Boutique'], 1240, 5, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80'],
-            ['spice-and-sea', 'Spice Tours & Sea Life', 'A half-day plantation walk, Prison Island tortoises and the famous Safari Blue snorkel & seafood cruise.', ['Culture', 'Snorkel'], 1080, 4, 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=1600&q=80'],
+            ['7-day-zanzibar-beach-vacation', '7 Day Zanzibar Beach Vacation', 'Sun, Sand & Ocean Views. A relaxing tropical escape featuring white sandy beaches, crystal-clear waters, vibrant culture, and unforgettable island experiences.', ['Beach', 'Relaxation', 'Culture'], 1450, 7, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $days, $img]) {
-            ZanzibarPackage::updateOrCreate(['slug' => $slug], [
+            $zanzibar = ZanzibarPackage::updateOrCreate(['slug' => $slug], [
                 'name' => $name,
                 'description' => $desc,
                 'features' => $features,
@@ -1042,6 +1040,50 @@ class PackagesSeeder extends Seeder
                 'sort_order' => $i,
                 'is_published' => true,
             ]);
+
+            if ($slug === '7-day-zanzibar-beach-vacation') {
+                $zanzibar->update([
+                    'overview' => "A relaxing 7 Day Zanzibar Beach Vacation featuring white-sand beaches, turquoise waters, tropical island scenery, and unforgettable ocean experiences. Perfect for travelers seeking a peaceful getaway with a mix of relaxation, culture, adventure, and luxury on the beautiful island of Zanzibar.\n\nFrom the historic streets of Stone Town to the white-sand beaches and turquoise waters of the Indian Ocean, Zanzibar offers a unique mix of culture, nature, and luxury. Travelers can enjoy snorkeling, diving, dhow cruises, spice tours, beach relaxation, and unforgettable sunset views.\n\nThis vacation is ideal as a romantic getaway, honeymoon, family beach holiday, or relaxing extension after a safari or Kilimanjaro climb.",
+                    'duration_days' => 7,
+                    'duration_nights' => 6,
+                    'theme' => 'Beach Vacation',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 1700],
+                        ['persons' => 4, 'price' => 1450],
+                        ['persons' => 9, 'price' => 1450],
+                        ['persons' => 10, 'price' => 1450],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Arrival in Zanzibar', 'description' => 'Arrive at Zanzibar airport or seaport then, you will meet Habari adventure representative and transfer you to the hotel for relaxation.', 'accommodation' => 'Mahali Zanzibar Hotel / Smile Beach hotel', 'meals' => ['Breakfast']],
+                        ['day' => 2, 'title' => 'Beach Relaxation', 'description' => 'Today you will have full day relaxation on the Beach.', 'accommodation' => 'Mahali Zanzibar Hotel / Smile Beach hotel', 'meals' => ['Breakfast']],
+                        ['day' => 3, 'title' => 'Diving Tour', 'description' => 'Today you will be picked up for half day diving tour and around afternoon you will be dropped at the hotel for relaxation on the Beach.', 'accommodation' => 'Mahali Zanzibar Hotel / Smile Beach hotel', 'meals' => ['Breakfast']],
+                        ['day' => 4, 'title' => 'Safari Blue Tour', 'description' => 'Today you will be picked up for full day safari Blue tour.', 'accommodation' => 'Mahali Zanzibar Hotel / Smile Beach hotel', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 5, 'title' => 'Spice Farm & Stone Town Tour', 'description' => 'Morning after breakfast pick up at 9:30 to spice farm where you can see different types of spice and how they grow up plus tasting the seasonal fruits and to experience the normal life of the local people in the village then will have lunch at spice farm. After meal will have town tour where you can have amazing history of the heart of the Zanzibar island as known as stone town, whereby you have chance to see the slave market site, daily market, house of wonder, old fort, palace museum and narrow street then will have chance to do shopping.', 'accommodation' => 'Mahali Zanzibar Hotel / Smile Beach hotel', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 6, 'title' => 'Snorkeling / Aquarium Tour', 'description' => 'Another beautiful day - you will be picked from the Hotel and go for snorkeling / aquarium tour.', 'accommodation' => 'Zanzibar Serena Hotel / Tembo Hotel', 'meals' => ['Breakfast']],
+                        ['day' => 7, 'title' => 'Stone Town Tour & Prison Island', 'description' => 'Another beautiful day you will be picked from the Hotel to for stone town tour and prison Island. After the tour will take you to the restaurant for the hot lunch before drop you at airport for departure.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        'All Park fees',
+                        'Hotel, Bed & Breakfast',
+                        'All Transfers',
+                        'All government taxes',
+                        'Tour cost and fruits',
+                    ],
+                    'excludes' => [
+                        'Flights',
+                        'Tipping (10$ per day to the local guide)',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Beach Resorts & Hotels', 'description' => 'Comfortable beachfront accommodation with breakfast included throughout the vacation.', 'image' => 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80'],
+                    ],
+                    'gallery' => [
+                        'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80',
+                        'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80',
+                        'https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?auto=format&fit=crop&w=1600&q=80',
+                    ],
+                ]);
+            }
         }
     }
 
