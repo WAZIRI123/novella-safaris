@@ -25,6 +25,9 @@ class PackagesSeeder extends Seeder
     private function safaris(): void
     {
         $data = [
+            ['2-days-safari-adventure', '2 Days Safari Adventure', 'Experience Wildlife, Scenic Landscapes & Unforgettable Game Drives. A captivating 2 Day Tarangire & Ngorongoro Safari combining two of Tanzania most iconic wildlife destinations.', ['Short safari', 'Tarangire', 'Ngorongoro'], 900, '2 Days', 'images/safaris/0dm0ar81eyposgb2jehzwuyus6cx82zr.webp'],
+            ['3-days-safari-adventure', '3 Days Safari Adventure', 'Explore Tanzania Top Wildlife Parks and Iconic Landscapes. A spectacular 3 Day Ngorongoro Crater & Serengeti Safari combining the world-famous Serengeti plains with the wildlife-rich Ngorongoro Crater.', ['Big Five', 'Serengeti', 'Ngorongoro'], 990, '3 Days', 'images/safaris/elephant.jpg'],
+            ['4-days-wildlife-safari', '4 Days Wildlife Safari', 'Discover More Wildlife, More Landscapes, and More Safari Experiences. A thrilling 4 Day Tarangire, Serengeti & Ngorongoro Crater Safari showcasing Tanzania most iconic wildlife destinations.', ['More game drives', 'Multiple parks', 'Diverse wildlife'], 1200, '4 Days', 'images/safaris/serengeti-migration.jpg'],
             ['5-days-safari-expedition', '5 Days Safari Expedition', 'An Immersive Wildlife Adventure Through Tanzania Most Iconic Parks. A remarkable 5 Day Tarangire, Serengeti & Ngorongoro Crater Safari offering extended game drives across Tanzania premier wildlife destinations.', ['Extended game drives', 'Big Five', 'Multiple parks'], 1600, '5 Days', 'images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg'],
         ];
 
@@ -40,6 +43,147 @@ class PackagesSeeder extends Seeder
                 'sort_order' => $i,
                 'is_published' => true,
             ]);
+
+            if ($slug === '2-days-safari-adventure') {
+                $safari->update([
+                    'overview' => "A short but unforgettable 2 Days Tanzania Safari exploring some of the country most iconic wildlife destinations. Perfect for travelers with limited time, this safari offers exciting game drives, beautiful landscapes, and the chance to see Africa famous wildlife in just two days.\n\nThis short safari is ideal for combining with a Kilimanjaro climb, Zanzibar beach holiday, or other Tanzania travel plans. Despite the shorter duration, you still have excellent opportunities to see elephants, lions, giraffes, zebras, buffalo, and many other animals in their natural habitat.\n\nWith experienced guides, comfortable safari vehicles, and flexible park options, this itinerary delivers an unforgettable African safari experience in a compact and convenient format.",
+                    'duration_days' => 2,
+                    'duration_nights' => 1,
+                    'theme' => 'Short Safari Adventure',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 1200],
+                        ['persons' => 4, 'price' => 900],
+                        ['persons' => 9, 'price' => 650],
+                        ['persons' => 10, 'price' => 500],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Tarangire National Park', 'description' => 'Leave at hotel at 06:00 am and transfer to the Tarangire National Park via Arusha city, the drive cover approximately covers around 4 hours to the park gate. You will spend a 7 hours drive within the park that is famous in having a big number of elephants and huge scattered baobab trees. Other mammals like giraffes, antelopes, lions and cheetahs can be seen. At 05:00 pm you will leave the park and drive to the Camp for your dinner and overnight.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Ngorongoro Crater', 'description' => 'Today you will be picked up at your hotel/campsite after an early breakfast; we plan to start very early in order to be able to spend 7 hours in the park before transfer back to Moshi/Arusha. The Ngorongoro Crater is one of the few areas in Tanzania where you can find such a breathtaking blend of scenery and wildlife coupled with a fascinating historical and cultural element. Today we expect to see rhino, elephants, lions, giraffes, pink flamingos, hyenas, etc. After a 6 - 8 hours game drive you will start to make your way to Airport / hotel.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        'Transport 4x4 safari land cruiser',
+                        'Transfer to and from the airport',
+                        'Professional guide/driver',
+                        'All parks and entrance fees',
+                        'Lodges/Hotel/Camping accommodation',
+                        'Camping equipments and accommodation',
+                        'Fruits',
+                        'Bottled water in safari vehicle',
+                        '24 hours support',
+                        'Current government taxes and levies',
+                        'Salaries',
+                    ],
+                    'excludes' => [
+                        'Entry visa to Tanzania',
+                        'Laundry services',
+                        'Tips to safari guides',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full board meals throughout the safari.', 'image' => 'images/safaris/IMG-4419-1780110169806-65108106.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/safaris/0dm0ar81eyposgb2jehzwuyus6cx82zr.webp',
+                        'images/safaris/elephant.jpg',
+                        'images/safaris/wildbeet.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === '3-days-safari-adventure') {
+                $safari->update([
+                    'overview' => "A memorable 3 Days Tanzania Safari combining exciting game drives, diverse wildlife, and stunning African landscapes across some of Tanzania top national parks. Ideal for travelers wanting a balanced safari experience with more time to explore and enjoy unforgettable wildlife encounters.\n\nYou can experience diverse landscapes including savannahs, crater floors, forests, and lakes while searching for lions, elephants, giraffes, zebras, buffalo, hippos, and many other animals. The additional time also improves your chances of seeing more wildlife activity and enjoying the safari at a more relaxed pace.\n\nThis safari is ideal for first-time visitors, couples, families, or travelers combining a safari with Kilimanjaro trekking or Zanzibar beach holidays.",
+                    'duration_days' => 3,
+                    'duration_nights' => 2,
+                    'theme' => 'Safari Adventure',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 1300],
+                        ['persons' => 4, 'price' => 990],
+                        ['persons' => 9, 'price' => 890],
+                        ['persons' => 10, 'price' => 800],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Serengeti National Park', 'description' => 'After an early breakfast 5:30 am we head towards the Serengeti National Park, via Arusha city and the beautiful high lying farmland of the Ngorongoro Conservation Area. Leaving the highlands behind, we descend into the heart of wild Africa the Serengeti National Park with its endless plains, rolling into the distance as far as the eye can see. We head to the central park area, known as the Seronera area, one of the richest wildlife habitats in the park. Today animals like Leopard, cheater, buffalo, hippo, elephants, big groups of lions, giraffe etc can be seen. Late evening you will transfer back to the campsite.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Serengeti Game Drives', 'description' => 'The early morning game drive takes you again into the protected Serengeti refuge. The breathtaking savannahs are a stunning backdrop to a diverse and abundant wildlife population throughout the entire year. A leisurely lunch and time to relax before setting out and start to drive back to Ngorongoro area.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Ngorongoro Crater', 'description' => 'Today you will be picked up at your hotel after an breakfast; we will drive few minutes to Ngorongoro crater. The Ngorongoro Crater is one of the few areas in Tanzania where you can find such a breathtaking blend of scenery and wildlife coupled with a fascinating historical and cultural element. Today we expect to see rhino, elephants, lions, giraffes, pink flamingos, hyenas, etc. After 8 hours game drive you leave the crater and transfer back to the Airport / Moshi for another overnight.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        'Transport 4x4 safari land cruiser',
+                        'Transfer to and from the airport',
+                        'Professional guide/driver',
+                        'All parks and entrance fees',
+                        'Lodges/Hotel/Camping accommodation',
+                        'Camping equipments and accommodation',
+                        'Fruits',
+                        'Bottled water in safari vehicle',
+                        '24 hours support',
+                        'Current government taxes and levies',
+                        'Salaries',
+                    ],
+                    'excludes' => [
+                        'Entry visa to Tanzania',
+                        'Laundry services',
+                        'Tips to safari guides',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full board meals throughout the safari.', 'image' => 'images/safaris/IMG-4419-1780110169806-65108106.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/safaris/elephant.jpg',
+                        'images/safaris/serengeti-migration.jpg',
+                        'images/safaris/wildbeet.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === '4-days-wildlife-safari') {
+                $safari->update([
+                    'overview' => "A rewarding 4 Days Tanzania Safari offering extended game drives, diverse wildlife encounters, and visits to some of Tanzania most iconic national parks. Perfect for travelers seeking a deeper safari experience with more time to explore Africa incredible landscapes and wildlife.\n\nOver four days, you can experience diverse landscapes including open savannahs, volcanic crater floors, forests, lakes, and wildlife-rich plains while searching for lions, elephants, leopards, giraffes, zebras, buffalo, and many other animals.\n\nThis safari is perfect for travelers who want a balanced mix of adventure, comfort, and wildlife exploration while visiting some of Tanzania most iconic safari destinations.",
+                    'duration_days' => 4,
+                    'duration_nights' => 3,
+                    'theme' => 'Wildlife Safari Adventure',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 1700],
+                        ['persons' => 4, 'price' => 1200],
+                        ['persons' => 9, 'price' => 1050],
+                        ['persons' => 10, 'price' => 990],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Tarangire National Park', 'description' => 'Leave at hotel at 06:00 am and transfer to the Tarangire National Park via Arusha city, the drive cover approximately covers around 4 hours to the park gate. You will spend a 7 - 8 hours drive within the park that is famous in having a big number of elephants and huge scattered baobab trees. Other mammals like giraffes, antelopes, lions and cheetahs can be seen. At 05:00 pm you will leave the park and drive to the Camp for your dinner and overnight.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Serengeti National Park', 'description' => 'After breakfast we head towards the Serengeti National Park, via the beautiful high lying farmland of Karatu and the Ngorongoro Conservation Area. Leaving the highlands behind, we descend into the heart of wild Africa the Serengeti National Park with its endless plains, rolling into the distance as far as the eye can see. We head to the central park area, known as the Seronera area, one of the richest wildlife habitats in the park.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Serengeti National Park - Full Day Game Drives', 'description' => 'After breakfast we will start our game viewing. Serengeti is huge (with 1400km it is nearly the size of Northern Ireland) and we will see only a small part of it during our drive in the North Serengeti since it is known as the heart of Serengeti National Park and having a huge diversity of animals, especially cats (Lions, Leopards, Cheetahs). After the game drive we will enter into Ngorongoro Conservation area for dinner and overnight.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Ngorongoro Crater', 'description' => 'Today you will be picked up at your hotel/campsite after an early breakfast; we plan to start very early in order to be able to spend 7 hours in the park before transfer back to Airport. The Ngorongoro Crater is one of the few areas in Tanzania where you can find such a breathtaking blend of scenery and wildlife coupled with a fascinating historical and cultural element. Today we expect to see rhino, elephants, lions, giraffes, pink flamingos, hyenas, etc. After a 6 - 8 hours game drive you will start to make your way to Airport / Moshi.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => [
+                        'Transport 4x4 safari land cruiser',
+                        'Transfer to and from the airport',
+                        'Professional guide/driver',
+                        'All parks and entrance fees',
+                        'Lodges/Hotel/Camping accommodation',
+                        'Camping equipments and accommodation',
+                        'Fruits',
+                        'Bottled water in safari vehicle',
+                        '24 hours support',
+                        'Current government taxes and levies',
+                        'Salaries',
+                    ],
+                    'excludes' => [
+                        'Entry visa to Tanzania',
+                        'Laundry services',
+                        'Tips to safari guides',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full board meals throughout the safari.', 'image' => 'images/safaris/IMG-4419-1780110169806-65108106.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/safaris/serengeti-migration.jpg',
+                        'images/safaris/elephant.jpg',
+                        'images/safaris/wildbeet.jpg',
+                    ],
+                ]);
+            }
 
             if ($slug === '5-days-safari-expedition') {
                 $safari->update([
