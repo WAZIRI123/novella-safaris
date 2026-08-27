@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <section class="page-banner" style="background-image:url('{{ asset('images/28.jpeg') }}');">
+    <section class="page-banner" style="background-image:url('{{ asset('images/zanzibar images/famous-rock-restaurant-built-cliff-sea-zanzibar-tanzania-1779768277653-505084469.jpg') }}');">
         <div class="container">
             <h1>Zanzibar</h1>
             <div class="breadcrumb"><a href="{{ route('home') }}">Home</a> <i class="bi bi-chevron-right"></i> <span>Zanzibar</span></div>
@@ -25,11 +25,11 @@
 
             <div class="split-row">
                 <div class="split-media">
-                    <img src="{{ asset('images/10.jpeg') }}" alt="Stone Town" />
+                    <img src="{{ asset('images/zanzibar images/stone town.webp') }}" alt="Stone Town" />
                 </div>
                 <div class="split-content">
                     <span class="eyebrow">History</span>
-                    <h2>Stone Town</h2>
+                    <h2>Stone Towns</h2>
                     <p>Wander UNESCO-listed alleys of coral stone, spice markets, ornate wooden doors and the ghost of the Sultan's palace.</p>
                     <ul>
                         <li><i class="bi bi-check-circle-fill"></i> Guided walking tours with a local historian</li>
@@ -41,7 +41,7 @@
 
             <div class="split-row reverse">
                 <div class="split-media">
-                    <img src="{{ asset('images/11.jpeg') }}" alt="Nungwi beach" />
+                    <img src="{{ asset('images/zanzibar images/Nungi kendwa.jpg') }}" alt="Nungwi beach" />
                 </div>
                 <div class="split-content">
                     <span class="eyebrow">Beaches</span>
@@ -57,7 +57,7 @@
 
             <div class="split-row">
                 <div class="split-media">
-                    <img src="{{ asset('images/12.jpeg') }}" alt="Spice tour" />
+                    <img src="{{ asset('images/zanzibar images/spice.jpg') }}" alt="Spice tour" />
                 </div>
                 <div class="split-content">
                     <span class="eyebrow">Excursions</span>
@@ -94,7 +94,7 @@
         </div>
     </section>
 
-    <section class="inner-cta">
+    <section class="inner-cta" style="background-image:url('{{ asset('images/zanzibar images/beach12.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;">
         <div class="container">
             <h2>Add Zanzibar to your safari</h2>
             <p>Most travellers pair 5–7 days safari with 4–5 days on the beach — we plan both, and the flight between them.</p>
