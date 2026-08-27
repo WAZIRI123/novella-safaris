@@ -60,16 +60,12 @@
             <div class="why-text">
                 <span class="eyebrow">Why Book with Novella</span>
                 <h2>Rooted in Tanzania. <br />Trusted worldwide.</h2>
-                <p>Founded by a Tanzanian family in 2005, Novella Safaris has spent nearly two decades taking travellers deep into the wild heart of East Africa. Our journeys are unrushed, our guides are family, and every itinerary is designed the way we would want to travel ourselves.</p>
+                <p>Novella Safaris takes travellers deep into the wild heart of East Africa. Our journeys are unrushed, our guides are family, and every itinerary is designed the way we would want to travel ourselves.</p>
                 <p>From the sweeping Serengeti plains to the roof of Africa on Kilimanjaro and the turquoise shores of Zanzibar — we are your one team, from your first email to your final sundowner.</p>
                 <a href="{{ route('about') }}" class="btn btn-navy">Read Our Story <i class="bi bi-arrow-right"></i></a>
             </div>
             <div class="why-portrait">
                 <img src="{{ asset('assets/novellapic.jpeg') }}" alt="Novella Safaris Owner" />
-                <div class="portrait-badge">
-                    <strong>19+</strong>
-                    <span>Years serving travellers</span>
-                </div>
             </div>
         </div>
     </section>
@@ -84,7 +80,7 @@
             <div class="feature-card">
                 <div class="feature-icon"><i class="bi bi-person-badge"></i></div>
                 <h3>Qualified Guides</h3>
-                <p>Wildlife College certified, WFR trained, averaging 12 years in the bush.</p>
+                <p>Wildlife College certified, WFR trained, with deep experience in the bush.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="bi bi-geo-alt"></i></div>
@@ -94,39 +90,6 @@
         </div>
     </section>
 
-    <section class="special-packages">
-        <div class="container">
-            <div class="section-title">
-                <h2>Special Packages</h2>
-                <p>Hand-crafted itineraries — book direct, pay nothing extra.</p>
-            </div>
-            <div class="special-grid">
-                @forelse ($specialPackages as $pkg)
-                    <article class="special-card">
-                        <div class="special-img" style="background-image:url('{{ $pkg->image }}');"></div>
-                        <div class="special-body">
-                            <h4>{{ $pkg->name }}</h4>
-                            <a href="{{ route('special-packages') }}" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </article>
-                @empty
-                    @foreach ([
-                        ['7-Day Great Migration Safari', asset('images/07.jpeg')],
-                        ['8-Day Kilimanjaro Lemosho Trek', asset('images/08.jpeg')],
-                        ['10-Day Safari & Zanzibar Combo', asset('images/09.jpeg')],
-                    ] as [$title, $img])
-                        <article class="special-card">
-                            <div class="special-img" style="background-image:url('{{ $img }}');"></div>
-                            <div class="special-body">
-                                <h4>{{ $title }}</h4>
-                                <a href="{{ route('special-packages') }}" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    @endforeach
-                @endforelse
-            </div>
-        </div>
-    </section>
 
     <section class="top-selling">
         <div class="container">
@@ -174,27 +137,27 @@
     <section class="group-trips">
         <div class="container">
             @foreach ([
-                ['7 Days', 'Machame Route Kilimanjaro Climb', '$1,969', asset('images/27.jpeg'), false],
-                ['8 Days', 'Lemosho Route Kilimanjaro Climb', '$2,251', asset('images/15.jpeg'), true],
-                ['7 Days', 'Serengeti Migration Safari', '$2,651', asset('images/25.jpeg'), false],
-            ] as [$days, $title, $price, $img, $reverse])
+                ['7 Days', 'Machame Route Kilimanjaro Climb', '$1,969', asset('images/27.jpeg'), false, route('trekking.show', 'machame')],
+                ['8 Days', 'Lemosho Route Kilimanjaro Climb', '$2,251', asset('images/15.jpeg'), true, route('trekking.show', 'lemosho')],
+                ['7 Days', 'Serengeti Migration Safari', '$2,651', asset('images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg'), false, route('tanzania-safaris')],
+            ] as [$days, $title, $price, $img, $reverse, $url])
                 <article class="trip-row{{ $reverse ? ' reverse' : '' }}">
                     @if ($reverse)
-                        <div class="trip-image" style="background-image:url('{{ $img }}');"></div>
+                        <a href="{{ $url }}" class="trip-image" style="background-image:url('{{ $img }}');" aria-label="{{ $title }}"></a>
                     @endif
                     <div class="trip-info">
                         <span class="trip-days">{{ $days }}</span>
-                        <h3>{{ $title }}</h3>
+                        <h3><a href="{{ $url }}">{{ $title }}</a></h3>
                         <div class="trip-meta">
                             <div class="trip-price"><strong>{{ $price }}</strong><span>Per Person</span></div>
                             <div class="trip-availability">
                                 <span class="avail-open"><i class="bi bi-check-circle-fill"></i> Open</span>
-                                <a href="{{ route('contact') }}" class="btn btn-yellow btn-sm">JOIN THE GROUP</a>
+                                <a href="{{ $url }}" class="btn btn-yellow btn-sm">View Details</a>
                             </div>
                         </div>
                     </div>
                     @if (! $reverse)
-                        <div class="trip-image" style="background-image:url('{{ $img }}');"></div>
+                        <a href="{{ $url }}" class="trip-image" style="background-image:url('{{ $img }}');" aria-label="{{ $title }}"></a>
                     @endif
                 </article>
             @endforeach

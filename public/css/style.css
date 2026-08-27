@@ -827,6 +827,13 @@ p { margin: 0 0 1em; color: var(--text); }
     margin-bottom: 24px;
     line-height: 1.2;
 }
+.trip-info h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+.trip-info h3 a:hover {
+    color: var(--yellow-dark, #c9a227);
+}
 .trip-meta {
     display: flex;
     justify-content: space-between;
@@ -862,6 +869,7 @@ p { margin: 0 0 1em; color: var(--text); }
 }
 .avail-open i { font-size: 14px; }
 .trip-image {
+    display: block;
     min-height: 340px;
     background-size: cover;
     background-position: center;

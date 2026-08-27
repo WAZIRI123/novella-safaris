@@ -53,7 +53,7 @@ include __DIR__ . "/partials/header.php";
             <div class="why-text">
                 <span class="eyebrow">Why Book with Novella</span>
                 <h2>Rooted in Tanzania. <br />Trusted worldwide.</h2>
-                <p>Founded by a Tanzanian family in 2005, Novella Safaris has spent nearly two decades taking travellers deep into the wild heart of East Africa. Our journeys are unrushed, our guides are family, and every itinerary is designed the way we would want to travel ourselves.</p>
+                <p>Novella Safaris has spent nearly two decades taking travellers deep into the wild heart of East Africa. Our journeys are unrushed, our guides are family, and every itinerary is designed the way we would want to travel ourselves.</p>
                 <p>From the sweeping Serengeti plains to the roof of Africa on Kilimanjaro and the turquoise shores of Zanzibar — we are your one team, from your first email to your final sundowner.</p>
                 <a href="#" class="btn btn-navy">Read Our Story <i class="bi bi-arrow-right"></i></a>
             </div>

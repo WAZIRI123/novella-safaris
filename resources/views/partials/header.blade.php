@@ -42,9 +42,6 @@
                 <li><a href="{{ route('tanzania-safaris') }}"{!! $navActive('safari') !!}>Safari</a></li>
                 <li><a href="{{ route('zanzibar') }}"{!! $navActive('zanzibar') !!}>Zanzibar</a></li>
                 <li><a href="{{ route('day-trips') }}"{!! $navActive('day-trips') !!}>Day Trips</a></li>
-                <li><a href="{{ route('other-country') }}"{!! $navActive('other-country') !!}>Other Country</a></li>
-                <li><a href="{{ route('special-packages') }}"{!! $navActive('special-packages') !!}>Special Packages</a></li>
-                <li><a href="{{ route('blog') }}"{!! $navActive('blog') !!}>Blog</a></li>
             </ul>
         </nav>
 

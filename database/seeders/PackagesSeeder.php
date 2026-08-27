@@ -1175,16 +1175,13 @@ class PackagesSeeder extends Seeder
     private function dayTrips(): void
     {
         $data = [
-            ['ngorongoro-day-trip', 'Ngorongoro Crater Day Trip', "Descend into the world's largest intact caldera for a full-day game drive  Big 5 possible in a single day.", ['Big 5', 'Guided'], 420, 'Full day', 'https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1600&q=80'],
-            ['lake-manyara-day-trip', 'Lake Manyara Day Trip', 'Tree-climbing lions, hippo pools, flocks of pink flamingos and a groundwater forest.', ['Tree lions', 'Birds'], 280, 'Full day', 'https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=1600&q=80'],
-            ['tarangire-day-trip', 'Tarangire Day Trip', "Elephants under the baobabs  one of Africa's most photogenic elephant destinations.", ['Elephants', 'Baobabs'], 260, 'Full day', 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=1600&q=80'],
-            ['materuni-waterfalls-coffee', 'Materuni Waterfalls & Coffee Tour', 'Hike through banana plantations to a hidden waterfall, then roast your own coffee with a Chagga family.', ['Coffee', 'Waterfall'], 90, 'Half day', 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80'],
-            ['maasai-village-cultural', 'Maasai Village Cultural Day', 'Learn ceremonial dance, jump with the warriors, share a meal  an unstaged cultural exchange.', ['Culture', 'Community'], 140, 'Full day', 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80'],
-            ['arusha-national-park', 'Arusha National Park', "Overlooked gem right on Arusha's doorstep  giraffe, buffalo, colobus monkeys and canoe safaris.", ['Canoe safari', 'Giraffe'], 180, 'Half day', 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80'],
+            ['materuni-waterfall', 'Materuni Waterfall', 'Hidden Gem of Kilimanjaro. A scenic day trip that combines a guided hike through lush countryside with a visit to one of Tanzania most beautiful waterfalls.', ['Waterfall', 'Coffee', 'Culture'], 80, 'Full day', 'images/Day Trips/IMG-2331-1780110336048-544612569.jpg'],
+            ['maasai-tour', 'Maasai Tour', 'Experience Local Heritage. A unique cultural experience where visitors can learn about the traditions, customs, and daily life of the Maasai people.', ['Culture', 'Traditions', 'Village'], 145, 'Full day', 'images/Day Trips/IMG-4419-1780110169806-65108106.jpg'],
+            ['chemka-hot-springs', 'Chemka Hot Springs', 'Turquoise Waters Experience. A relaxing day trip to a natural oasis of crystal-clear turquoise waters surrounded by lush vegetation.', ['Swimming', 'Relaxation', 'Nature'], 80, 'Full day', 'images/Day Trips/IMG-1402-1780110475334-118582944.jpg'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $duration, $img]) {
-            DayTrip::updateOrCreate(['slug' => $slug], [
+            $dayTrip = DayTrip::updateOrCreate(['slug' => $slug], [
                 'name' => $name,
                 'description' => $desc,
                 'features' => $features,
@@ -1195,6 +1192,124 @@ class PackagesSeeder extends Seeder
                 'sort_order' => $i,
                 'is_published' => true,
             ]);
+
+            if ($slug === 'maasai-tour') {
+                $dayTrip->update([
+                    'overview' => "A meaningful Maasai Cultural Tour offering authentic insight into the traditions, lifestyle, and heritage of the Maasai people. Perfect for travelers seeking cultural experiences, local interaction, traditional dances, village visits, and a deeper connection to East African culture.\n\nVisitors can enjoy traditional singing and dancing, explore village homes, discover local crafts, and gain insight into the Maasai way of life that has been preserved for generations. The experience provides meaningful cultural exchange while supporting local communities and sustainable tourism initiatives.\n\nThis tour is ideal for travelers seeking more than wildlife and scenery, adding cultural depth and authentic human connection to their Tanzania adventure.",
+                    'theme' => 'Cultural Heritage',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 210],
+                        ['persons' => 4, 'price' => 145],
+                        ['persons' => 9, 'price' => 90],
+                        ['persons' => 10, 'price' => 90],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Maasai Village Tour', 'description' => 'After breakfast you will have one hour drive to Maasai Boma you will pass through local villages while your enjoying cattle and birds on the way. On arrival, you will be met by a Maasai leader who will describe all about the nature, practice, and beliefs of Massai. Then you will experience some of activities conducted by Maasai people such as livestock keeping, local foods, cultural practises and local houses which are really interesting. Afterward, you will be provided with lunch before departing to Moshi/Airport.', 'accommodation' => 'Return to hotel', 'meals' => ['Lunch']],
+                    ],
+                    'includes' => [
+                        'Transport',
+                        'Village fees',
+                        'Professional guide/driver',
+                        'Lunch',
+                        'Reasonable wages to driver & guide',
+                        'Bottled & mineral water',
+                    ],
+                    'excludes' => [
+                        'Tipping',
+                        'Personal of Nature expenses',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Hotel Return', 'description' => 'Return to your hotel after the tour.', 'image' => 'images/Day Trips/DSC01306-1780110936265-474666078.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/Day Trips/IMG-4419-1780110169806-65108106.jpg',
+                        'images/Day Trips/DSC01306-1780110936265-474666078.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'chemka-hot-springs') {
+                $dayTrip->update([
+                    'overview' => "A relaxing Chemka Hot Springs Day Trip featuring crystal-clear turquoise waters, natural geothermal pools, and peaceful tropical surroundings near Moshi. Perfect for travelers seeking swimming, relaxation, nature, and a refreshing escape after safari or Kilimanjaro adventures.\n\nVisitors can swim in the warm crystal-clear pools, relax by the water, enjoy rope swings, or simply unwind in the calm natural environment. The springs are fed by underground geothermal water, creating a unique oasis in the middle of the countryside.\n\nThis tour is ideal after a Kilimanjaro climb, safari, or busy travel schedule, providing a relaxing and enjoyable outdoor experience suitable for couples, families, solo travelers, and groups.",
+                    'theme' => 'Relaxation & Nature',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 100],
+                        ['persons' => 4, 'price' => 80],
+                        ['persons' => 9, 'price' => 60],
+                        ['persons' => 10, 'price' => 55],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Chemka Hot Springs Tour', 'description' => 'You will be pick up at your hotel followed by 1 hour drive to Chemka Hot Springs. We start on paved road towards Arusha, before turning left into gravel road which takes 30 minutes. You will pass through bush land, acacia trees, dry rivers and local Maasai huts. Also you will see Maasai cattle along the road and the Tanzania colonial railways. We expect you will have a great picnic spot in warm water at Chemka Hot Spring.', 'accommodation' => 'Return to hotel', 'meals' => ['Lunch']],
+                    ],
+                    'includes' => [
+                        'Transport',
+                        'All fees',
+                        'Lunch',
+                        'Professional guide/driver',
+                        'Reasonable wages to driver & guide',
+                        'Bottled & mineral water',
+                        'All government taxes',
+                    ],
+                    'excludes' => [
+                        'Tipping (usually, 20 USD per person/group)',
+                        'Hotel',
+                        'Visa',
+                        'Flights',
+                        'Insurance',
+                        'Personal of nature expenses',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Hotel Return', 'description' => 'Return to your hotel in Moshi after the tour.', 'image' => 'images/Day Trips/DSC01306-1780110936265-474666078.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/Day Trips/IMG-1402-1780110475334-118582944.jpg',
+                        'images/Day Trips/DSC01306-1780110936265-474666078.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'materuni-waterfall') {
+                $dayTrip->update([
+                    'overview' => "A scenic Materuni Waterfall Day Trip offering lush rainforest scenery, cultural experiences, and one of the most beautiful waterfalls near Mount Kilimanjaro. Perfect for travelers seeking nature, light hiking, local coffee experiences, and a refreshing escape from the city.\n\nThe experience includes a scenic walk through banana farms and local Chagga villages before reaching the waterfall, where visitors can enjoy the cool water, take photos, or simply relax in nature. Many tours also include a traditional coffee-making experience, giving travelers a chance to learn about local culture and enjoy freshly prepared Tanzanian coffee.\n\nThis trip is ideal for nature lovers, couples, families, and travelers looking for a peaceful and authentic Tanzania experience without a demanding hike.",
+                    'theme' => 'Nature & Culture',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 100],
+                        ['persons' => 4, 'price' => 80],
+                        ['persons' => 9, 'price' => 60],
+                        ['persons' => 10, 'price' => 55],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Materuni Waterfall Tour', 'description' => 'Around 10 am our driver guide will come to pick you at the hotel. He will drive you a bit in Moshi town before taking you on the way to Materuni waterfall and it takes 45 minutes. On the way you will take some photos of the hills surrounds mountain Kilimanjaro. On arrival you will visit some families in order to know more about their life styles and practices. Afterwards you will go to the best waterfall to enjoy and having a lunch. Then around 3pm you will have a cup of coffee prepared by you and local people you met there before drive back to your hotel in Moshi.', 'accommodation' => 'Return to hotel', 'meals' => ['Lunch']],
+                    ],
+                    'includes' => [
+                        'Transport',
+                        'All fees',
+                        'Lunch',
+                        'Professional guide/driver',
+                        'Reasonable wages to driver & guide',
+                        'Bottled & mineral water',
+                        'All government taxes',
+                    ],
+                    'excludes' => [
+                        'Tipping (usually, 20 USD per person/group)',
+                        'Hotel',
+                        'Visa',
+                        'Flights',
+                        'Insurance',
+                        'Personal of nature expenses',
+                    ],
+                    'accommodations' => [
+                        ['name' => 'Hotel Return', 'description' => 'Return to your hotel in Moshi after the tour.', 'image' => 'images/Day Trips/IMG-1402-1780110475334-118582944.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/Day Trips/IMG-2331-1780110336048-544612569.jpg',
+                        'images/Day Trips/DSC01306-1780110936265-474666078.jpg',
+                    ],
+                ]);
+            }
         }
     }
 

@@ -15,7 +15,6 @@
             <ul>
                 <li><a href="{{ route('about') }}">About Us</a></li>
                 <li><a href="{{ route('about') }}#team">Our Team</a></li>
-                <li><a href="{{ route('blog') }}">Blog &amp; News</a></li>
                 <li><a href="{{ route('about') }}#sustainability">Sustainability</a></li>
                 <li><a href="{{ route('resources') }}">Resources</a></li>
             </ul>
@@ -27,7 +26,6 @@
                 <li><a href="{{ route('trekking') }}#machame">Kilimanjaro Machame Route</a></li>
                 <li><a href="{{ route('day-trips') }}">Ngorongoro Crater Day Trip</a></li>
                 <li><a href="{{ route('zanzibar') }}">Zanzibar Beach Escape</a></li>
-                <li><a href="{{ route('special-packages') }}">Northern Circuit Fly-in</a></li>
             </ul>
         </div>
         <div class="footer-col">

@@ -20,7 +20,6 @@ class PageController extends Controller
     {
         return view('pages.home', [
             'heroSlides' => HeroSlide::query()->where('is_published', true)->orderBy('sort_order')->get(),
-            'specialPackages' => SpecialPackage::query()->where('is_published', true)->orderBy('sort_order')->limit(3)->get(),
             'reviews' => Review::query()->where('is_published', true)->orderBy('sort_order')->limit(4)->get(),
             'blogPosts' => BlogPost::query()->where('is_published', true)->orderByDesc('published_at')->limit(2)->get(),
             'partners' => Partner::query()->where('is_published', true)->orderBy('sort_order')->get(),
