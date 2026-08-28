@@ -164,70 +164,61 @@
         </div>
     </section>
 
-    <section class="reviews">
-        <div class="container">
-            <div class="reviews-head">
-                <h2>What Our Clients Say</h2>
-                <div class="reviews-badge">
-                    <span class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
-                    <strong>EXCELLENT</strong>
-                    <span>Based on 1,087 reviews</span>
-                    <img src="{{ asset('images/13.jpeg') }}" alt="TripAdvisor" class="tripadvisor-logo" />
-                </div>
-            </div>
-            <div class="reviews-grid">
-                @forelse ($reviews as $r)
-                    <article class="review-card">
-                        <div class="review-stars">
-                            @for ($s = 0; $s < $r->rating; $s++)<i class="bi bi-star-fill"></i>@endfor
-                        </div>
-                        <h5>{{ $r->name }}</h5>
-                        <p>{{ $r->quote }}</p>
-                        <div class="review-author">
-                            @if ($r->avatar)<img src="{{ $r->avatar }}" alt="" />@endif
-                            <div><strong>{{ $r->name }}</strong><span>{{ $r->location }}</span></div>
-                        </div>
-                    </article>
-                @empty
-                    @foreach ([
-                        ['Sarah W.', 'London, UK', 'Trip of a lifetime', 'From airport pickup to the last sundowner, Novella made us feel like family. Our guide Emmanuel is a living encyclopedia of the bush.', asset('images/03.jpeg')],
-                        ['Michael T.', 'Tokyo, Japan', 'Summited Kilimanjaro!', 'The Lemosho crew was extraordinary. Porters, food, safety briefings — every day I felt looked after. We all reached Uhuru Peak.', asset('images/04.jpeg')],
-                        ['The Hansens', 'Oslo, Norway', 'Perfect family safari', 'Traveled with our 8 and 11 year olds. Pace was perfect, lodges were kid-friendly. Truly the trip of a lifetime.', asset('images/05.jpeg')],
-                        ['Anna K.', 'Berlin, Germany', 'Photography dream', 'Private vehicle, off-road permits, golden hour after golden hour. My best-ever wildlife portfolio came from this trip.', asset('images/06.jpeg')],
-                    ] as [$name, $loc, $title, $quote, $avatar])
-                        <article class="review-card">
-                            <div class="review-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                            <h5>{{ $title }}</h5>
-                            <p>{{ $quote }}</p>
-                            <div class="review-author">
-                                <img src="{{ $avatar }}" alt="" />
-                                <div><strong>{{ $name }}</strong><span>{{ $loc }}</span></div>
-                            </div>
-                        </article>
-                    @endforeach
-                @endforelse
-            </div>
-        </div>
-    </section>
 
     <div class="gradient-divider"></div>
 
-    <section class="videos">
+    <section class="inspiration">
         <div class="container">
             <div class="section-title">
-                <h2>Inspirational Videos</h2>
+                <h2>Get Inspiration</h2>
+                <p>Wildlife, white-sand beaches and unforgettable day adventures across Tanzania.</p>
             </div>
-            <div class="videos-grid">
-                @foreach ([
-                    asset('images/25.jpeg'),
-                    asset('images/29.jpeg'),
-                    asset('images/27.jpeg'),
-                    asset('images/28.jpeg'),
-                ] as $img)
-                    <a href="#" class="video-card" style="background-image:url('{{ $img }}');">
-                        <i class="bi bi-play-fill"></i>
-                    </a>
-                @endforeach
+            <div class="inspiration-cols">
+                <div class="inspiration-col">
+                    <div class="inspiration-col-head">
+                        <h3>Safaris</h3>
+                        <a href="{{ route('tanzania-safaris') }}">Explore safaris <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="inspiration-stack">
+                        @foreach ([
+                            'images/safaris/serengeti-migration.jpg',
+                            'images/safaris/wildbeet.jpg',
+                            'images/safaris/elephant.jpg',
+                        ] as $img)
+                            <a href="{{ route('tanzania-safaris') }}" class="inspiration-card" style="background-image:url('{{ asset($img) }}');" aria-label="Safari inspiration"></a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="inspiration-col">
+                    <div class="inspiration-col-head">
+                        <h3>Zanzibar</h3>
+                        <a href="{{ route('zanzibar') }}">Explore Zanzibar <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="inspiration-stack">
+                        @foreach ([
+                            'images/zanzibar images/famous-rock-restaurant-built-cliff-sea-zanzibar-tanzania-1779768277653-505084469.jpg',
+                            'images/zanzibar images/Nungi kendwa.jpg',
+                            'images/zanzibar images/beach12.png',
+                        ] as $img)
+                            <a href="{{ route('zanzibar') }}" class="inspiration-card" style="background-image:url('{{ asset($img) }}');" aria-label="Zanzibar inspiration"></a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="inspiration-col">
+                    <div class="inspiration-col-head">
+                        <h3>Day Trips</h3>
+                        <a href="{{ route('day-trips') }}">Explore day trips <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="inspiration-stack">
+                        @foreach ([
+                            'images/Day Trips/two-elephants-walking-african-savanna-sunset-1780110653074-799730501.jpg',
+                            'images/Day Trips/DSC01306-1780110936265-474666078.jpg',
+                            'images/Day Trips/IMG-2331-1780110336048-544612569.jpg',
+                        ] as $img)
+                            <a href="{{ route('day-trips') }}" class="inspiration-card" style="background-image:url('{{ asset($img) }}');" aria-label="Day trip inspiration"></a>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -266,16 +257,25 @@
         </div>
     </section>
 
-    <section class="resources">
+    <section class="faq">
         <div class="container">
-            <div class="section-title">
-                <h2>Resources and Information</h2>
+            <div class="section-title" style="margin-bottom: 30px;">
+                <h2>Frequently Asked Questions</h2>
             </div>
-            <div class="resources-grid">
-                <a href="{{ route('resources') }}" class="resource-btn"><i class="bi bi-award"></i> NOVELLA'S AWARDS <i class="bi bi-arrow-right"></i></a>
-                <a href="{{ route('resources') }}" class="resource-btn"><i class="bi bi-download"></i> DOWNLOAD BROCHURE <i class="bi bi-arrow-right"></i></a>
-                <a href="{{ route('resources') }}" class="resource-btn"><i class="bi bi-question-circle"></i> FAQ &amp; TRAVEL TIPS <i class="bi bi-arrow-right"></i></a>
-                <a href="{{ route('resources') }}" class="resource-btn"><i class="bi bi-shield-check"></i> RESPONSIBLE TRAVEL <i class="bi bi-arrow-right"></i></a>
+            <div class="faq-list">
+                @foreach ([
+                    ['When is the best time to go on safari?', 'Tanzania is a year-round destination, but June–October offers dry weather and easier wildlife viewing. January–March is calving season in the southern Serengeti. The Great Migration river crossings usually happen July–September.'],
+                    ['Do I need a visa to enter Tanzania?', 'Most nationalities can obtain a visa on arrival at Kilimanjaro International Airport (USD 50 for tourist visa, USD 100 for US passport holders). E-visas are available online in advance — we recommend applying at least 3 weeks before departure.'],
+                    ['What vaccinations do I need?', 'Yellow fever certificate is required if arriving from a yellow-fever endemic country. Malaria prophylaxis is strongly recommended. Consult your travel doctor 4–6 weeks before departure for personalised advice.'],
+                    ['How difficult is Kilimanjaro?', 'Kilimanjaro is a non-technical climb — no ropes or climbing experience required. It is however a serious high-altitude trek and the summit day is genuinely demanding. Our 7–9 day routes give you the best acclimatisation, boosting summit success to 98%.'],
+                    ['What\'s included in your prices?', 'All safari and climb packages include: park fees, government taxes, professional guide, transport, accommodation, all meals on trip, and airport transfers. Excluded: international flights, tips, personal items and travel insurance.'],
+                    ['Can I customise an itinerary?', 'Absolutely — every itinerary on our site is a starting point. Tell us your preferences, dates and traveller count, and we\'ll craft a custom proposal within 24 hours.'],
+                ] as [$q, $a])
+                    <details class="faq-item">
+                        <summary>{{ $q }}</summary>
+                        <div class="faq-body">{{ $a }}</div>
+                    </details>
+                @endforeach
             </div>
         </div>
     </section>

@@ -8,7 +8,6 @@ use App\Models\HeroSlide;
 use App\Models\OtherCountryTrip;
 use App\Models\Partner;
 use App\Models\Resource;
-use App\Models\Review;
 use App\Models\Safari;
 use App\Models\SpecialPackage;
 use App\Models\TrekkingRoute;
@@ -20,7 +19,6 @@ class PageController extends Controller
     {
         return view('pages.home', [
             'heroSlides' => HeroSlide::query()->where('is_published', true)->orderBy('sort_order')->get(),
-            'reviews' => Review::query()->where('is_published', true)->orderBy('sort_order')->limit(4)->get(),
             'blogPosts' => BlogPost::query()->where('is_published', true)->orderByDesc('published_at')->limit(2)->get(),
             'partners' => Partner::query()->where('is_published', true)->orderBy('sort_order')->get(),
         ]);
