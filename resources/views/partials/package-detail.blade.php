@@ -328,7 +328,7 @@
                     <details>
                         <summary><span><i class="bi bi-people-fill"></i> Is this trip for you?</span></summary>
                         <div class="accord-body">
-                            <p>Novella Safaris has been running Tanzanian journeys since 2005. Our licensed guides, modern 4×4 Land Cruisers, and 24/7 in-country support make us the trusted choice for over 4,800 travellers to date. Group size is capped so every guest gets personal attention.</p>
+                            <p>Novella Safaris has been running Tanzanian journeys. Our licensed guides, modern 4×4 Land Cruisers, and 24/7 in-country support make us the trusted choice for over 4,800 travellers to date. Group size is capped so every guest gets personal attention.</p>
                         </div>
                     </details>
                     <details>
@@ -356,7 +356,7 @@
                     <details>
                         <summary><span><i class="bi bi-geo-alt-fill"></i> Departure &amp; Pickup Locations</span></summary>
                         <div class="accord-body">
-                            <p><strong>Departure:</strong> Novella Safaris office, Boma Road, Arusha, Tanzania.</p>
+                            <p><strong>Departure:</strong> Novella Safaris office, Moshi, Tanzania.</p>
                             <p><strong>Pickup available from:</strong> Kilimanjaro International Airport (JRO), Arusha Airport (ARK), Julius Nyerere International Airport (DAR).</p>
                         </div>
                     </details>
@@ -496,12 +496,12 @@
                 </div>
                 <div class="body">
                     <ul>
-                        <li><i class="bi bi-telephone-fill"></i> +255 754 000 000</li>
+                        <li><i class="bi bi-telephone-fill"></i> +255 767 738 691</li>
                         <li><i class="bi bi-envelope-fill"></i> info@novellasafaris.com</li>
                         <li><i class="bi bi-clock-fill"></i> Reply within 24h</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/255754000000" class="cta" style="background: #25d366;"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+                <a href="https://wa.me/255767738691" class="cta" style="background: #25d366;"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
             </div>
 
         </aside>

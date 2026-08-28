@@ -1,6 +1,6 @@
 @extends('layouts.app', [
     'pageTitle' => 'About Us — Novella Safaris',
-    'pageDescription' => 'Meet the family behind Novella Safaris. Two decades of handcrafted Tanzania adventures — rooted locally, trusted globally.',
+    'pageDescription' => 'Meet the family behind Novella Safaris. Handcrafted Tanzania adventures — rooted locally, trusted globally.',
 ])
 
 @section('content')
@@ -15,7 +15,8 @@
         <div class="container">
             <span class="eyebrow">Our Story</span>
             <h2>Rooted in Tanzania. Loved worldwide.</h2>
-            <p>Novella Safaris was founded in 2005 by a Tanzanian family who grew up under the shadow of Kilimanjaro. Nearly two decades later, we've guided over 4,800 travellers through the Serengeti, up Uhuru Peak and along Zanzibar's white shores — every journey handcrafted, every guide part of our extended family.</p>
+            <p>Novella Safaris takes travellers deep into the wild heart of East Africa. Our journeys are unrushed, our guides are family, and every itinerary is designed the way we would want to travel ourselves.</p>
+            <p>From the sweeping Serengeti plains to the roof of Africa on Kilimanjaro and the turquoise shores of Zanzibar — we are your one team, from your first email to your final sundowner.</p>
         </div>
     </section>
 
@@ -53,32 +54,6 @@
                     </ul>
                     <a href="{{ route('contact') }}" class="btn btn-navy">Support the Foundation <i class="bi bi-arrow-right"></i></a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="page-intro" id="team">
-        <div class="container">
-            <span class="eyebrow">Meet the Team</span>
-            <h2>Guides, planners, family</h2>
-            <p>Every trip is powered by a small team of Tanzanian trip designers, veteran guides, and the office crew who keep the whole thing humming 24/7.</p>
-        </div>
-    </section>
-
-    <section class="dest-list" style="padding-top:0;">
-        <div class="container">
-            <div class="team-grid">
-                @foreach ([
-                    ['Amani Mwakalinga', 'Founder & Head Guide', asset('images/03.jpeg')],
-                    ['Neema Kileo', 'Trip Designer', asset('images/04.jpeg')],
-                    ['Emmanuel Msigwa', 'Senior Safari Guide', asset('images/05.jpeg')],
-                    ['Grace Massawe', 'Guest Relations', asset('images/06.jpeg')],
-                ] as [$name, $role, $img])
-                    <div class="team-card">
-                        <img src="{{ $img }}" alt="" />
-                        <div class="team-info"><strong>{{ $name }}</strong><span>{{ $role }}</span></div>
-                    </div>
-                @endforeach
             </div>
         </div>
     </section>

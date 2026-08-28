@@ -13,7 +13,7 @@
             <div class="quick-strip">
                 <a href="{{ route('about') }}"><i class="bi bi-people-fill"></i> About Us</a>
                 <a href="{{ route('contact') }}"><i class="bi bi-telephone-fill"></i> Contact Us</a>
-                <a href="{{ route('resources') }}"><i class="bi bi-file-earmark-pdf-fill"></i> Resources</a>
+                <a href="{{ route('blog') }}"><i class="bi bi-file-earmark-pdf-fill"></i> Resources</a>
             </div>
         </div>
     </div>

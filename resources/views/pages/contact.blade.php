@@ -17,10 +17,10 @@
                 <div class="contact-info">
                     <span class="eyebrow">Get in Touch</span>
                     <h2>Let's plan your Tanzania journey</h2>
-                    <p>Whether you have a rough idea or a full itinerary in mind, our Arusha-based team will get back to you within 24 hours with a tailored proposal — no obligation.</p>
+                    <p>Whether you have a rough idea or a full itinerary in mind, our Moshi-based team will get back to you within 24 hours with a tailored proposal — no obligation.</p>
                     <ul>
-                        <li><i class="bi bi-geo-alt-fill"></i><div><strong>Office</strong><span>Boma Road, Arusha, Tanzania</span></div></li>
-                        <li><i class="bi bi-telephone-fill"></i><div><strong>Phone / WhatsApp</strong><span>+255 754 000 000 (24/7)</span></div></li>
+                        <li><i class="bi bi-geo-alt-fill"></i><div><strong>Office</strong><span>Moshi, Tanzania</span></div></li>
+                        <li><i class="bi bi-telephone-fill"></i><div><strong>Phone / WhatsApp</strong><span>+255 767 738 691 (24/7)</span></div></li>
                         <li><i class="bi bi-envelope-fill"></i><div><strong>Email</strong><span>info@novellasafaris.com</span></div></li>
                         <li><i class="bi bi-clock-fill"></i><div><strong>Office Hours</strong><span>Mon – Sat, 8:00 – 18:00 EAT</span></div></li>
                     </ul>
@@ -93,7 +93,7 @@
         <div class="container">
             <h2>Prefer WhatsApp?</h2>
             <p>Chat with our team directly on WhatsApp — replies within an hour during office time.</p>
-            <a href="https://wa.me/255754000000" class="btn btn-yellow btn-lg"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
+            <a href="https://wa.me/255767738691" class="btn btn-yellow btn-lg"><i class="bi bi-whatsapp"></i> WhatsApp Us</a>
         </div>
     </section>
 @endsection
