@@ -1,6 +1,6 @@
 @extends('layouts.app', [
     'pageTitle' => 'About Us — Novella Safaris',
-    'pageDescription' => 'Meet the family behind Novella Safaris. Handcrafted Tanzania adventures — rooted locally, trusted globally.',
+    'pageDescription' => 'Novella Tanzania Safaris and Trekking — locally owned, tailor-made safaris, Kilimanjaro climbs and cultural journeys across Tanzania.',
 ])
 
 @section('content')
@@ -14,9 +14,10 @@
     <section class="page-intro">
         <div class="container">
             <span class="eyebrow">Our Story</span>
-            <h2>Rooted in Tanzania. Loved worldwide.</h2>
-            <p>Novella Safaris takes travellers deep into the wild heart of East Africa. Our journeys are unrushed, our guides are family, and every itinerary is designed the way we would want to travel ourselves.</p>
-            <p>From the sweeping Serengeti plains to the roof of Africa on Kilimanjaro and the turquoise shores of Zanzibar — we are your one team, from your first email to your final sundowner.</p>
+            <h2>Your new story begins here</h2>
+            <p>At Novella Tanzania Safaris and Trekking, we believe every journey is a new story waiting to be written. The name Novella represents a new chapter — a fresh adventure and unforgettable moments created through travel.</p>
+            <p>We are a locally owned Tanzanian company specializing in tailor-made wildlife safaris, Mount Kilimanjaro trekking, and authentic cultural experiences. Founded by Upendo Mwanga, we create exceptional journeys for our guests while making a positive impact in local communities — supporting young talent and meaningful employment across Tanzania's tourism industry.</p>
+            <p>Our team of passionate travel experts, mountain crews, and guides share one commitment: quality service, safety, honesty, and genuine Tanzanian hospitality. Whether you dream of summiting Kilimanjaro, witnessing the Serengeti and Ngorongoro, exploring rich cultures, or relaxing on Zanzibar's beaches — we are here to make your journey seamless and unforgettable.</p>
         </div>
     </section>
 
@@ -24,35 +25,31 @@
         <div class="container">
             <div class="split-row">
                 <div class="split-media">
-                    <img src="{{ asset('images/01.jpeg') }}" alt="Serengeti sunset" />
+                    <img src="{{ asset('assets/novellapic.jpeg') }}" alt="Upendo Mwanga, Founder of Novella Tanzania Safaris and Trekking" />
                 </div>
                 <div class="split-content">
                     <span class="eyebrow">Our Mission</span>
-                    <h2>Journeys that give back</h2>
-                    <p>We believe travel should benefit the places it touches. Every Novella booking supports fair-wage porter treatment, community classrooms, and Tanzania's national park conservation levies.</p>
+                    <h2>Authentic journeys, lasting impact</h2>
+                    <p>To create exceptional, authentic travel experiences that showcase Tanzania's natural beauty, wildlife, and culture — delivered with safe, personalized, professional service.</p>
                     <ul>
-                        <li><i class="bi bi-check-circle-fill"></i> KPAP-certified porter welfare</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Plastic-free camps &amp; low-impact routing</li>
-                        <li><i class="bi bi-check-circle-fill"></i> 5% of profits to Novella Foundation</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Tailor-made safaris, treks &amp; cultural experiences</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Responsible tourism &amp; community support</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Meaningful employment for young people</li>
                         <li><i class="bi bi-check-circle-fill"></i> 100% Tanzanian-owned &amp; operated</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="split-row reverse" id="sustainability">
+            <div class="split-row reverse">
                 <div class="split-media">
-                    <img src="{{ asset('images/02.jpeg') }}" alt="Community project" />
+                    <img src="{{ asset('images/01.jpeg') }}" alt="Tanzania safari landscape" />
                 </div>
                 <div class="split-content">
-                    <span class="eyebrow">Sustainability</span>
-                    <h2>Novella Foundation</h2>
-                    <p>A portion of every booking funds classrooms, clean water and porter welfare in the villages around Kilimanjaro and the Serengeti. Ask us about visiting our projects on your itinerary.</p>
-                    <ul>
-                        <li><i class="bi bi-check-circle-fill"></i> 12 schools supported since 2011</li>
-                        <li><i class="bi bi-check-circle-fill"></i> 400+ porters equipped with cold-weather gear</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Clean water access for 3,200 people</li>
-                    </ul>
-                    <a href="{{ route('contact') }}" class="btn btn-navy">Support the Foundation <i class="bi bi-arrow-right"></i></a>
+                    <span class="eyebrow">Our Vision</span>
+                    <h2>Trusted worldwide, rooted in Tanzania</h2>
+                    <p>To become a trusted, leading Tanzanian tourism company, recognized globally for unforgettable adventures, outstanding guest experiences, and positive social impact through sustainable tourism and community empowerment.</p>
+                    <p>We aim to inspire travellers from around the world to discover Tanzania while building opportunities for future generations.</p>
+                    <a href="{{ route('contact') }}" class="btn btn-navy">Start Your Journey <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>

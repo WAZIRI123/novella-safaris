@@ -59,9 +59,9 @@
         <div class="container why-inner">
             <div class="why-text">
                 <span class="eyebrow">Why Book with Novella</span>
-                <h2>Rooted in Tanzania. <br />Trusted worldwide.</h2>
-                <p>Novella Safaris takes travellers deep into the wild heart of East Africa. Our journeys are unrushed, our guides are family, and every itinerary is designed the way we would want to travel ourselves.</p>
-                <p>From the sweeping Serengeti plains to the roof of Africa on Kilimanjaro and the turquoise shores of Zanzibar — we are your one team, from your first email to your final sundowner.</p>
+                <h2>Your new story begins here</h2>
+                <p>At Novella Tanzania Safaris and Trekking, every journey is a new chapter — tailor-made safaris, Kilimanjaro treks, and authentic cultural experiences across Tanzania, crafted with care by a locally owned team.</p>
+                <p>Founded by Upendo Mwanga, we combine genuine Tanzanian hospitality with safe, personalized service — from your first email to your final sundowner.</p>
                 <a href="{{ route('about') }}" class="btn btn-navy">Read Our Story <i class="bi bi-arrow-right"></i></a>
             </div>
             <div class="why-portrait">
