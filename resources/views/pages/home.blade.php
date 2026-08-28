@@ -11,10 +11,11 @@
                 $slides = $heroSlides->pluck('image')->all();
                 if (empty($slides)) {
                     $slides = [
-                        asset('images/25.jpeg'),
-                        asset('images/27.jpeg'),
-                        asset('images/28.jpeg'),
-                        asset('images/22.jpeg'),
+                        asset('images/safaris/IMG-4419-1780110169806-65108106.jpg'),
+                        asset('images/04.jpeg'),
+                        asset('images/15.jpeg'),
+                        asset('images/safaris/IMG-4419-1780110169806-65108106.jpg'),
+                       
                         asset('images/24.jpeg'),
                     ];
                 }
