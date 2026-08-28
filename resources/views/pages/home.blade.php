@@ -164,9 +164,6 @@
         </div>
     </section>
 
-
-    <div class="gradient-divider"></div>
-
     <section class="inspiration">
         <div class="container">
             <div class="section-title">
