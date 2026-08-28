@@ -566,7 +566,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    WHY BOOK
    ========================================================== */
-.why-book { padding: 90px 0; background: var(--white); }
+.why-book { padding: 30px 0; background: var(--white); }
 .why-inner {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -608,7 +608,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    FEATURES + CHARITY
    ========================================================== */
-.features-charity { padding: 90px 0; background: var(--bg-light); }
+.features-charity { padding: 30px 0; background: var(--bg-light); }
 .features-inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -666,7 +666,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    SPECIAL PACKAGES
    ========================================================== */
-.special-packages { padding: 90px 0; background: var(--white); }
+.special-packages { padding: 30px 0; background: var(--white); }
 .special-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -704,7 +704,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    TOP SELLING
    ========================================================== */
-.top-selling { padding: 90px 0; background: var(--bg-light); }
+.top-selling { padding: 30px 0; background: var(--bg-light); }
 .top-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -763,7 +763,7 @@ p { margin: 0 0 1em; color: var(--text); }
    GROUP DEPARTURE
    ========================================================== */
 .group-banner {
-    padding: 70px 0;
+    padding: 30px 0;
     background:
         linear-gradient(rgba(15,29,18,.88), rgba(15,29,18,.88)),
         url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80') center/cover;
@@ -777,7 +777,7 @@ p { margin: 0 0 1em; color: var(--text); }
     letter-spacing: 1px;
 }
 
-.group-intro { padding: 70px 0 40px; background: var(--white); }
+.group-intro { padding: 30px 0; background: var(--white); }
 .group-intro-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -787,7 +787,7 @@ p { margin: 0 0 1em; color: var(--text); }
 .group-intro h3 { font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
 .group-intro p { color: var(--muted); font-size: 16px; line-height: 1.75; }
 
-.group-trips { padding: 30px 0 90px; background: var(--white); }
+.group-trips { padding: 30px 0; background: var(--white); }
 .trip-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -878,7 +878,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    REVIEWS
    ========================================================== */
-.reviews { padding: 90px 0; background: var(--bg-light); }
+.reviews { padding: 30px 0; background: var(--bg-light); }
 .reviews-head {
     display: flex;
     justify-content: space-between;
@@ -960,7 +960,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    GET INSPIRATION
    ========================================================== */
-.inspiration { padding: 90px 0; background: var(--white); }
+.inspiration { padding: 30px 0; background: var(--white); }
 .inspiration-cols {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1015,7 +1015,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    NEWS
    ========================================================== */
-.news { padding: 90px 0; background: var(--bg-light); }
+.news { padding: 30px 0; background: var(--bg-light); }
 .news-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1054,7 +1054,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    RESOURCES
    ========================================================== */
-.resources { padding: 90px 0; background: var(--white); }
+.resources { padding: 30px 0; background: var(--white); }
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1085,7 +1085,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    BLOG CATEGORIES
    ========================================================== */
-.blog-cats { padding: 90px 0; background: var(--bg-light); }
+.blog-cats { padding: 30px 0; background: var(--bg-light); }
 .cats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1151,7 +1151,7 @@ p { margin: 0 0 1em; color: var(--text); }
 /* ==========================================================
    PARTNERS
    ========================================================== */
-.partners { padding: 80px 0; background: var(--white); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
+.partners { padding: 30px 0; background: var(--white); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
 .partners .section-title { margin-bottom: 40px; }
 .partners-inner {
     display: grid;
@@ -1703,7 +1703,7 @@ p { margin: 0 0 1em; color: var(--text); }
 .resource-tile a:hover { color: var(--amber); }
 
 /* FAQ */
-.faq { padding: 60px 0 90px; background: var(--cream); }
+.faq { padding: 30px 0; background: var(--cream); }
 .faq-list { max-width: 800px; margin: 0 auto; }
 .faq-item {
     background: var(--white);
