@@ -60,10 +60,12 @@
         <div class="container why-inner">
             <div class="why-text">
                 <span class="eyebrow">Why Book with Novella</span>
-                <h2>Your new story begins here</h2>
-                <p>At Novella Tanzania Safaris and Trekking, every journey is a new chapter — tailor-made safaris, Kilimanjaro treks, and authentic cultural experiences across Tanzania, crafted with care by a locally owned team.</p>
-                <p>Founded by Upendo Mwanga, we combine genuine Tanzanian hospitality with safe, personalized service — from your first email to your final sundowner.</p>
-                <a href="{{ route('about') }}" class="btn btn-navy">Read Our Story <i class="bi bi-arrow-right"></i></a>
+                <h2>About Novella Tanzania Safaris & Trekking</h2>
+                <p>At Novella Tanzania Safaris and Trekking, we believe every journey is a new story waiting to be written. The name Novella represents a new chapter — a fresh adventure, meaningful experiences, and unforgettable moments created through travel.</p>
+                  <Br/>
+                    <p>Locally owned and proudly Tanzanian, Novella was founded by Upendo Mwanga with a passion for sharing the beauty, culture, and natural wonders of Tanzania with travelers from around the world. We specialize in tailor-made wildlife safaris, mountain trekking, and authentic cultural experiences, creating journeys designed around each guest's interests and expectations.</p>
+                    <a href="{{ route('about') }}" class="btn btn-navy">Read Our Story <i class="bi bi-arrow-right"></i></a>
+
             </div>
             <div class="why-portrait">
                 <img src="{{ asset('assets/novellapic.jpeg') }}" alt="Novella Safaris Owner" />

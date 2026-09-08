@@ -85,6 +85,16 @@
         });
     }
 
+    const whyReadMore = document.querySelector('.why-read-more');
+    const whyMore = document.getElementById('whyBookMore');
+    if (whyReadMore && whyMore) {
+        whyReadMore.addEventListener('click', () => {
+            whyMore.hidden = false;
+            whyReadMore.setAttribute('aria-expanded', 'true');
+            whyReadMore.hidden = true;
+        });
+    }
+
     // Scroll reveal
     const targets = document.querySelectorAll(
         '.feature-card, .special-card, .top-card, .review-card, .video-card, .news-card, .cat-card, .trip-row, .charity-card, .why-portrait, .why-text, .section-title, .awards-strip .award-logo'
