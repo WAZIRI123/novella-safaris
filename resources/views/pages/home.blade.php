@@ -141,7 +141,7 @@
         <div class="container">
             @foreach ([
                 ['7 Days', 'Machame Route Kilimanjaro Climb', '$1,969', asset('images/27.jpeg'), false, route('trekking.show', 'machame')],
-                ['8 Days', 'Lemosho Route Kilimanjaro Climb', '$2,251', asset('images/15.jpeg'), true, route('trekking.show', 'lemosho')],
+                ['8 Days', 'Lemosho Route Kilimanjaro Climb', '$2,251', asset('images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'), true, route('trekking.show', 'lemosho')],
                 ['7 Days', 'Serengeti Migration Safari', '$2,651', asset('images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg'), false, route('tanzania-safaris')],
             ] as [$days, $title, $price, $img, $reverse, $url])
                 <article class="trip-row{{ $reverse ? ' reverse' : '' }}">

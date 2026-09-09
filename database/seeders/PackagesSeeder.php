@@ -29,6 +29,9 @@ class PackagesSeeder extends Seeder
             ['3-days-safari-adventure', '3 Days Safari Adventure', 'Explore Tanzania Top Wildlife Parks and Iconic Landscapes. A spectacular 3 Day Ngorongoro Crater & Serengeti Safari combining the world-famous Serengeti plains with the wildlife-rich Ngorongoro Crater.', ['Big Five', 'Serengeti', 'Ngorongoro'], 990, '3 Days', 'images/safaris/elephant.jpg'],
             ['4-days-wildlife-safari', '4 Days Wildlife Safari', 'Discover More Wildlife, More Landscapes, and More Safari Experiences. A thrilling 4 Day Tarangire, Serengeti & Ngorongoro Crater Safari showcasing Tanzania most iconic wildlife destinations.', ['More game drives', 'Multiple parks', 'Diverse wildlife'], 1200, '4 Days', 'images/safaris/serengeti-migration.jpg'],
             ['5-days-safari-expedition', '5 Days Safari Expedition', 'An Immersive Wildlife Adventure Through Tanzania Most Iconic Parks. A remarkable 5 Day Tarangire, Serengeti & Ngorongoro Crater Safari offering extended game drives across Tanzania premier wildlife destinations.', ['Extended game drives', 'Big Five', 'Multiple parks'], 1600, '5 Days', 'images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg'],
+            ['6-days-safari-discovery', '6 Days Safari Discovery', 'A deeper Tanzania safari through Tarangire, Serengeti, Ngorongoro, and Lake Manyara, with more time for wildlife and landscapes.', ['Big Five', 'Four parks', 'Migration country'], 1850, '6 Days', 'images/safaris/wildbeet.jpg'],
+            ['7-days-safari-journey', '7 Days Safari Journey', 'A carefully paced week-long safari combining Tanzania’s most famous parks, generous game-drive time, and unforgettable wildlife encounters.', ['Big Five', 'Migration', 'Scenic landscapes'], 2200, '7 Days', 'images/safaris/elephant.jpg'],
+            ['8-days-safari-expedition', '8 Days Safari Expedition', 'An immersive northern Tanzania safari with extra time in the Serengeti, Ngorongoro, Tarangire, and Lake Manyara.', ['Extended safari', 'Big Five', 'Serengeti'], 2550, '8 Days', 'images/safaris/IMG-4419-1780110169806-65108106.jpg'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $badge, $img]) {
@@ -233,6 +236,90 @@ class PackagesSeeder extends Seeder
                     ],
                 ]);
             }
+
+            if ($slug === '6-days-safari-discovery') {
+                $safari->update([
+                    'overview' => "A 6 Days Tanzania Safari Discovery through Tarangire, Serengeti, Ngorongoro Crater, and Lake Manyara. With more time for game drives and varied landscapes, this itinerary offers a deeper and more relaxed northern Tanzania safari experience.\n\nSearch for elephants beneath Tarangire’s baobabs, follow wildlife across the Serengeti plains, descend into the Ngorongoro Crater, and explore Lake Manyara’s forest and birdlife.",
+                    'duration_days' => 6,
+                    'duration_nights' => 5,
+                    'theme' => 'Northern Circuit Discovery',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 2450],
+                        ['persons' => 4, 'price' => 1850],
+                        ['persons' => 9, 'price' => 1600],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Tarangire National Park', 'description' => 'Depart after breakfast for Tarangire National Park. Enjoy a full-day game drive among elephants, baobabs, giraffes, lions, and other wildlife before dinner and overnight at camp or lodge.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Lake Manyara National Park', 'description' => 'Explore Lake Manyara’s groundwater forest, open plains, and lakeshore. Look for elephants, buffalo, giraffes, hippos, birds, and the park’s famous tree-climbing lions before continuing to the lodge.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Serengeti National Park', 'description' => 'Travel through the Ngorongoro Conservation Area into the Serengeti. Enjoy an afternoon game drive across the endless plains and settle into camp in the Seronera area.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Serengeti Full-Day Game Drive', 'description' => 'Spend a full day exploring the Serengeti, following predator activity and searching for lions, cheetahs, leopards, elephants, giraffes, zebras, and wildebeest.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Ngorongoro Crater', 'description' => 'After breakfast, descend into Ngorongoro Crater for a full-day game drive. Search for rhino, lions, elephants, buffalo, hippos, flamingos, and hyenas before continuing to your overnight stay.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Departure', 'description' => 'Enjoy breakfast and transfer back to Arusha, Moshi, or the airport, depending on your onward travel plans.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast']],
+                    ],
+                    'includes' => ['4x4 safari Land Cruiser with pop-up roof', 'Professional guide/driver', 'Park and entrance fees', 'Lodge, hotel, or camping accommodation', 'All meals during the safari', 'Bottled water and fruit', 'Government taxes and levies', '24-hour support'],
+                    'excludes' => ['International flights and visa fees', 'Travel insurance', 'Laundry services', 'Tips to safari guides', 'Personal expenses'],
+                    'accommodations' => [['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full-board meals throughout the safari.', 'image' => 'images/safaris/wildbeet.jpg']],
+                    'gallery' => ['images/safaris/wildbeet.jpg', 'images/safaris/serengeti-migration.jpg', 'images/safaris/elephant.jpg'],
+                ]);
+            }
+
+            if ($slug === '7-days-safari-journey') {
+                $safari->update([
+                    'overview' => "A 7 Days Safari Journey through northern Tanzania’s most celebrated wildlife areas. This carefully paced itinerary gives you time to explore Tarangire, Lake Manyara, the Serengeti, and Ngorongoro with extended game drives and varied scenery.\n\nIt is an excellent choice for travelers who want a complete northern circuit safari without rushing between destinations.",
+                    'duration_days' => 7,
+                    'duration_nights' => 6,
+                    'theme' => 'Complete Northern Circuit',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 2850],
+                        ['persons' => 4, 'price' => 2200],
+                        ['persons' => 9, 'price' => 1900],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Tarangire National Park', 'description' => 'Begin with a full-day game drive in Tarangire, famous for elephants, ancient baobabs, lions, giraffes, and wide-open savannah landscapes.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Lake Manyara National Park', 'description' => 'Explore Lake Manyara’s forest, hot springs, lakeshore, and rich birdlife while looking for elephants, buffalo, hippos, giraffes, and tree-climbing lions.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Central Serengeti', 'description' => 'Drive toward the Serengeti through the Ngorongoro highlands and enjoy an afternoon game drive in the Seronera area, one of the park’s richest wildlife habitats.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Serengeti Full-Day Game Drive', 'description' => 'Spend the day following the rhythms of the Serengeti. Explore different plains and river areas while searching for the Big Five and large herds of wildebeest and zebra.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Northern or Central Serengeti', 'description' => 'Enjoy another full day of game viewing in the best available wildlife area for the season, with time for photography and unhurried sightings.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Ngorongoro Crater', 'description' => 'Descend into the Ngorongoro Crater for a full-day game drive among rhino, lions, elephants, buffalo, hippos, and flamingos.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 7, 'title' => 'Departure', 'description' => 'After breakfast, transfer to Arusha, Moshi, or the airport for your onward journey.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast']],
+                    ],
+                    'includes' => ['4x4 safari Land Cruiser with pop-up roof', 'Professional guide/driver', 'Park and entrance fees', 'Lodge, hotel, or camping accommodation', 'All meals during the safari', 'Bottled water and fruit', 'Government taxes and levies', '24-hour support'],
+                    'excludes' => ['International flights and visa fees', 'Travel insurance', 'Laundry services', 'Tips to safari guides', 'Personal expenses'],
+                    'accommodations' => [['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full-board meals throughout the safari.', 'image' => 'images/safaris/elephant.jpg']],
+                    'gallery' => ['images/safaris/elephant.jpg', 'images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg', 'images/safaris/serengeti-migration.jpg'],
+                ]);
+            }
+
+            if ($slug === '8-days-safari-expedition') {
+                $safari->update([
+                    'overview' => "An immersive 8 Days Safari Expedition through Tarangire, Lake Manyara, the Serengeti, and Ngorongoro. With two full Serengeti days and a balanced pace, this safari gives you more time to explore wildlife-rich landscapes and follow seasonal animal movement.\n\nThe itinerary is designed for travelers who want a complete northern Tanzania experience with excellent game viewing, comfortable accommodation, and time for memorable photographic encounters.",
+                    'duration_days' => 8,
+                    'duration_nights' => 7,
+                    'theme' => 'Immersive Wildlife Expedition',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 3200],
+                        ['persons' => 4, 'price' => 2550],
+                        ['persons' => 9, 'price' => 2200],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Tarangire National Park', 'description' => 'Start with a full-day Tarangire game drive among elephants, baobabs, giraffes, antelopes, lions, and other wildlife.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Lake Manyara National Park', 'description' => 'Discover Lake Manyara’s groundwater forest, open plains, hot springs, lakeshore, and abundant birdlife.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Serengeti National Park', 'description' => 'Travel through the Ngorongoro Conservation Area and continue into the Serengeti for an afternoon game drive.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Serengeti Full-Day Game Drive', 'description' => 'Explore the central Serengeti throughout the day, following wildlife activity across the plains and river corridors.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Serengeti Migration Country', 'description' => 'Continue game viewing in the best area for the season. Enjoy extended drives and opportunities to see predators, resident herds, and migratory wildlife.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Serengeti to Ngorongoro', 'description' => 'Enjoy a final morning game drive in the Serengeti before travelling toward the Ngorongoro Conservation Area for the evening.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 7, 'title' => 'Ngorongoro Crater', 'description' => 'Descend into the crater for a full-day game drive and search for rhino, lions, elephants, buffalo, hippos, hyenas, and flamingos.', 'accommodation' => 'Camping/Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 8, 'title' => 'Departure', 'description' => 'Enjoy breakfast and transfer back to Arusha, Moshi, or the airport for your onward travel.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast']],
+                    ],
+                    'includes' => ['4x4 safari Land Cruiser with pop-up roof', 'Professional guide/driver', 'Park and entrance fees', 'Lodge, hotel, or camping accommodation', 'All meals during the safari', 'Bottled water and fruit', 'Government taxes and levies', '24-hour support'],
+                    'excludes' => ['International flights and visa fees', 'Travel insurance', 'Laundry services', 'Tips to safari guides', 'Personal expenses'],
+                    'accommodations' => [['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full-board meals throughout the expedition.', 'image' => 'images/safaris/IMG-4419-1780110169806-65108106.jpg']],
+                    'gallery' => ['images/safaris/IMG-4419-1780110169806-65108106.jpg', 'images/safaris/wildbeet.jpg', 'images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg'],
+                ]);
+            }
         }
     }
 
@@ -257,7 +344,7 @@ class PackagesSeeder extends Seeder
             ['mount-meru-3-day', '3 Days Mount Meru Trek', 'Short Mount Meru option for tighter schedules.', ['Warm-up', 'Wildlife'], 920, 3, 'Moderate', 'images/16.jpeg'],
             ['7-day-lemosho-route-climb', '7 Days Lemosho Route Climb', 'The 7-day Lemosho Route is one of Kilimanjaro most scenic routes  rainforest, Shira Plateau and the southern circuit to the summit.', ['Scenic', 'Great acclimatisation'], 2300, 7, 'Moderate to Challenging', 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
             ['6-day-lemosho-route-climb', '6 Days Lemosho Route Climb   Novella Tanzanian Safaris & Trekking', 'The 6 Days Lemosho Route is a scenic and adventurous Kilimanjaro trek starting from the western side of the mountain.', ['Strong fitness', 'Less crowded', 'Summit push'], 2150, 6, 'Challenging', 'images/20.jpeg'],
-            ['8-day-lemosho-route-climb-kosovo-camp', '8 Days Lemosho Route Climb   Kosovo Camp', 'The 8 Days Lemosho Kosovo Route is designed for trekkers seeking the scenery and acclimatisation profile of the Lemosho Route with the advantage of Kosovo Camp before the summit push.', ['Kosovo Camp', 'Shorter summit night', 'Excellent acclimatisation'], 2600, 8, 'Moderate to Challenging', 'images/15.jpeg'],
+            ['8-day-lemosho-route-climb-kosovo-camp', '8 Days Lemosho Route Climb   Kosovo Camp', 'The 8 Days Lemosho Kosovo Route is designed for trekkers seeking the scenery and acclimatisation profile of the Lemosho Route with the advantage of Kosovo Camp before the summit push.', ['Kosovo Camp', 'Shorter summit night', 'Excellent acclimatisation'], 2600, 8, 'Moderate to Challenging', 'images/kilimanjaro images/Kili-2024.webp'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $days, $difficulty, $img]) {
@@ -1024,6 +1111,8 @@ class PackagesSeeder extends Seeder
     private function zanzibarPackages(): void
     {
         $data = [
+            ['2-day-zanzibar-escape', '2 Day Zanzibar Escape', 'A quick Zanzibar getaway combining beach relaxation with a taste of the island’s culture and coastal beauty.', ['Beach', 'Relaxation', 'Culture'], 450, 2, 'images/zanzibar images/beach12.png'],
+            ['3-day-zanzibar-getaway', '3 Day Zanzibar Getaway', 'A compact island holiday with beach time, Stone Town culture, and a memorable ocean experience.', ['Beach', 'Stone Town', 'Ocean'], 600, 3, 'images/zanzibar images/Nungi kendwa.jpg'],
             ['4-day-zanzibar-escape', '4 Day Zanzibar Escape', 'Discover Zanzibar in 4 Days. A short yet unforgettable tropical getaway featuring white sandy beaches, crystal-clear waters, cultural experiences, and relaxing island vibes.', ['Beach', 'Relaxation', 'Culture'], 750, 4, 'images/zanzibar images/beach1.png'],
             ['5-day-zanzibar-holiday', '5 Day Zanzibar Holiday', 'Luxury Zanzibar Experience. A relaxing tropical escape with beautiful beaches, ocean adventures, and unforgettable island experiences.', ['Beach', 'Relaxation', 'Culture'], 1100, 5, 'images/zanzibar images/beach4.png'],
             ['7-day-zanzibar-beach-vacation', '7 Day Zanzibar Beach Vacation', 'Sun, Sand & Ocean Views. A relaxing tropical escape featuring white sandy beaches, crystal-clear waters, vibrant culture, and unforgettable island experiences.', ['Beach', 'Relaxation', 'Culture'], 1450, 7, 'images/zanzibar images/beach6.png'],
@@ -1042,6 +1131,51 @@ class PackagesSeeder extends Seeder
                 'sort_order' => $i,
                 'is_published' => true,
             ]);
+
+            if ($slug === '2-day-zanzibar-escape') {
+                $zanzibar->update([
+                    'overview' => "A quick 2 Day Zanzibar Escape combining white-sand beaches, warm turquoise waters, and a taste of the island’s culture. It is ideal for travelers adding a short beach break after a safari or Kilimanjaro climb.\n\nEnjoy time by the ocean, then discover the character of Stone Town before your departure.",
+                    'duration_days' => 2,
+                    'duration_nights' => 1,
+                    'theme' => 'Quick Beach Escape',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 550],
+                        ['persons' => 4, 'price' => 450],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Arrival & Beach Relaxation', 'description' => 'Arrive at Zanzibar airport or seaport, meet your representative, and transfer to your beach hotel. Spend the rest of the day relaxing beside the ocean.', 'accommodation' => 'Beach hotel', 'meals' => ['Breakfast']],
+                        ['day' => 2, 'title' => 'Stone Town Tour & Departure', 'description' => 'Explore Stone Town and its historic streets before enjoying lunch and transferring to the airport or seaport for departure.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => ['Hotel accommodation with breakfast', 'Airport or seaport transfers', 'Stone Town tour', 'All government taxes'],
+                    'excludes' => ['Flights', 'Tips', 'Personal expenses'],
+                    'accommodations' => [['name' => 'Beach Hotel', 'description' => 'Comfortable beach accommodation for a short island escape.', 'image' => 'images/zanzibar images/beach12.png']],
+                    'gallery' => ['images/zanzibar images/beach12.png', 'images/zanzibar images/stone town.webp'],
+                ]);
+            }
+
+            if ($slug === '3-day-zanzibar-getaway') {
+                $zanzibar->update([
+                    'overview' => "A compact 3 Day Zanzibar Getaway combining beach relaxation, historic Stone Town, and an unforgettable ocean experience. This package is made for travelers who want a short but varied island holiday.\n\nEnjoy Zanzibar’s beaches, explore its culture, and spend a day on the water before departure.",
+                    'duration_days' => 3,
+                    'duration_nights' => 2,
+                    'theme' => 'Beach & Culture',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => 700],
+                        ['persons' => 4, 'price' => 600],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Arrival & Beach Relaxation', 'description' => 'Arrive at Zanzibar airport or seaport, meet your representative, and transfer to your hotel. Relax on the beach for the afternoon.', 'accommodation' => 'Beach hotel', 'meals' => ['Breakfast']],
+                        ['day' => 2, 'title' => 'Stone Town & Spice Experience', 'description' => 'Visit a spice farm and explore the historic streets of Stone Town, including the market, Old Fort, and other landmarks.', 'accommodation' => 'Beach hotel', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 3, 'title' => 'Ocean Experience & Departure', 'description' => 'Enjoy a morning snorkeling or aquarium experience, then have lunch before your transfer to the airport or seaport for departure.', 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => ['Hotel accommodation with breakfast', 'Airport or seaport transfers', 'Stone Town and spice tour', 'Snorkeling or aquarium experience', 'All government taxes'],
+                    'excludes' => ['Flights', 'Tips', 'Personal expenses'],
+                    'accommodations' => [['name' => 'Beach Hotel', 'description' => 'Comfortable accommodation close to Zanzibar’s beaches.', 'image' => 'images/zanzibar images/Nungi kendwa.jpg']],
+                    'gallery' => ['images/zanzibar images/Nungi kendwa.jpg', 'images/zanzibar images/spice.jpg', 'images/zanzibar images/stone town.webp'],
+                ]);
+            }
 
             if ($slug === '4-day-zanzibar-escape') {
                 $zanzibar->update([
@@ -1178,6 +1312,8 @@ class PackagesSeeder extends Seeder
             ['materuni-waterfall', 'Materuni Waterfall', 'Hidden Gem of Kilimanjaro. A scenic day trip that combines a guided hike through lush countryside with a visit to one of Tanzania most beautiful waterfalls.', ['Waterfall', 'Coffee', 'Culture'], 80, 'Full day', 'images/Day Trips/IMG-2331-1780110336048-544612569.jpg'],
             ['maasai-tour', 'Maasai Tour', 'Experience Local Heritage. A unique cultural experience where visitors can learn about the traditions, customs, and daily life of the Maasai people.', ['Culture', 'Traditions', 'Village'], 145, 'Full day', 'images/Day Trips/IMG-4419-1780110169806-65108106.jpg'],
             ['chemka-hot-springs', 'Chemka Hot Springs', 'Turquoise Waters Experience. A relaxing day trip to a natural oasis of crystal-clear turquoise waters surrounded by lush vegetation.', ['Swimming', 'Relaxation', 'Nature'], 80, 'Full day', 'images/Day Trips/IMG-1402-1780110475334-118582944.jpg'],
+            ['tarangire-national-park', 'Tarangire National Park Day Trip', 'Explore Tarangire National Park, famous for its large elephant herds, ancient baobab trees, and remarkable wildlife.', ['Elephants', 'Baobabs', 'Wildlife'], 145, 'Full day', 'https://arushatrips.com/wp-content/uploads/2019/10/Tarangire-national-park-2.png'],
+            ['arusha-national-park-walking-safari', 'Arusha National Park Walking Safari', 'Walk alongside wildlife at the foot of Mount Meru, discovering green surroundings, lakes, waterfalls, and Arusha National Park’s unique black-and-white colobus monkeys.', ['Walking Safari', 'Wildlife', 'Mount Meru'], 165, 'Full day', 'https://arushatrips.com/wp-content/uploads/2019/10/Arusha-National-Park-overview.png'],
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $features, $price, $duration, $img]) {
@@ -1307,6 +1443,76 @@ class PackagesSeeder extends Seeder
                     'gallery' => [
                         'images/Day Trips/IMG-2331-1780110336048-544612569.jpg',
                         'images/Day Trips/DSC01306-1780110936265-474666078.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'tarangire-national-park') {
+                $dayTrip->update([
+                    'overview' => "On this day trip, we will visit Tarangire National Park, famous for its large elephant herds and towering, ancient baobab trees. You’ll probably get to see plenty of them, along with many other incredible animals that call this park home.\n\nThe adventure begins with an early morning departure from Arusha. From there, we’ll drive straight to Tarangire National Park, a journey of about two hours.\n\nStart location: Arusha\nStart time: 07:30-08:00\nDuration: Full Day\nAvailability: Daily\n\nYou’ll be driving in a spacious 4×4 Land Cruiser with a pop-up roof, offering a 360-degree view. During your day trip in Tarangire National Park, you might encounter lions, giraffes, zebras, wildebeests, warthogs, impalas, cheetahs, mongooses, buffalos, baboons, and ostriches. And if you’re lucky, you might even spot a leopard lounging in a tree! Of course, there’s plenty more wildlife waiting to be discovered.\n\nLet’s not forget about the massive elephant herds that rule the park. You’ll see large families, bachelor herds, and groups of females—complete with adorable babies, playful teenagers, young mothers, and wise older matriarchs leading the way. You might also spot a majestic bull elephant roaming alone.\n\nHalfway through our day trip, we’ll take a lunch break at a special spot with stunning views over the park. Keep an eye out for curious monkeys—they might be eyeing your lunch too!\n\nAfter lunch, we’ll head out for another game drive to search for any animals we may have missed, making sure to check off as many incredible wildlife encounters as possible. At the end of the day, we’ll begin our journey back to Arusha.\n\nThis day trip can be booked as a private excursion or as part of a group. If you’d like to join a group, just send us an inquiry, and we’ll find one for you!",
+                    'theme' => 'Wildlife & Nature',
+                    'skill_level' => 'Easy',
+                    'pricing_tiers' => [
+                        ['persons' => 2, 'price' => 245],
+                        ['persons' => 6, 'price' => 145],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Tarangire National Park Game Drive', 'description' => 'Depart from Arusha between 07:30 and 08:00 for the approximately two-hour drive to Tarangire National Park. Enjoy a full-day game drive in a 4×4 Land Cruiser with a pop-up roof, a scenic lunch break, and an afternoon search for more wildlife before returning to Arusha.', 'accommodation' => 'Return to Arusha', 'meals' => ['Lunch']],
+                    ],
+                    'includes' => [
+                        'Pick-up and drop-off at your accommodation',
+                        'English-speaking private driver/guide',
+                        '4x4 safari vehicle with pop-up roof',
+                        'Park fees and government taxes',
+                        'Unlimited game-drive mileage',
+                        'Lunch',
+                        'Coffee, tea and water',
+                    ],
+                    'excludes' => [
+                        'Tips for the guide',
+                    ],
+                    'what_to_bring' => null,
+                    'gallery' => [
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Tarangire-national-park-2.png',
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Tarangire-National-Park-baobab.png',
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Tarangire-national-park-3.png',
+                        'https://arushatrips.com/wp-content/uploads/2019/09/Duo-3.png',
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Tarangire-National-Park.png',
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Tarangire-National-Park-1.png',
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Tarangire-National-Park-4.png',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'arusha-national-park-walking-safari') {
+                $dayTrip->update([
+                    'overview' => "Walk freely alongside the wildlife of Tanzania and visit unique sights. A great way to start your safari experience. At the foot of Mount Meru lies Arusha National Park, a beautiful park famous for its green surroundings, lakes, unique sights, and black-and-white colobus monkeys. A walking safari is a unique and thrilling experience and a chance to get up close with wild animals, face to face. It is an experience that is only possible in a few national parks.\n\nStart location: Arusha\nStart time: 08:00 AM\nDuration: Full Day\nAvailability: Daily\n\nYou’ll start the day with a short drive to Arusha National Park, taking about 30 minutes from Arusha. From there, we’ll drive through the beautiful green surroundings of the park to spot local wildlife, while enjoying a stunning view of Mount Meru in the background.\n\nNext, your local safari ranger will take you on a walking safari. The scents and sounds of the African bush are best experienced on foot, as you walk alongside freely roaming animals in their natural habitat. Your ranger will explain how to move safely near wild animals and share knowledge about the unique flora and fauna of Arusha National Park.\n\nDuring the walking safari, you’ll visit unique sights such as the impressive waterfall hidden in the heart of the park, Ngurdoto Crater, and Lake Momella, where thousands of pink flamingos can often be spotted.\n\nMany visitors come hoping to spot the elusive colobus monkey. Giraffes, buffalo, zebras, warthogs, and blue monkeys may also be seen. Arusha is also excellent for birdwatchers, with trogons, starlings, turacos, and migrating flamingos among the species that can be discovered.",
+                    'theme' => 'Walking Safari & Wildlife',
+                    'skill_level' => 'Moderate',
+                    'pricing_tiers' => [
+                        ['persons' => 2, 'price' => 265],
+                        ['persons' => 6, 'price' => 165],
+                    ],
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Walking Safari in Arusha National Park', 'description' => 'Depart Arusha at 08:00 AM for the approximately 30-minute drive to Arusha National Park. Enjoy a scenic drive through the park, a guided walking safari with a local ranger, and visits to the waterfall, Ngurdoto Crater, and Lake Momella before returning to Arusha.', 'accommodation' => 'Return to Arusha', 'meals' => ['Lunchbox']],
+                    ],
+                    'includes' => [
+                        'Pick-up and drop-off at your accommodation',
+                        '4x4 safari vehicle with pop-up roof',
+                        'Private English-speaking driver/guide',
+                        'Game drive in Arusha National Park',
+                        'Walking safari with a ranger',
+                        'Park fees and government taxes',
+                        'Lunchbox',
+                        'Water, tea and coffee',
+                    ],
+                    'excludes' => [
+                        'Tips for the guide',
+                    ],
+                    'gallery' => [
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Arusha-National-Park-overview.png',
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Arusha-National-Park-tree-2.png',
+                        'https://arushatrips.com/wp-content/uploads/2019/10/Colobus-2.png',
                     ],
                 ]);
             }

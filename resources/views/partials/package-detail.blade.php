@@ -5,6 +5,7 @@
     Uses site palette: --forest, --amber, --gold, --cream, --sand.
 --}}
 @php $destination = $destination ?? ($package->country ?? 'Tanzania'); @endphp
+@php $mediaUrl = fn ($path) => \Illuminate\Support\Str::startsWith((string) $path, ['http://', 'https://']) ? $path : asset($path); @endphp
 
 <style>
     /* ============ Package detail — Novella palette ============ */
@@ -137,7 +138,7 @@
 </style>
 
 {{-- HERO --}}
-<section class="pkg-hero" style="background-image:url('{{ asset($package->image ?? $typeBanner) }}');">
+<section class="pkg-hero" style="background-image:url('{{ $mediaUrl($package->image ?? $typeBanner) }}');">
     <div class="pkg-hero-inner container">
         <div class="pkg-crumb">
             <a href="{{ route('home') }}">Home</a>
@@ -311,7 +312,7 @@
                     <div class="pkg-card-body">
                         <div class="pkg-gallery-grid">
                             @foreach ($package->gallery as $img)
-                                <div class="g-img" style="background-image:url('{{ asset(is_array($img) ? ($img['url'] ?? '') : $img) }}');"></div>
+                                <div class="g-img" style="background-image:url('{{ $mediaUrl(is_array($img) ? ($img['url'] ?? '') : $img) }}');"></div>
                             @endforeach
                         </div>
                     </div>
@@ -412,6 +413,7 @@
                         <input type="hidden" name="trip_interest" value="{{ $package->name }}" />
                         <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
                             <div>
+
                                 <label>Full Name</label>
                                 <input name="name" type="text" value="{{ old('name') }}" required />
                             </div>
@@ -520,7 +522,7 @@
                     <div class="related-grid">
                         @foreach ($relatedTours as $rel)
                             <a href="{{ route($listRoute . '.show', $rel->slug) }}" class="related-card">
-                                <div class="r-img" style="background-image:url('{{ asset($rel->image) }}');"></div>
+                                <div class="r-img" style="background-image:url('{{ $mediaUrl($rel->image) }}');"></div>
                                 <div class="r-body">
                                     @if ($rel->duration_days)<span class="r-days">{{ $rel->duration_days }} Days</span>@endif
                                     <h4>{{ $rel->name }}</h4>

@@ -5,6 +5,8 @@
 ])
 
 @section('content')
+    @php $mediaUrl = fn ($path) => \Illuminate\Support\Str::startsWith((string) $path, ['http://', 'https://']) ? $path : asset($path); @endphp
+
     <section class="page-banner" style="background-image:url('{{ asset('images/22.jpeg') }}');">
         <div class="container">
             <h1>Day Trips</h1>
@@ -25,7 +27,7 @@
             <div class="dest-cards">
                 @forelse ($dayTrips as $t)
                     <article class="dest-card">
-                        <div class="dest-image" style="background-image:url('{{ asset($t->image) }}');">
+                        <div class="dest-image" style="background-image:url('{{ $mediaUrl($t->image) }}');">
                             @if ($t->duration)<span class="dest-days-tag">{{ $t->duration }}</span>@endif
                         </div>
                         <div class="dest-body">

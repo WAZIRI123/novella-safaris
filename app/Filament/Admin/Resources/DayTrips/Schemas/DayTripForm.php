@@ -87,6 +87,10 @@ class DayTripForm
                                     ->simple(TextInput::make('text')->required())
                                     ->reorderable()
                                     ->columnSpanFull(),
+                                TagsInput::make('what_to_bring')
+                                    ->label('What to bring')
+                                    ->reorderable()
+                                    ->columnSpanFull(),
                             ]),
 
                         Tab::make('Accommodations')

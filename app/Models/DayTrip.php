@@ -11,7 +11,7 @@ class DayTrip extends Model
         'duration', 'features', 'duration_days', 'duration_nights',
         'pricing_tiers', 'itinerary', 'includes', 'excludes',
         'accommodations', 'gallery', 'category', 'theme', 'skill_level',
-        'sort_order', 'is_published',
+        'what_to_bring', 'sort_order', 'is_published',
     ];
 
     protected $casts = [
@@ -22,6 +22,7 @@ class DayTrip extends Model
         'excludes' => 'array',
         'accommodations' => 'array',
         'gallery' => 'array',
+        'what_to_bring' => 'array',
         'price' => 'decimal:2',
         'is_published' => 'boolean',
     ];
