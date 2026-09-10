@@ -51,7 +51,7 @@
                         ['Tarangire Day Trip', 'Elephants under the baobabs — one of Africa\'s most photogenic elephant destinations.', ['Elephants', 'Baobabs'], '260', 'Full day', asset('images/29.jpeg')],
                         ['Materuni Waterfalls & Coffee Tour', 'Hike through banana plantations to a hidden waterfall, then roast your own coffee with a Chagga family.', ['Coffee', 'Waterfall'], '90', 'Half day', asset('images/24.jpeg')],
                         ['Maasai Village Cultural Day', 'Learn ceremonial dance, jump with the warriors, share a meal — an unstaged cultural exchange.', ['Culture', 'Community'], '140', 'Full day', asset('images/25.jpeg')],
-                        ['Arusha National Park', 'Overlooked gem right on Arusha\'s doorstep — giraffe, buffalo, colobus monkeys and canoe safaris.', ['Canoe safari', 'Giraffe'], '180', 'Half day', asset('images/15.jpeg')],
+                        ['Arusha National Park', 'Overlooked gem right on Arusha\'s doorstep — giraffe, buffalo, colobus monkeys and canoe safaris.', ['Canoe safari', 'Giraffe'], '180', 'Half day', asset('images/30.jpeg')],
                     ] as [$name, $desc, $features, $price, $duration, $img])
                         <article class="dest-card">
                             <div class="dest-image" style="background-image:url('{{ $img }}');">

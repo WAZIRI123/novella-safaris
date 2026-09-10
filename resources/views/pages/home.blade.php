@@ -13,7 +13,7 @@
                     $slides = [
                         asset('images/safaris/IMG-4419-1780110169806-65108106.jpg'),
                         asset('images/04.jpeg'),
-                        asset('images/15.jpeg'),
+                        asset('images/21.jpeg'),
                         asset('images/safaris/IMG-4419-1780110169806-65108106.jpg'),
                        
                         asset('images/24.jpeg'),
@@ -105,7 +105,7 @@
                     ['6 Days', 'Northern Circuit Safari', asset('images/29.jpeg')],
                     ['10 Days', 'Luxury Fly-In Safari', asset('images/22.jpeg')],
                     ['8 Days', 'Kilimanjaro Lemosho', asset('images/27.jpeg')],
-                    ['6 Days', 'Kilimanjaro Marangu', asset('images/15.jpeg')],
+                    ['6 Days', 'Kilimanjaro Marangu', asset('images/26.jpeg')],
                     ['7 Days', 'Kilimanjaro Machame', asset('images/20.jpeg')],
                 ] as [$days, $title, $img])
                     <a href="{{ route('tanzania-safaris') }}" class="top-card" style="background-image:url('{{ $img }}');">

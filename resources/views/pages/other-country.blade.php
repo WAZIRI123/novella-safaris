@@ -41,7 +41,7 @@
                     @foreach ([
                         ['Kenya', 'Kenya — Maasai Mara', 'The northern extension of the Serengeti — Mara River crossings, big cat drama and open plains.', ['Migration', 'Big cats', 'Balloon safari'], '3,290', asset('images/25.jpeg')],
                         ['Rwanda', 'Rwanda — Gorilla Trekking', 'Come face-to-face with mountain gorillas in Volcanoes National Park — a once-in-a-lifetime encounter.', ['Mountain gorillas', 'Golden monkeys'], '4,180', asset('images/24.jpeg')],
-                        ['Uganda', 'Uganda — Bwindi & the Nile', 'Half of the world\'s remaining mountain gorillas live here. Combine with chimp trekking in Kibale and the source of the Nile.', ['Gorillas', 'Chimps', 'Nile'], '3,890', asset('images/15.jpeg')],
+                        ['Uganda', 'Uganda — Bwindi & the Nile', 'Half of the world\'s remaining mountain gorillas live here. Combine with chimp trekking in Kibale and the source of the Nile.', ['Gorillas', 'Chimps', 'Nile'], '3,890', asset('images/31.jpeg')],
                         ['Kenya', 'Amboseli & Tsavo', 'Elephants against the backdrop of Kilimanjaro — Amboseli is the classic African postcard.', ['Elephants', 'Kilimanjaro views'], '2,180', asset('images/29.jpeg')],
                         ['Uganda', 'Queen Elizabeth NP', 'Tree-climbing lions in the Ishasha sector, boat cruises on the Kazinga Channel, and volcanic craters.', ['Tree lions', 'Boat safari'], '1,890', asset('images/28.jpeg')],
                         ['Multi-country', '3-Country Combo', 'Tanzania safari + Rwanda gorillas + Zanzibar beach — the ultimate East African journey.', ['Ultimate', 'Custom'], '8,290', asset('images/23.jpeg')],
