@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 </head>
