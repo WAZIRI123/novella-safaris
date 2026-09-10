@@ -68,7 +68,7 @@
 
             </div>
             <div class="why-portrait">
-                <img src="{{ asset('assets/novellapic (2).jpeg') }}" alt="Novella Safaris Owner" />
+            <img src="{{ asset('assets/novellapic (2).jpeg') }}" alt="Novella Safaris Owner" />
             </div>
         </div>
     </section>
