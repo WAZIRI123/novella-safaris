@@ -17,10 +17,18 @@ class PageController extends Controller
 {
     public function home()
     {
+        // Fetch top 6 packages from different types
+        $safaris = Safari::query()->where('is_published', true)->orderBy('sort_order')->limit(3)->get();
+        $treks = TrekkingRoute::query()->where('is_published', true)->orderBy('sort_order')->limit(2)->get();
+        $zanzibar = ZanzibarPackage::query()->where('is_published', true)->orderBy('sort_order')->limit(1)->get();
+        
+        $topPackages = $safaris->concat($treks)->concat($zanzibar)->take(6);
+
         return view('pages.home', [
             'heroSlides' => HeroSlide::query()->where('is_published', true)->orderBy('sort_order')->get(),
             'blogPosts' => BlogPost::query()->where('is_published', true)->orderByDesc('published_at')->limit(2)->get(),
             'partners' => Partner::query()->where('is_published', true)->orderBy('sort_order')->get(),
+            'topPackages' => $topPackages,
         ]);
     }
 

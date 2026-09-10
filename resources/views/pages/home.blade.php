@@ -100,21 +100,43 @@
                 <h2>Top Selling Packages</h2>
             </div>
             <div class="top-grid">
-                @foreach ([
-                    ['4 Days', 'Tanzania Safari', asset('images/28.jpeg')],
-                    ['6 Days', 'Northern Circuit Safari', asset('images/29.jpeg')],
-                    ['10 Days', 'Luxury Fly-In Safari', asset('images/22.jpeg')],
-                    ['8 Days', 'Kilimanjaro Lemosho', asset('images/27.jpeg')],
-                    ['6 Days', 'Kilimanjaro Marangu', asset('images/26.jpeg')],
-                    ['7 Days', 'Kilimanjaro Machame', asset('images/20.jpeg')],
-                ] as [$days, $title, $img])
-                    <a href="{{ route('tanzania-safaris') }}" class="top-card" style="background-image:url('{{ $img }}');">
+                @forelse($topPackages as $package)
+                    @php
+                        $routeMap = [
+                            'App\Models\Safari' => 'safari.show',
+                            'App\Models\TrekkingRoute' => 'trekking.show',
+                            'App\Models\ZanzibarPackage' => 'zanzibar.show',
+                            'App\Models\DayTrip' => 'day-trips.show',
+                            'App\Models\SpecialPackage' => 'special-packages.show',
+                            'App\Models\OtherCountryTrip' => 'other-country.show',
+                        ];
+                        $modelClass = get_class($package);
+                        $route = $routeMap[$modelClass] ?? 'home';
+                        $badge = $package->badge ?? ($package->days ? $package->days . ' Days' : ($package->duration ?? ''));
+                    @endphp
+                    <a href="{{ route($route, $package->slug) }}" class="top-card" style="background-image:url('{{ asset($package->image) }}');">
                         <div class="top-card-overlay">
-                            <span class="top-days">{{ $days }}</span>
-                            <h4>{{ $title }}</h4>
+                            <span class="top-days">{{ $badge }}</span>
+                            <h4>{{ $package->name }}</h4>
                         </div>
                     </a>
-                @endforeach
+                @empty
+                    @foreach ([
+                        ['4 Days', 'Tanzania Safari', asset('images/28.jpeg')],
+                        ['6 Days', 'Northern Circuit Safari', asset('images/29.jpeg')],
+                        ['10 Days', 'Luxury Fly-In Safari', asset('images/22.jpeg')],
+                        ['8 Days', 'Kilimanjaro Lemosho', asset('images/27.jpeg')],
+                        ['6 Days', 'Kilimanjaro Marangu', asset('images/26.jpeg')],
+                        ['7 Days', 'Kilimanjaro Machame', asset('images/20.jpeg')],
+                    ] as [$days, $title, $img])
+                        <a href="{{ route('tanzania-safaris') }}" class="top-card" style="background-image:url('{{ $img }}');">
+                            <div class="top-card-overlay">
+                                <span class="top-days">{{ $days }}</span>
+                                <h4>{{ $title }}</h4>
+                            </div>
+                        </a>
+                    @endforeach
+                @endforelse
             </div>
         </div>
     </section>
