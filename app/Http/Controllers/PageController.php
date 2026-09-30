@@ -19,7 +19,7 @@ class PageController extends Controller
     {
         // Fetch top 6 packages from different types
         $safaris = Safari::query()->where('is_published', true)->orderBy('sort_order')->limit(3)->get();
-        $treks = TrekkingRoute::query()->where('is_published', true)->orderBy('sort_order')->limit(2)->get();
+        $treks = TrekkingRoute::query()->packages()->where('is_published', true)->orderBy('sort_order')->limit(2)->get();
         $zanzibar = ZanzibarPackage::query()->where('is_published', true)->orderBy('sort_order')->limit(1)->get();
         
         $topPackages = $safaris->concat($treks)->concat($zanzibar)->take(6);
@@ -42,7 +42,7 @@ class PageController extends Controller
     public function trekking()
     {
         return view('pages.trekking', [
-            'routes' => TrekkingRoute::query()->where('is_published', true)->orderBy('sort_order')->get(),
+            'routes' => TrekkingRoute::query()->packages()->where('is_published', true)->orderBy('sort_order')->get(),
         ]);
     }
 
@@ -113,6 +113,7 @@ class PageController extends Controller
         // Build a list of related routes (variants) for the same base route.
         $baseName = preg_replace('/\s*Route$/i', '', $package->name);
         $variants = TrekkingRoute::query()
+            ->packages()
             ->where('is_published', true)
             ->where('slug', '!=', $slug)
             ->where(function ($q) use ($slug, $baseName) {
@@ -133,7 +134,7 @@ class PageController extends Controller
             ]);
         }
 
-        $relatedTours = TrekkingRoute::query()->where('is_published', true)->where('id', '!=', $package->id)->orderBy('sort_order')->limit(3)->get();
+        $relatedTours = TrekkingRoute::query()->packages()->where('is_published', true)->where('id', '!=', $package->id)->orderBy('sort_order')->limit(3)->get();
 
         return view('pages.trekking-detail', compact('package', 'relatedTours'));
     }
