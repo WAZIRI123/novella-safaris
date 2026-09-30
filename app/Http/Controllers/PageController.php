@@ -124,7 +124,9 @@ class PageController extends Controller
             ->get();
 
         // If multiple variants exist, show a grouped listing page for that route.
-        if ($variants->count() >= 1) {
+        // Only base routes (e.g. "lemosho") group; day-count variants like
+        // "8-day-lemosho-route-climb" always show their own itinerary.
+        if ($variants->count() >= 1 && ! preg_match('/^\d/', $slug)) {
             return view('pages.trekking-group', [
                 'routes' => $variants,
                 'base' => $package,

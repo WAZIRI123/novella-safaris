@@ -30,16 +30,43 @@
                 <li class="has-dropdown">
                     <a href="{{ route('trekking') }}"{!! $navActive('trekking') !!}>Trekking <i class="bi bi-chevron-down"></i></a>
                     <ul class="dropdown">
-                        <li><a href="{{ route('trekking.show', 'machame') }}">Machame Route</a></li>
-                        <li><a href="{{ route('trekking.show', 'northern-circuit') }}">Northern Circuit</a></li>
-                        <li><a href="{{ route('trekking.show', 'lemosho') }}">Lemosho Route</a></li>
-                        <li><a href="{{ route('trekking.show', 'marangu') }}">Marangu Route</a></li>
-                        <li><a href="{{ route('trekking.show', 'rongai') }}">Rongai Route</a></li>
-                        <li><a href="{{ route('trekking.show', 'umbwe') }}">Umbwe Route</a></li>
-                        <li><a href="{{ route('trekking.show', 'meru') }}">Mount Meru</a></li>
+                        <li class="has-submenu">
+                            <a href="{{ route('trekking') }}">Kilimanjaro <i class="bi bi-chevron-right"></i></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('trekking.show', 'machame') }}">Machame Route</a></li>
+                                <li><a href="{{ route('trekking.show', 'lemosho') }}">Lemosho Route</a></li>
+                                <li><a href="{{ route('trekking.show', 'marangu') }}">Marangu Route</a></li>
+                                <li><a href="{{ route('trekking.show', 'rongai') }}">Rongai Route</a></li>
+                                <li><a href="{{ route('trekking.show', 'umbwe') }}">Umbwe Route</a></li>
+                                <li><a href="{{ route('trekking.show', 'northern-circuit') }}">Northern Circuit Route</a></li>
+                            </ul>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="{{ route('trekking.show', 'meru') }}">Mount Meru <i class="bi bi-chevron-right"></i></a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('trekking.show', 'mount-meru-3-day') }}">3 Days Mount Meru Trek</a></li>
+                                <li><a href="{{ route('trekking.show', '4-day-mount-meru-trek') }}">4 Days Mount Meru Trek</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-                <li><a href="{{ route('tanzania-safaris') }}"{!! $navActive('safari') !!}>Safari</a></li>
+                <li class="has-dropdown">
+                    <a href="{{ route('tanzania-safaris') }}"{!! $navActive('safari') !!}>Safari <i class="bi bi-chevron-down"></i></a>
+                    <ul class="dropdown dropdown-safari">
+                        @foreach ([
+                            ['2-days-safari-adventure', '2 Days Safari', 'Tarangire · Ngorongoro Crater'],
+                            ['3-days-safari-adventure', '3 Days Safari', 'Serengeti · Ngorongoro Crater'],
+                            ['4-days-wildlife-safari', '4 Days Safari', 'Tarangire · Serengeti · Ngorongoro Crater'],
+                            ['5-days-safari-expedition', '5 Days Safari', 'Tarangire · Serengeti (2 nights) · Maasai Culture · Ngorongoro Crater'],
+                            ['6-days-safari-discovery', '6 Days Safari', 'Tarangire · Central & North Serengeti (2 nights) · Ngorongoro Crater'],
+                            ['7-days-safari-journey', '7 Days Safari', 'Tarangire · Central & North Serengeti (3 nights) · Ngorongoro Crater'],
+                            ['8-days-safari-expedition', '8 Days Safari', 'Tarangire · Serengeti · Ngorongoro Crater · Lake Manyara'],
+                        ] as [$slug, $label, $parks])
+                            <li><a href="{{ route('safari.show', $slug) }}">{{ $label }}<small>{{ $parks }}</small></a></li>
+                        @endforeach
+                        <li class="dropdown-all"><a href="{{ route('tanzania-safaris') }}">View all safaris <i class="bi bi-arrow-right"></i></a></li>
+                    </ul>
+                </li>
                 <li><a href="{{ route('zanzibar') }}"{!! $navActive('zanzibar') !!}>Zanzibar</a></li>
                 <li><a href="{{ route('day-trips') }}"{!! $navActive('day-trips') !!}>Day Trips</a></li>
             </ul>
