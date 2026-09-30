@@ -39,7 +39,10 @@
     .pkg-card-head h2 { margin: 0; font-size: 1.35rem; font-weight: 800; letter-spacing: .3px; color: var(--white); }
     .pkg-card-body { padding: 30px; color: var(--text); line-height: 1.75; }
     .pkg-card-body h3 { color: var(--forest); font-size: 1.1rem; margin-top: 20px; }
-    .pkg-card-body p { color: #4a4a3f; }
+    .pkg-card-body p { color: #4a4a3f; margin-bottom: 14px; }
+    .pkg-card-body .overview-heading { margin-bottom: 6px; color: var(--forest); }
+    .pkg-card-body .overview-heading + p:not(.overview-heading) { margin-top: 12px; }
+    .pkg-card-body .overview-list { margin: 0 0 14px 20px; padding: 0; list-style: disc; color: #4a4a3f; }
 
     /* Sidebar */
     .pkg-sidebar { position: sticky; top: 76px; }
@@ -198,7 +201,7 @@
                 </div>
                 <div class="pkg-card-body">
                     @if ($package->overview)
-                        {!! nl2br(e($package->overview)) !!}
+                        @include('partials.overview-text', ['text' => $package->overview, 'name' => $package->name])
                     @else
                         <p>{{ $package->description }}</p>
                     @endif
