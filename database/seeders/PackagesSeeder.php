@@ -1447,6 +1447,185 @@ class PackagesSeeder extends Seeder
                     ],
                 ]);
             }
+
+            $arrivalDay = ['title' => 'Arrive in Tanzania', 'description' => "Upon arrival at Kilimanjaro International Airport, you will be welcomed by our team and transferred to your hotel in Moshi. Later, you will meet your mountain guide for a detailed briefing about the upcoming trek, followed by an equipment check to ensure you have all the essential gear. Any missing equipment can be rented before the climb.\nIn the evening, you will enjoy dinner and relax at the hotel as you prepare for your Kilimanjaro adventure. Overnight at your hotel in Moshi.", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast']];
+            $departureDay = ['title' => 'Depart Tanzania', 'description' => "After completing your Kilimanjaro adventure, you will be transferred to Kilimanjaro International Airport for your onward flight, according to your travel arrangements.\nIf you wish to extend your stay in Tanzania, we can arrange a cultural experience, a relaxing Zanzibar beach getaway, or an exciting wildlife safari. You can explore iconic destinations such as Tarangire National Park, the Ngorongoro Crater, or Serengeti National Park.", 'accommodation' => 'Departure day', 'meals' => ['Breakfast']];
+            $mountainIncludes = [
+                '2 nights hotel in Moshi: bed & breakfast',
+                'Private transport to / from Kilimanjaro International Airport to your hotel in Moshi',
+                'Qualified guides with mountain crew',
+                'National Park fees',
+                '18% VAT on tour fees and services',
+                'Transport',
+                'Rescue fees',
+                'All needs on the mountain (breakfast, lunch and dinner)',
+                'Guides and porters accommodation and their entry fees on the mountain',
+                'Pulse oximeter',
+                'First aid kit',
+                'Emergency oxygen',
+                'Sleeping mats and sleeping bags',
+                'Treated water through the trek',
+                'Fair wages to guides and porters as approved by Kilimanjaro National Park authority',
+            ];
+            $mountainExcludes = ['Flights', 'Visa', 'Tips to mountain crew', 'Private toilet ($120 per group)', 'Laundry services'];
+            $numberDays = fn (array $days) => array_map(fn ($day, $i) => ['day' => $i + 1] + $day, $days, array_keys($days));
+
+            if ($slug === '5-day-machame-express') {
+                $route->update([
+                    'overview' => "The 5 Days Machame Express is a faster version of the famous Machame 'Whiskey Route', made for fit and experienced trekkers who want a quicker summit push. You still enjoy the full Machame scenery: lush rainforest, open moorland, the Shira Plateau, Lava Tower, the Barranco Wall and the high alpine desert.\n\nWith one day less on the mountain than the 6 day Machame, there is less time for acclimatisation and the summit day is long, as you descend all the way to Mweka Gate after reaching Uhuru Peak. We recommend this itinerary for climbers with previous high-altitude experience.\n\nQuick Facts: Duration 5 Days / 4 Nights; Starting Point Machame Gate; Ending Point Mweka Gate; Difficulty Strenuous; Accommodation Mountain camping; Summit Uhuru Peak 5,895m / 19,341ft; Best Time January to March and June to October.",
+                    'duration_days' => 5,
+                    'duration_nights' => 4,
+                    'theme' => 'Machame Express Climb',
+                    'skill_level' => 'Strenuous',
+                    'itinerary' => $numberDays([
+                        ['title' => 'Machame Gate (1800m) to Machame Camp (2835m)', 'description' => 'After breakfast you will be picked up at your hotel around 8:00 am and transferred to Machame Gate, passing coffee and banana plantations grown by the Chagga people. After park registration you start your Kilimanjaro climb through the tropical rainforest to Machame Camp (2835m), with a picnic lunch on the way. Dinner and overnight at Machame Camp.', 'accommodation' => 'Machame camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Machame Camp (2835m) to Shira Cave Camp (3750m)', 'description' => 'You start hiking around 8:00 am, climbing for about an hour to the top of the forest before continuing at a gentler gradient through the moorland zone. After lunch you continue up a rocky ridge onto the Shira Plateau, with views of the Western Breach and its glaciers. Dinner and overnight at Shira Cave Camp (3750m).', 'accommodation' => 'Shira camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira Cave Camp (3750m) to Lava Tower (4600m) to Barranco Camp (3900m)', 'description' => 'Following the "climb high, sleep low" principle, you hike into the alpine desert up to Lava Tower (4600m) for lunch, then descend to Barranco Camp (3900m). The descent offers beautiful views of the Western Breach and the Barranco Wall, and the camp sits in a valley below the wall with a memorable sunset. Dinner and overnight at Barranco Camp.', 'accommodation' => 'Barranco camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Barranco Camp (3900m) to Karanga to Barafu Camp (4640m)', 'description' => 'After breakfast you climb the Great Barranco Wall, a non-technical but long scramble over rocks, and continue to Karanga Camp for lunch and the last water stop before the summit. In the afternoon you trek through the alpine desert to Barafu Camp (4640m), the base camp for the summit. Early dinner and rest before the midnight start.', 'accommodation' => 'Barafu camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Barafu Camp (4640m) to Uhuru Peak (5895m) then down to Mweka Gate (1630m)', 'description' => "You wake around midnight for tea and cookies and climb the scree for 4 to 5 hours to reach Stella Point (5756m) on the crater rim as the first rays of sun appear. It takes about 1 hour more to reach Uhuru Peak (5895m), the highest point in Africa, where you take photos before descending to Barafu Camp for lunch and a rest.\n\nYou then continue the long descent past Millennium Camp and through the rainforest to Mweka Gate, where you collect your summit certificate. A private car takes you back to your hotel in Moshi for a warm shower and a well-deserved celebration.", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                    ]),
+                    'includes' => array_merge($mountainIncludes, ['All camping accommodations', 'Mountain tents']),
+                    'excludes' => $mountainExcludes,
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Classic mountain camping throughout the route, surrounded by dramatic volcanic landscapes, with hot meals and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/26.jpeg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'lemosho') {
+                $route->update([
+                    'overview' => "Trip outline: Day 1: arrival day · Days 2–9: on the mountain · Day 10: departure day.\n\nThe Lemosho Route approaches Kilimanjaro from the remote western side. It is one of the most beautiful routes on the mountain, starting in quiet rainforest at Lemosho Glades, crossing the whole Shira Plateau and joining the southern circuit via Lava Tower, the Barranco Wall and Karanga before the summit from Barafu Camp.\n\nWith 8 days on the mountain, Lemosho has one of the best acclimatisation profiles of any route, giving you an excellent chance of standing on Uhuru Peak (5,895m) while enjoying low crowds and outstanding scenery.",
+                    'duration_days' => 8,
+                    'duration_nights' => 7,
+                    'theme' => 'Western Wilderness Route',
+                    'pricing_tiers' => null,
+                    'skill_level' => 'Moderate',
+                    'itinerary' => $numberDays([
+                        $arrivalDay,
+                        ['title' => 'Lemosho Glades (2385m) to Big Tree Camp (2780m)', 'description' => "After breakfast you are picked up at around 8:00 AM and driven to Londorossi Gate on the western side of Kilimanjaro for park registration. The hike begins with a gentle ascent through the lush rainforest of the Lemosho Glades, where you may spot monkeys and birdlife, arriving at Mti Mkubwa (Big Tree) Camp for dinner and overnight.\nDistance covered: 7km / 4.3mi | Approx. time taken: 4 hours", 'accommodation' => 'Big Tree Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Big Tree Camp (2780m) to Shira 1 Camp (3600m)', 'description' => "Leave the forest behind and trek onto the Shira Plateau through open moorland and heath dotted with volcanic rock formations. Some sections are moderately steep, and Kibo Peak often appears above the clouds. Dinner and overnight at Shira 1 Camp.\nDistance covered: 8.5km / 5.3mi | Approx. time taken: 7 hrs", 'accommodation' => 'Shira 1 Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira 1 Camp (3600m) to Shira 2 Camp (3900m)', 'description' => "A short and gentle day across the Shira Plateau to help acclimatisation, with views of Kibo and the Northern Ice Fields. After a hot lunch at camp, you take a short afternoon acclimatisation walk to higher altitude before returning for dinner and overnight.\nDistance covered: 8km / 5mi | Approx. time taken: 5 hours", 'accommodation' => 'Shira 2 Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira 2 Camp (3900m) to Lava Tower (4600m) to Barranco Camp (3960m)', 'description' => "Enter the high alpine desert and climb to Lava Tower (4,600m) beneath the Western Breach glaciers for lunch. In the afternoon you descend for about 3 hours to Barranco Camp, set in a valley beneath the impressive Barranco Wall, for sunset, dinner and overnight.\nDistance covered: 10km / 6.2mi | Approx. time taken: 7 hrs", 'accommodation' => 'Barranco Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Barranco Camp (3960m) to Karanga Camp (3963m)', 'description' => "Climb the Barranco Wall to around 4,200m, a rocky but non-technical scramble with views of the Heim Glacier, then continue through the scenic Karanga Valley to Karanga Camp, where you rest and prepare for the next stage.\nDistance covered: 5.5km / 3.4mi | Approx. time taken: 5 hours", 'accommodation' => 'Karanga Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Karanga Camp (3963m) to Barafu Camp (4640m)', 'description' => "Trek through dry, barren alpine landscape with views of Kibo and Mawenzi to Barafu Camp. After lunch you rest for the afternoon, have an early dinner and sleep before waking around midnight for the summit attempt.\nDistance covered: 3km / 1.9mi | Approx. time taken: 3 hours", 'accommodation' => 'Barafu Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Barafu Camp (4640m) to Uhuru Peak (5895m) & down to Millennium Camp (3790m)', 'description' => "Starting around midnight, climb the steep scree slopes for 4–5 hours to Stella Point (5,756m) on the crater rim in time for sunrise, then continue for about 1 hour to Uhuru Peak (5,895m), the highest point in Africa. After photos and celebrations, descend to Barafu Camp for lunch and a rest, then continue down to Millennium Camp for dinner and overnight.\nDistance covered: 13.4km / 8.3mi | Approx. time taken: 12 – 15 hours", 'accommodation' => 'Millennium Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Millennium Camp (3790m) to Mweka Gate (1630m)', 'description' => "Descend through the lush Mweka rainforest to Mweka Gate, complete the park formalities and receive your official summit certificate. Your private vehicle then takes you back to your hotel in Moshi for a hot shower and celebration.\nDistance covered: 12.1km / 7.5mi | Approx. time taken: 6 hours", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        $departureDay,
+                    ]),
+                    'includes' => array_merge($mountainIncludes, ['All camping accommodations', 'Mountain tents']),
+                    'excludes' => $mountainExcludes,
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Comfortable mountain camping at each campsite along the Lemosho Route, with hot meals and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
+                    ],
+                    'gallery' => [
+                        'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'marangu') {
+                $route->update([
+                    'overview' => "Trip outline: Day 1: arrival day · Days 2–7: on the mountain · Day 8: departure day.\n\nThe Marangu Route, known as the 'Coca-Cola Route', is the only Kilimanjaro route with sleeping huts instead of tents. It climbs from Marangu Gate through rainforest and moorland to Mandara, Horombo and Kibo Huts, and descends the same way.\n\nThis 6 day itinerary includes an extra acclimatisation day at Horombo Hut with a hike to Zebra Rocks, giving you more time to adjust to the altitude before the summit. The gentle gradient and hut accommodation make Marangu a comfortable choice for first-time climbers.",
+                    'duration_days' => 6,
+                    'duration_nights' => 5,
+                    'theme' => 'The Coca-Cola Route',
+                    'pricing_tiers' => null,
+                    'skill_level' => 'Easy',
+                    'itinerary' => $numberDays([
+                        $arrivalDay,
+                        ['title' => 'Marangu Gate (1860m) to Mandara Hut (2700m)', 'description' => "After breakfast you are picked up from your hotel at around 8:00 AM and driven to Marangu Gate. After registration you hike for about 5 hours through lush rainforest, where you may see blue monkeys and black-and-white colobus monkeys, to Mandara Hut. If time allows, take a short walk to Maundi Crater for views towards Kenya. Overnight at Mandara Hut.\nDistance covered: 8.3km / 5.2mi | Approx. time taken: 5 hours", 'accommodation' => 'Mandara Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Mandara Hut (2700m) to Horombo Hut (3700m)', 'description' => "Leave the rainforest behind and cross into the heath and moorland zone. At Horombo Hut you can relax and enjoy views of Kibo and Mawenzi Peaks and the plains of the Masai Steppe. Overnight at Horombo Hut.\nDistance covered: 12.5km / 7.8mi | Approx. time taken: 4 – 6 hours", 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Acclimatization trek to Zebra Rocks (4020m) and back to Horombo Hut (3700m)', 'description' => "An acclimatisation day to help your body adjust to the altitude. Hike up to Zebra Rocks (4,020m), named for their black-and-white striped appearance, then return to Horombo Hut for lunch and an afternoon of rest. Overnight at Horombo Hut.\nDistance covered: 5km / 3.1mi | Approx. time taken: 3 – 4 hours", 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Horombo Hut (3700m) to Kibo Hut (4700m)', 'description' => "Cross the vast Saddle, the high-altitude desert between Kibo and Mawenzi, to reach Kibo Hut in about 5–6 hours. After lunch you rest, have an early dinner and go to bed early before the midnight start.\nDistance covered: 9.5km / 5.9mi | Approx. time taken: 5 – 6 hours", 'accommodation' => 'Kibo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Kibo Hut (4700m) to Uhuru Peak (5895m) & down to Horombo Hut (3700m)', 'description' => "Wake around 1:00 AM and climb past Hans Meyer Cave (5,220m) to Gilman's Point (5,681m) on the crater rim around sunrise. Continue for about 1 hr 30 min along the rim to Uhuru Peak (5,895m), the highest point in Africa. Descend to Kibo Hut for lunch and a 1–2 hour rest, then continue down to Horombo Hut for dinner and your last night on the mountain.\nDistance covered: 22km / 13.7mi", 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Horombo Hut (3700m) to Marangu Gate (1860m)', 'description' => "Descend through the heath and moorland to Mandara Hut for a hot lunch, then continue through the rainforest to Marangu Gate. Complete the final formalities, say goodbye to your crew and transfer back to your hotel in Moshi to celebrate.\nDistance covered: 20.8km / 12.9mi | Approx. time taken: 8 hours", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        $departureDay,
+                    ]),
+                    'includes' => array_merge($mountainIncludes, ['Mountain hut accommodation']),
+                    'excludes' => $mountainExcludes,
+                    'accommodations' => [
+                        ['name' => 'Mountain Huts', 'description' => 'Sleep in the Mandara, Horombo and Kibo mountain huts, with shared dormitory-style rooms, dining halls and hot meals prepared by your crew.', 'image' => 'images/kilimanjaro images/Marangu3.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/kilimanjaro images/Marangu3.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'rongai') {
+                $route->update([
+                    'overview' => "Trip outline: Day 1: arrival day · Days 2–8: on the mountain · Day 9: departure day.\n\nThe Rongai Route is the only Kilimanjaro route that approaches the mountain from the north, close to the Kenyan border. It is known for quiet trails, remote wilderness and a gradual ascent, and because the northern side receives less rain, it is a good choice during the rainy season.\n\nThis 7 day itinerary adds an acclimatisation day at Mawenzi Tarn Hut beneath the dramatic cliffs of Mawenzi Peak, giving you a more comfortable pace before the summit. After reaching Uhuru Peak (5,895m), you descend via the Marangu Route, experiencing two different sides of Kilimanjaro.",
+                    'duration_days' => 7,
+                    'duration_nights' => 6,
+                    'theme' => 'Northern Wilderness Route',
+                    'pricing_tiers' => null,
+                    'skill_level' => 'Moderate',
+                    'itinerary' => $numberDays([
+                        $arrivalDay,
+                        ['title' => 'Nalemoru Gate (1,990 m) to Simba Camp (2,625 m)', 'description' => "After breakfast, drive to Nale Moru village, the starting point of the Rongai Route. The trek begins through farmland and pine forest, where you may spot colobus monkeys and, with luck, elephants or buffaloes, before reaching Simba Camp at the edge of the moorland. Dinner and overnight at Simba Camp.\nDistance: 8 km / 5 mi | Hiking time: 4–5 hrs", 'accommodation' => 'Simba Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Simba Camp (2,625 m) to Kikelewa Camp (3,630 m)', 'description' => "A steady climb through the moorland, passing Second Cave (3,480 m), with views of Kibo Peak and the Eastern Ice Fields. Rest at Kikelewa Camp and enjoy the mountain scenery. Dinner and overnight.\nDistance: 10 km / 6.2 mi | Hiking time: 6–7 hrs", 'accommodation' => 'Kikelewa Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Kikelewa Camp (3,630 m) to Mawenzi Tarn Hut (4,310 m)', 'description' => "A short but steep climb across grassy slopes with views over the Kenyan plains, reaching Mawenzi Tarn Hut beneath the cliffs of Mawenzi Peak. The afternoon is for rest or a short acclimatisation walk. Dinner and overnight.\nDistance: 4 km / 2.5 mi | Hiking time: 3–4 hrs", 'accommodation' => 'Mawenzi Tarn Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Acclimatization day at Mawenzi Tarn Hut (4,310 m)', 'description' => "An extra day to help your body adjust to the altitude before the summit. After breakfast, take a guided hike higher towards the base of Mawenzi Peak for views of its jagged cliffs, Kibo and the Saddle, then return to Mawenzi Tarn Hut for lunch and an afternoon of rest. Dinner and overnight.\nHiking time: 3–4 hrs", 'accommodation' => 'Mawenzi Tarn Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Mawenzi Tarn Hut (4,310 m) to Kibo Hut (4,700 m)', 'description' => "Cross the Saddle, the lunar-like high-altitude desert between Mawenzi and Kibo, with views of the main summit ahead. At Kibo Hut you have lunch, rest, and an early dinner before the midnight start.\nDistance: 8 km / 5 mi | Hiking time: 5–6 hrs", 'accommodation' => 'Kibo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Kibo Hut (4,700 m) to Uhuru Peak (5,895 m) & Horombo Hut (3,700 m)', 'description' => "Wake around midnight and climb past Hans Meyer Cave (5,220 m) to Gilman's Point (5,681 m) on the crater rim around sunrise, then continue for 1–2 hours to Uhuru Peak (5,895 m), the highest point in Africa. After celebrating, descend to Kibo Hut for a warm meal and short rest, then continue down to Horombo Hut for the night.\nDistance: 22 km / 13.7 mi | Hiking time: 12–15 hrs", 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Horombo Hut (3,700 m) to Marangu Gate (1,860 m)', 'description' => "Descend through the heath and moorland to Mandara Hut for lunch, then through the rainforest to Marangu Gate. After the final park formalities and goodbyes to your crew, transfer back to your hotel in Moshi to celebrate your climb.\nDistance: 20.8 km / 12.9 mi | Hiking time: 8 hrs", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        $departureDay,
+                    ]),
+                    'includes' => array_merge($mountainIncludes, ['All camping and hut accommodations', 'Mountain tents']),
+                    'excludes' => $mountainExcludes,
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Mountain camping along the quiet northern slopes, with hut stays on the descent via the Marangu side, hot meals and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/kili2.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/kilimanjaro images/kili2.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'northern-circuit') {
+                $route->update([
+                    'overview' => "Trip outline: Day 1: arrival day · Days 2–10: on the mountain · Day 11: departure day.\n\nThe Northern Circuit is the longest route on Kilimanjaro and one of the most rewarding. Starting from Londorossi Gate in the west, it crosses the Shira Plateau and then circles around the quiet northern slopes of Kibo, with sweeping views towards Kenya, before summiting via Gilman's Point.\n\nWith 9 days on the mountain, it offers the best acclimatisation and the highest summit success rate of any route, together with remote wilderness, very few other climbers and stunning 360° panoramas.",
+                    'duration_days' => 9,
+                    'duration_nights' => 8,
+                    'theme' => 'The Grand Circuit',
+                    'pricing_tiers' => null,
+                    'skill_level' => 'Moderate',
+                    'itinerary' => $numberDays([
+                        $arrivalDay,
+                        ['title' => 'Londorossi Gate (2,100 m) – Mti Mkubwa Camp (2,650 m)', 'description' => "Drive about 2 hours from Moshi to Londorossi Gate on the western side of Kilimanjaro. After registration, continue to the trailhead and trek through lush rainforest, where elephants, giraffes or buffaloes are sometimes seen, to Mti Mkubwa Camp for dinner and overnight.\nDistance: 7 km | Hiking time: 3–4 hours | Habitat: Rainforest", 'accommodation' => 'Mti Mkubwa Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Mti Mkubwa Camp (2,650 m) – Shira I Camp (3,600 m)', 'description' => "Finish the rainforest section and enter the moorland, where the landscape opens up with wide mountain views. Continue gently onto the Shira Plateau to Shira I Camp for dinner and overnight.\nDistance: 8 km | Hiking time: About 5 hours | Habitat: Rainforest / Moorland", 'accommodation' => 'Shira I Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira I Camp (3,600 m) – Shira II Camp (3,900 m)', 'description' => "A short, gradual walk east across the Shira Plateau with panoramic views, allowing your body to keep adjusting to the altitude. Lunch, dinner and overnight at Shira II Camp.\nDistance: 10 km | Hiking time: About 3 hours | Habitat: Low Alpine Zone", 'accommodation' => 'Shira II Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira II Camp (3,900 m) – Moir Camp (4,200 m)', 'description' => "Cross the northern side of the Shira Plateau towards the Lava Tower area, hiking higher for acclimatisation before descending to Moir Hut Camp. Lunch and an afternoon of rest, then dinner and overnight.\nDistance: 4 km | Hiking time: About 2 hours | Habitat: Low Alpine Zone", 'accommodation' => 'Moir Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Moir Camp (4,200 m) – Pofu Camp (4,000 m)', 'description' => "Climb out of Moir Valley, with an optional detour to Little Lent Hill (4,375 m), then follow gentle ups and downs along the remote northern slopes with views towards the Kenya–Tanzania border. Arrive at Pofu (Buffalo) Camp around midday for lunch and rest.\nDistance: 10 km | Hiking time: 5–7 hours | Habitat: High Alpine Zone", 'accommodation' => 'Pofu Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Pofu Camp (4,000 m) – Third Cave Camp (3,800 m)', 'description' => "Climb over Buffalo Ridge and continue east along the northern slopes through rugged, open country, then descend gradually to Rongai Third Cave. A shorter day with extra time to rest and acclimatise.\nDistance: 7 km | Hiking time: About 4 hours | Habitat: Alpine Zone", 'accommodation' => 'Third Cave Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Third Cave Camp (3,800 m) – School Hut (4,800 m)', 'description' => "Ascend steadily across the Saddle between Kibo and Mawenzi to School Hut. Settle in, have an early dinner and rest before waking before midnight for the summit.\nDistance: 7 km | Hiking time: 4–5 hours | Habitat: High Alpine Zone", 'accommodation' => 'School Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'School Hut (4,800 m) – Uhuru Peak (5,895 m) – Millennium Camp (3,790 m)', 'description' => "Start at around midnight, climbing past Hans Meyer Cave to Gilman's Point (5,681 m) for sunrise over Mawenzi. Continue along the crater rim to Uhuru Peak (5,895 m), then descend via Stella Point and the scree slopes to Barafu Camp for a short rest, and on to Millennium Camp for dinner and your final night on the mountain.\nDistance: 16 km | Hiking time: About 12 hours | Habitat: Glacial / Alpine Zones", 'accommodation' => 'Millennium Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Millennium Camp (3,790 m) – Mweka Gate (1,630 m)', 'description' => "Descend through the montane rainforest to Mweka Gate, sign out and receive your summit certificate: green for Gilman's Point, gold for Uhuru Peak. Transfer back to your hotel in Moshi for rest and celebration.\nDistance: 14 km | Hiking time: About 5 hours | Habitat: Rainforest", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        $departureDay,
+                    ]),
+                    'includes' => array_merge($mountainIncludes, ['All camping accommodations', 'Mountain tents']),
+                    'excludes' => $mountainExcludes,
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Remote wilderness camping around the northern slopes of Kilimanjaro, with hot meals and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
+                    ],
+                ]);
+            }
         }
     }
 
@@ -1873,7 +2052,7 @@ class PackagesSeeder extends Seeder
         ];
 
         foreach ($data as $i => [$slug, $name, $desc, $price, $duration, $days, $nights, $img]) {
-            SpecialPackage::updateOrCreate(['slug' => $slug], [
+            $package = SpecialPackage::updateOrCreate(['slug' => $slug], [
                 'name' => $name,
                 'description' => $desc,
                 'price_from' => $price,
@@ -1885,6 +2064,116 @@ class PackagesSeeder extends Seeder
                 'sort_order' => $i,
                 'is_published' => true,
             ]);
+
+            $safariIncludes = ['4x4 safari Land Cruiser with pop-up roof', 'Professional English-speaking safari guide/driver', 'Park and entrance fees', 'Lodge, hotel, or camping accommodation', 'All meals during the safari', 'Bottled water and fruit', 'Government taxes and levies', '24-hour support', 'Medical kit, binoculars, cooler', 'Wi-Fi on board', 'Hot lunch hamper', 'Power outlets for charging devices', 'All activities as per the itinerary'];
+            $zanzibarIncludes = ['Zanzibar beach hotel, bed & breakfast', 'All transfers in Zanzibar', 'Zanzibar tours as per the itinerary, with tour fees and fruits'];
+            $comboExcludes = ['International & domestic flights', 'Visa fees', 'Travel insurance', 'Laundry services', 'Tips to guides and crew', 'Personal expenses (souvenirs, etc.)', 'Alcoholic and soft drinks at the hotel', 'Optional activities'];
+            $lodgeStay = ['name' => 'Safari Lodges & Tented Camps', 'description' => 'Comfortable lodge or tented camp accommodation with full-board meals throughout the safari.', 'image' => 'images/safaris/IMG-4419-1780110169806-65108106.jpg'];
+            $beachStay = ['name' => 'Beach Resorts & Hotels', 'description' => 'Comfortable beachfront accommodation with breakfast included throughout your island stay.', 'image' => 'images/zanzibar images/beach3.png'];
+
+            if ($slug === 'safari-zanzibar-combo') {
+                $package->update([
+                    'overview' => "Route: Tarangire, Serengeti (2 nights), Ngorongoro Crater, then 5 days in Zanzibar.\n\nThe perfect combination of wildlife and beach. Spend five days on a private safari through Tarangire, the Serengeti and the Ngorongoro Crater, with a Maasai cultural visit on the way, then fly to Zanzibar for sun, white sand and turquoise water on the beaches of Nungwi.\n\nOn the island you can explore historic Stone Town and a spice farm, snorkel in the Indian Ocean, sail on a Safari Blue dhow trip and visit Prison Island before your departure.",
+                    'theme' => 'Safari & Beach',
+                    'skill_level' => 'Easy',
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Moshi/Arusha - Tarangire National Park', 'description' => "Early morning pickup from your hotel in Moshi or Arusha and drive to Tarangire National Park, famous for its large elephant herds, ancient baobab trees and diverse wildlife. Enjoy a full day of game viewing, looking out for giraffes, zebras, buffaloes, lions and many bird species, then continue to your accommodation for dinner and overnight.", 'accommodation' => 'Tarangire/Karatu area - Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 2, 'title' => 'Tarangire/Karatu - Serengeti National Park', 'description' => "After breakfast, drive through the Ngorongoro highlands and descend onto the vast plains of the Serengeti. Game drive towards the Seronera area in central Serengeti, rich in wildlife thanks to its permanent water sources, before dinner and overnight.", 'accommodation' => 'Serengeti - Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Full-Day Serengeti Wildlife Adventure', 'description' => "A full day exploring the Serengeti with your guide, searching for large herds of wildebeest and zebras, elephants, giraffes and big cats such as lions, cheetahs and leopards. When your dates match the Great Migration or calving season, your guide will plan the route around the herds.", 'accommodation' => 'Serengeti - Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Serengeti - Maasai Cultural Visit - Ngorongoro Area', 'description' => "Enjoy a morning game drive in the Serengeti, then travel towards the Ngorongoro area. On the way, visit a Maasai community to learn about their traditions, homes and daily life. Dinner and overnight in the Ngorongoro area.", 'accommodation' => 'Ngorongoro area - Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Ngorongoro Crater - Arusha', 'description' => "Descend into the Ngorongoro Crater for a game drive of about 6 hours, looking for lions, elephants, buffaloes, hippos, flamingos and the endangered black rhinoceros. After a picnic lunch, drive back to Arusha for your last night on the mainland.", 'accommodation' => 'Hotel in Arusha', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 6, 'title' => 'Fly to Zanzibar - Nungwi Beach', 'description' => "Transfer to Arusha airport for your flight to Zanzibar. On arrival you are met by our representative and transferred to your beach hotel in Nungwi, on the island's northern tip. Spend the afternoon relaxing on the beach.", 'accommodation' => 'Nungwi beach hotel', 'meals' => ['Breakfast']],
+                        ['day' => 7, 'title' => 'Spice Farm & Stone Town Tour', 'description' => "Visit a spice farm to see how Zanzibar's famous spices grow, taste seasonal fruits and enjoy lunch in the village. In the afternoon, explore historic Stone Town: the old slave market site, the daily market, the House of Wonders, the Old Fort and its narrow streets.", 'accommodation' => 'Nungwi beach hotel', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 8, 'title' => 'Snorkeling / Aquarium Tour', 'description' => "Head out for a snorkeling trip in the warm waters of the Indian Ocean or visit the natural aquarium to swim with turtles, then return to the hotel for an afternoon on the beach.", 'accommodation' => 'Nungwi beach hotel', 'meals' => ['Breakfast']],
+                        ['day' => 9, 'title' => 'Safari Blue Tour', 'description' => "A full-day Safari Blue trip on a traditional dhow, with snorkeling, sandbank stops and a seafood lunch, before returning to the hotel for your last evening on the island.", 'accommodation' => 'Nungwi beach hotel', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 10, 'title' => 'Prison Island & Departure', 'description' => "Take a boat trip from Stone Town to Prison Island to see the giant tortoises, then enjoy a hot lunch in a local restaurant before your transfer to the airport for departure.", 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => array_merge($safariIncludes, $zanzibarIncludes),
+                    'excludes' => $comboExcludes,
+                    'accommodations' => [$lodgeStay, $beachStay],
+                    'gallery' => ['images/safaris/serengeti-migration.jpg', 'images/safaris/elephant.jpg', 'images/zanzibar images/beach4.png', 'images/zanzibar images/Nungi kendwa.jpg'],
+                ]);
+            }
+
+            if ($slug === 'family-adventure-safari') {
+                $package->update([
+                    'overview' => "Route: Tarangire, Serengeti (2 nights), Maasai village, Ngorongoro Crater and Lake Manyara.\n\nA safari designed around families, with a relaxed pace, shorter driving days, family-friendly lodges with pools and time in the middle of the day to rest. Children will love spotting elephants among Tarangire's baobabs, lions on the Serengeti plains and flamingos in the Ngorongoro Crater, and our guides love sharing stories about the animals with young explorers.\n\nThe journey also includes a visit to a Maasai community, where the whole family can learn about Maasai traditions, homes and daily life.",
+                    'theme' => 'Family Safari',
+                    'skill_level' => 'Easy',
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Arrive in Tanzania', 'description' => "Upon arrival at Kilimanjaro International Airport, you are welcomed by our team and transferred to your hotel in Arusha or Moshi. Your guide will meet you for a safari briefing, and the rest of the day is free to relax and recover from your journey.", 'accommodation' => 'Hotel in Arusha / Moshi', 'meals' => ['Dinner']],
+                        ['day' => 2, 'title' => 'Arusha/Moshi - Tarangire National Park', 'description' => "After breakfast, drive to Tarangire National Park, famous for its large elephant herds and giant baobab trees. Enjoy game drives looking for giraffes, zebras, buffaloes, lions and colourful birds, with a picnic lunch in the park. In the afternoon continue to your family-friendly lodge in the Karatu area.", 'accommodation' => 'Karatu area - family-friendly lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Karatu - Serengeti National Park', 'description' => "Drive through the Ngorongoro highlands, with a stop at the crater viewpoint, and descend onto the endless plains of the Serengeti. Game drive to the Seronera area in central Serengeti, known for its lions, leopards and cheetahs. Dinner and overnight in the Serengeti.", 'accommodation' => 'Serengeti - family-friendly lodge/tented camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Serengeti - Morning & Afternoon Game Drives', 'description' => "Head out early when the animals are most active, then return to the lodge for lunch and a relaxing midday break by the pool. Go out again in the late afternoon for another game drive and the beautiful Serengeti sunset.", 'accommodation' => 'Serengeti - family-friendly lodge/tented camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Serengeti - Maasai Village Visit - Karatu', 'description' => "Enjoy a final morning game drive in the Serengeti, then travel back towards the Ngorongoro area. On the way, visit a Maasai community where the family can see traditional homes, watch Maasai dances and learn about their way of life. Dinner and overnight in the Karatu area.", 'accommodation' => 'Karatu area - family-friendly lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Ngorongoro Crater', 'description' => "Descend into the Ngorongoro Crater for a game drive on the crater floor, home to black rhino, lions, elephants, buffaloes, hippos, hyenas and flamingos. Enjoy a picnic lunch by the hippo pool before returning to your lodge for a relaxing afternoon.", 'accommodation' => 'Karatu area - family-friendly lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 7, 'title' => 'Lake Manyara National Park - Arusha/Moshi', 'description' => "After breakfast, visit Lake Manyara National Park, with its groundwater forest, baboons and blue monkeys, hippos, flamingos and famous tree-climbing lions. After a picnic lunch, drive back to Arusha or Moshi for your final night.", 'accommodation' => 'Hotel in Arusha / Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 8, 'title' => 'Depart Tanzania', 'description' => "After breakfast, transfer to Kilimanjaro International Airport for your flight home, or continue your holiday with a Zanzibar beach extension.", 'accommodation' => 'Departure day', 'meals' => ['Breakfast']],
+                    ],
+                    'includes' => array_merge($safariIncludes, ['Hotel in Arusha / Moshi before and after the safari', 'Airport transfers', 'Maasai village visit']),
+                    'excludes' => $comboExcludes,
+                    'accommodations' => [['name' => 'Family-Friendly Lodges', 'description' => 'Lodges and tented camps chosen for families, with family rooms, swimming pools where available and full-board meals.', 'image' => 'images/safaris/IMG-4419-1780110169806-65108106.jpg']],
+                    'gallery' => ['images/safaris/elephant.jpg', 'images/safaris/serengeti-migration.jpg', 'images/safaris/wildbeet.jpg'],
+                ]);
+            }
+
+            if ($slug === 'honeymoon-journey') {
+                $package->update([
+                    'overview' => "Route: Tarangire, Central Serengeti (2 nights), Ngorongoro Crater rim, then 5 days in Zanzibar.\n\nA romantic journey for newlyweds, combining a private safari through Tanzania's most beautiful parks with a relaxing beach finale in Zanzibar. Stay in intimate lodges and camps, enjoy sundowners on the Serengeti plains and dinner under the stars, and wake up to views over the Ngorongoro Crater.\n\nOn Zanzibar, relax at a beach resort, explore Stone Town and a spice farm, and snorkel the crystal-clear waters around Mnemba Atoll.",
+                    'theme' => 'Romantic Safari & Beach',
+                    'skill_level' => 'Easy',
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Arrive in Tanzania', 'description' => "Upon arrival at Kilimanjaro International Airport, you are welcomed by our team and transferred to your hotel in Arusha to relax after your journey.", 'accommodation' => 'Hotel in Arusha', 'meals' => ['Dinner']],
+                        ['day' => 2, 'title' => 'Arusha - Tarangire National Park', 'description' => "Drive to Tarangire National Park for a game drive among its large elephant herds and giant baobab trees, with a picnic lunch in the park. In the afternoon continue to your lodge in the Karatu highlands for dinner and overnight.", 'accommodation' => 'Karatu area - Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Karatu - Central Serengeti', 'description' => "Drive through the Ngorongoro highlands, with views over the crater, and descend onto the endless Serengeti plains. Game drive to Central Serengeti (Seronera), one of the richest wildlife areas in the park, and end the day with a sundowner on the plains.", 'accommodation' => 'Central Serengeti - Luxury tented camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Central Serengeti - Full Day Game Drive', 'description' => "Spend a full day exploring Central Serengeti. The Seronera River valley has resident wildlife all year round: lions, leopards, cheetahs, elephants, giraffes, hippos and large herds of zebra and wildebeest. Enjoy a romantic dinner at camp under the stars.", 'accommodation' => 'Central Serengeti - Luxury tented camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Central Serengeti - Ngorongoro Crater rim', 'description' => "After a morning game drive, leave the Serengeti via Naabi Hill Gate and drive up to the Ngorongoro Crater rim for dinner and overnight, with beautiful views over the crater.", 'accommodation' => 'Ngorongoro Crater rim - Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Ngorongoro Crater - Arusha', 'description' => "Descend into the Ngorongoro Crater for a game drive of about 6 hours, searching for black rhino, lions, elephants, buffaloes, hippos and flamingos. After a picnic lunch, drive back to Arusha.", 'accommodation' => 'Hotel in Arusha', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 7, 'title' => 'Fly to Zanzibar', 'description' => "Transfer to Arusha airport for your flight to Zanzibar. You are met on arrival and transferred to your beach resort to relax by the ocean.", 'accommodation' => 'Zanzibar beach resort', 'meals' => ['Breakfast']],
+                        ['day' => 8, 'title' => 'Spice Farm & Stone Town Tour', 'description' => "Visit a spice farm to see and taste Zanzibar's famous spices and seasonal fruits, then explore Stone Town's narrow streets, markets, the House of Wonders and the Old Fort.", 'accommodation' => 'Zanzibar beach resort', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 9, 'title' => 'Mnemba Atoll Snorkeling', 'description' => "Take a boat trip to the waters around Mnemba Atoll for snorkeling among colourful coral, tropical fish and, with luck, dolphins and turtles, then return to the resort for a relaxing afternoon.", 'accommodation' => 'Zanzibar beach resort', 'meals' => ['Breakfast']],
+                        ['day' => 10, 'title' => 'Beach Relaxation', 'description' => "A free day to enjoy the beach, the pool or a spa treatment, with an optional sunset dhow cruise in the evening.", 'accommodation' => 'Zanzibar beach resort', 'meals' => ['Breakfast']],
+                        ['day' => 11, 'title' => 'Departure', 'description' => "After breakfast, transfer to Zanzibar airport for your flight home.", 'accommodation' => 'Departure day', 'meals' => ['Breakfast']],
+                    ],
+                    'includes' => array_merge($safariIncludes, $zanzibarIncludes, ['Hotel in Arusha before the safari and before your Zanzibar flight', 'Airport transfers']),
+                    'excludes' => $comboExcludes,
+                    'accommodations' => [['name' => 'Luxury Lodges & Tented Camps', 'description' => 'Intimate luxury lodges and tented camps with full-board meals throughout the safari.', 'image' => 'images/safaris/IMG-4419-1780110169806-65108106.jpg'], $beachStay],
+                    'gallery' => ['images/safaris/zebra-with-baby-dust-against-setting-sun-kenya-tanzania-national-park-serengeti-maasai-mara-1780114075090-760945481.jpg', 'images/safaris/serengeti-migration.jpg', 'images/zanzibar images/beach7.png', 'images/zanzibar images/beach9.png'],
+                ]);
+            }
+
+            if ($slug === 'kili-safari-zanzibar') {
+                $package->update([
+                    'overview' => "Route: Kilimanjaro via the Machame Route (6 days), a 4 day safari through Tarangire, the Serengeti and the Ngorongoro Crater, then Zanzibar.\n\nThe full Tanzania experience in one journey. Climb Mount Kilimanjaro on the scenic Machame 'Whiskey Route' to stand on Uhuru Peak (5,895m), the roof of Africa. Then trade your hiking boots for a safari vehicle and explore Tarangire, the Serengeti and the Ngorongoro Crater.\n\nFinish with well-deserved days on the white-sand beaches of Zanzibar, with Stone Town, a spice farm, a Safari Blue dhow trip and Prison Island.",
+                    'theme' => 'Summit, Safari & Beach',
+                    'skill_level' => 'Challenging',
+                    'itinerary' => [
+                        ['day' => 1, 'title' => 'Arrive in Tanzania', 'description' => "Upon arrival at Kilimanjaro International Airport, you are welcomed by our team and transferred to your hotel in Moshi. Later you meet your mountain guide for a briefing and equipment check. Any missing equipment can be rented before the climb.", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Dinner']],
+                        ['day' => 2, 'title' => 'Machame Gate (1800m) to Machame Camp (2835m)', 'description' => "Drive to Machame Gate past coffee and banana plantations of the Chagga people. After registration, climb through the tropical rainforest to Machame Camp, with a picnic lunch on the way.", 'accommodation' => 'Machame camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 3, 'title' => 'Machame Camp (2835m) to Shira Cave Camp (3750m)', 'description' => "Climb to the top of the forest and continue through the moorland and up a rocky ridge onto the Shira Plateau, with views of the Western Breach and its glaciers.", 'accommodation' => 'Shira camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 4, 'title' => 'Shira Cave Camp (3750m) to Lava Tower (4600m) to Barranco Camp (3900m)', 'description' => "Climb high to Lava Tower (4600m) for acclimatisation, then descend to Barranco Camp in a valley below the Barranco Wall, with a memorable sunset.", 'accommodation' => 'Barranco camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 5, 'title' => 'Barranco Camp (3900m) to Barafu Camp (4640m)', 'description' => "Scramble up the Great Barranco Wall and continue to Karanga Camp for lunch, then through the alpine desert to Barafu Camp, the base camp for the summit. Early dinner and rest.", 'accommodation' => 'Barafu camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 6, 'title' => 'Barafu Camp to Uhuru Peak (5895m) then down to Millennium Camp (3790m)', 'description' => "Start around midnight and climb the scree to Stella Point (5756m) for sunrise, then continue for about 1 hour to Uhuru Peak (5895m), the highest point in Africa. Descend to Barafu Camp for lunch and continue down to Millennium Camp for the night.", 'accommodation' => 'Millennium camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 7, 'title' => 'Millennium Camp (3790m) to Mweka Gate (1630m) - Moshi', 'description' => "Descend through the rainforest to Mweka Gate and collect your summit certificate, then transfer to your hotel in Moshi for a warm shower and celebration.", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 8, 'title' => 'Moshi - Tarangire National Park', 'description' => "Early morning pickup and drive to Tarangire National Park for a full day of game viewing among its large elephant herds and ancient baobab trees, then continue to your accommodation for dinner and overnight.", 'accommodation' => 'Tarangire/Karatu area - Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 9, 'title' => 'Tarangire Area - Serengeti National Park', 'description' => "Drive through the Ngorongoro highlands onto the Serengeti plains and game drive towards the wildlife-rich Seronera area, looking for lions, elephants, giraffes, zebras, wildebeest and, with luck, cheetahs or leopards.", 'accommodation' => 'Serengeti - Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 10, 'title' => 'Serengeti Game Drive - Ngorongoro Area', 'description' => "Enjoy an extended game drive in the Serengeti, with your guide choosing the best areas for the season, then travel to the Ngorongoro area for the night. Evenings in the highlands can be cool, so keep a warm layer handy.", 'accommodation' => 'Ngorongoro area - Mid-range/Luxury lodge', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['day' => 11, 'title' => 'Ngorongoro Crater - Arusha', 'description' => "Descend into the Ngorongoro Crater for a game drive of about 6 hours, looking for lions, elephants, buffaloes, hippos, flamingos and the endangered black rhinoceros, then drive back to Arusha.", 'accommodation' => 'Hotel in Arusha', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 12, 'title' => 'Fly to Zanzibar', 'description' => "Transfer to Arusha airport for your flight to Zanzibar. You are met on arrival and transferred to your beach hotel for an afternoon of relaxation.", 'accommodation' => 'Zanzibar beach hotel', 'meals' => ['Breakfast']],
+                        ['day' => 13, 'title' => 'Spice Farm & Stone Town Tour', 'description' => "Visit a spice farm to see how Zanzibar's spices grow and taste seasonal fruits, then explore historic Stone Town: the slave market site, the daily market, the House of Wonders, the Old Fort and the narrow streets.", 'accommodation' => 'Zanzibar beach hotel', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 14, 'title' => 'Safari Blue Tour', 'description' => "A full-day Safari Blue trip on a traditional dhow, with snorkeling, sandbank stops and a seafood lunch.", 'accommodation' => 'Zanzibar beach hotel', 'meals' => ['Breakfast', 'Lunch']],
+                        ['day' => 15, 'title' => 'Prison Island & Departure', 'description' => "Take a boat trip to Prison Island to see the giant tortoises, then enjoy a hot lunch before your transfer to the airport for departure.", 'accommodation' => 'Departure day', 'meals' => ['Breakfast', 'Lunch']],
+                    ],
+                    'includes' => array_merge(
+                        ['Hotel in Moshi before and after the climb (bed & breakfast)', 'Airport transfers', 'Qualified mountain guides with mountain crew', 'Kilimanjaro National Park and rescue fees', 'All camping accommodation and mountain tents', 'All meals on the mountain', 'Pulse oximeter, first aid kit and emergency oxygen', 'Sleeping mats and sleeping bags', 'Treated water through the trek', 'Fair wages to guides and porters as approved by Kilimanjaro National Park authority'],
+                        $safariIncludes,
+                        $zanzibarIncludes
+                    ),
+                    'excludes' => array_merge($comboExcludes, ['Private toilet on the mountain ($120 per group)']),
+                    'accommodations' => [['name' => 'Mountain Camping', 'description' => 'Classic mountain camping on the Machame Route with hot meals and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'], $lodgeStay, $beachStay],
+                    'gallery' => ['images/kilimanjaro images/Kilimanjaro.jpeg', 'images/safaris/serengeti-migration.jpg', 'images/zanzibar images/beach1.png'],
+                ]);
+            }
         }
     }
 
