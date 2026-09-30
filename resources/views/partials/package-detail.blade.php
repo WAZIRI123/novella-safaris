@@ -148,12 +148,7 @@
             <span>{{ $package->name }}</span>
         </div>
         <span class="eyebrow">{{ $package->category ?? $typeLabel }}</span>
-        <h1>
-            @if ($package->duration_days || $package->duration_nights)
-                {{ $package->duration_days ? $package->duration_days.' Days' : '' }}{{ $package->duration_nights ? ' | '.$package->duration_nights.' Nights ' : ' ' }}
-            @endif
-            {{ $package->name }}
-        </h1>
+        <h1>{{ $package->name }}</h1>
         <div class="pkg-hero-meta">
             @if ($package->duration_days)
                 <span class="chip"><i class="bi bi-calendar3"></i> {{ $package->duration_days }} Days</span>
