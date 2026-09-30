@@ -387,7 +387,6 @@ class PackagesSeeder extends Seeder
             ['6-day-marangu-huts', '6 Days Marangu Route (Huts)', 'Marangu 6-day with hut stays for a comfortable ascent.', ['Huts', 'Beginner-friendly'], 1556, 6, 'Easy', 'images/kilimanjaro images/marangu-5.jpg'],
             ['rongai', 'Rongai Route', 'The only northern approach. Drier, quieter, and the go-to route during the rainy season.', ['Quiet', 'Rainy-season option'], 1870, 7, 'Moderate', 'images/kilimanjaro images/kili2.jpg'],
             ['rongai-6-day', '6 Days Rongai Route', 'Shorter Rongai itinerary with good acclimatisation profile.', ['Quiet', 'Less-crowded'], 1720, 6, 'Moderate', 'images/23.jpeg'],
-            ['7-day-rongai-route', '7 Days Rongai Route', 'The quiet northern Rongai approach with an extra acclimatisation day at Mawenzi Tarn for a more comfortable summit.', ['Quiet', 'Rainy-season option', 'Extra acclimatisation'], 1870, 7, 'Moderate', 'images/kilimanjaro images/kili2.jpg'],
             ['umbwe', 'Umbwe Route', 'Steep, direct, and highly adventurous  one of the most demanding and less-crowded routes on Kilimanjaro.', ['Steep ascent', 'Less crowded', 'Experienced climbers'], 1890, 6, 'Very Challenging', 'images/kilimanjaro images/Kilimanjaro.jpeg'],
             ['6-day-umbwe-route-climb', '6 Day Umbwe Route Climb', 'A direct and demanding Kilimanjaro ascent through rainforest, steep ridges, and the southern circuit to the summit.', ['Steep', 'Direct ascent', 'Experienced route'], 2100, 6, 'Very Challenging', 'images/24.jpeg'],
             ['7-day-umbwe-route-climb', '7 Days Umbwe Route Climb', 'The steep, direct Umbwe ascent with an extra acclimatisation day at Barranco Camp before the summit push.', ['Steep', 'Extra acclimatisation day', 'Less crowded'], 2100, 7, 'Very Challenging', 'images/kilimanjaro images/Kilimanjaro.jpeg'],
@@ -397,7 +396,7 @@ class PackagesSeeder extends Seeder
             ['meru', 'Mount Meru Trek', "Kilimanjaro's little sister at 4,566m  a perfect warm-up climb, wildlife-filled and dramatic.", ['Warm-up climb', 'Wildlife'], 1120, 4, 'Moderate', 'images/kilimanjaro images/Kilimanjaro.jpeg'],
             ['4-day-mount-meru-trek', '4 Days Mount Meru Trek', 'A well-paced Mount Meru climb with an extra day for acclimatisation and a sunrise summit on Socialist Peak.', ['Warm-up climb', 'Wildlife', 'Sunrise summit'], 1120, 4, 'Moderate', 'images/kilimanjaro images/Kilimanjaro.jpeg'],
             ['mount-meru-3-day', '3 Days Mount Meru Trek', 'Short Mount Meru option for tighter schedules.', ['Warm-up', 'Wildlife'], 920, 3, 'Moderate', 'images/16.jpeg'],
-            ['6-day-lemosho-route-climb', '6 Days Lemosho Route Climb ', 'The 6 Days Lemosho Route is a scenic and adventurous Kilimanjaro trek starting from the western side of the mountain.', ['Strong fitness', 'Less crowded', 'Summit push'], 2150, 6, 'Challenging', 'images/20.jpeg'],
+            ['6-day-lemosho-route-climb', '6 Days Lemosho Route Climb   Novella Tanzanian Safaris & Trekking', 'The 6 Days Lemosho Route is a scenic and adventurous Kilimanjaro trek starting from the western side of the mountain.', ['Strong fitness', 'Less crowded', 'Summit push'], 2150, 6, 'Challenging', 'images/20.jpeg'],
             ['7-day-lemosho-route-climb', '7 Days Lemosho Route Climb', 'The 7-day Lemosho Route is one of Kilimanjaro most scenic routes  rainforest, Shira Plateau and the southern circuit to the summit.', ['Scenic', 'Great acclimatisation'], 2300, 7, 'Moderate to Challenging', 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
             ['8-day-lemosho-route-climb', '8 Days Lemosho Route Climb', 'The classic 8-day Lemosho itinerary with an extra night at Shira I Camp — a slower pace and more time to acclimatise.', ['Best acclimatisation', 'Scenic', 'Less crowded'], 2251, 8, 'Moderate', 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
             ['8-day-lemosho-route-climb-kosovo-camp', '8 Days Lemosho Route Climb   Kosovo Camp', 'The 8 Days Lemosho Kosovo Route is designed for trekkers seeking the scenery and acclimatisation profile of the Lemosho Route with the advantage of Kosovo Camp before the summit push.', ['Kosovo Camp', 'Shorter summit night', 'Excellent acclimatisation'], 2600, 8, 'Moderate to Challenging', 'images/kilimanjaro images/Kili-2024.webp'],
@@ -416,7 +415,7 @@ class PackagesSeeder extends Seeder
                 'image' => $img,
                 'category' => 'Trekking',
                 'sort_order' => $i,
-                'is_published' => ! in_array($slug, ['8-day-lemosho-route-climb-kosovo-camp', '8-day-lemosho-route-crater-camp']), // one package per number of days
+                'is_published' => true,
             ]);
 
             if ($slug === '8-day-lemosho-route-climb-kosovo-camp') {
@@ -1498,7 +1497,71 @@ class PackagesSeeder extends Seeder
                 ]);
             }
 
-            if ($slug === '7-day-rongai-route') {
+            if ($slug === 'lemosho') {
+                $route->update([
+                    'overview' => "Trip outline: Day 1: arrival day · Days 2–9: on the mountain · Day 10: departure day.\n\nThe Lemosho Route approaches Kilimanjaro from the remote western side. It is one of the most beautiful routes on the mountain, starting in quiet rainforest at Lemosho Glades, crossing the whole Shira Plateau and joining the southern circuit via Lava Tower, the Barranco Wall and Karanga before the summit from Barafu Camp.\n\nWith 8 days on the mountain, Lemosho has one of the best acclimatisation profiles of any route, giving you an excellent chance of standing on Uhuru Peak (5,895m) while enjoying low crowds and outstanding scenery.",
+                    'duration_days' => 8,
+                    'duration_nights' => 7,
+                    'theme' => 'Western Wilderness Route',
+                    'pricing_tiers' => null,
+                    'skill_level' => 'Moderate',
+                    'itinerary' => $numberDays([
+                        $arrivalDay,
+                        ['title' => 'Lemosho Glades (2385m) to Big Tree Camp (2780m)', 'description' => "After breakfast you are picked up at around 8:00 AM and driven to Londorossi Gate on the western side of Kilimanjaro for park registration. The hike begins with a gentle ascent through the lush rainforest of the Lemosho Glades, where you may spot monkeys and birdlife, arriving at Mti Mkubwa (Big Tree) Camp for dinner and overnight.\nDistance covered: 7km / 4.3mi | Approx. time taken: 4 hours", 'accommodation' => 'Big Tree Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Big Tree Camp (2780m) to Shira 1 Camp (3600m)', 'description' => "Leave the forest behind and trek onto the Shira Plateau through open moorland and heath dotted with volcanic rock formations. Some sections are moderately steep, and Kibo Peak often appears above the clouds. Dinner and overnight at Shira 1 Camp.\nDistance covered: 8.5km / 5.3mi | Approx. time taken: 7 hrs", 'accommodation' => 'Shira 1 Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira 1 Camp (3600m) to Shira 2 Camp (3900m)', 'description' => "A short and gentle day across the Shira Plateau to help acclimatisation, with views of Kibo and the Northern Ice Fields. After a hot lunch at camp, you take a short afternoon acclimatisation walk to higher altitude before returning for dinner and overnight.\nDistance covered: 8km / 5mi | Approx. time taken: 5 hours", 'accommodation' => 'Shira 2 Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira 2 Camp (3900m) to Lava Tower (4600m) to Barranco Camp (3960m)', 'description' => "Enter the high alpine desert and climb to Lava Tower (4,600m) beneath the Western Breach glaciers for lunch. In the afternoon you descend for about 3 hours to Barranco Camp, set in a valley beneath the impressive Barranco Wall, for sunset, dinner and overnight.\nDistance covered: 10km / 6.2mi | Approx. time taken: 7 hrs", 'accommodation' => 'Barranco Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Barranco Camp (3960m) to Karanga Camp (3963m)', 'description' => "Climb the Barranco Wall to around 4,200m, a rocky but non-technical scramble with views of the Heim Glacier, then continue through the scenic Karanga Valley to Karanga Camp, where you rest and prepare for the next stage.\nDistance covered: 5.5km / 3.4mi | Approx. time taken: 5 hours", 'accommodation' => 'Karanga Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Karanga Camp (3963m) to Barafu Camp (4640m)', 'description' => "Trek through dry, barren alpine landscape with views of Kibo and Mawenzi to Barafu Camp. After lunch you rest for the afternoon, have an early dinner and sleep before waking around midnight for the summit attempt.\nDistance covered: 3km / 1.9mi | Approx. time taken: 3 hours", 'accommodation' => 'Barafu Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Barafu Camp (4640m) to Uhuru Peak (5895m) & down to Millennium Camp (3790m)', 'description' => "Starting around midnight, climb the steep scree slopes for 4–5 hours to Stella Point (5,756m) on the crater rim in time for sunrise, then continue for about 1 hour to Uhuru Peak (5,895m), the highest point in Africa. After photos and celebrations, descend to Barafu Camp for lunch and a rest, then continue down to Millennium Camp for dinner and overnight.\nDistance covered: 13.4km / 8.3mi | Approx. time taken: 12 – 15 hours", 'accommodation' => 'Millennium Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Millennium Camp (3790m) to Mweka Gate (1630m)', 'description' => "Descend through the lush Mweka rainforest to Mweka Gate, complete the park formalities and receive your official summit certificate. Your private vehicle then takes you back to your hotel in Moshi for a hot shower and celebration.\nDistance covered: 12.1km / 7.5mi | Approx. time taken: 6 hours", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        $departureDay,
+                    ]),
+                    'includes' => array_merge($mountainIncludes, ['All camping accommodations', 'Mountain tents']),
+                    'excludes' => $mountainExcludes,
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Comfortable mountain camping at each campsite along the Lemosho Route, with hot meals and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
+                    ],
+                    'gallery' => [
+                        'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'marangu') {
+                $route->update([
+                    'overview' => "Trip outline: Day 1: arrival day · Days 2–7: on the mountain · Day 8: departure day.\n\nThe Marangu Route, known as the 'Coca-Cola Route', is the only Kilimanjaro route with sleeping huts instead of tents. It climbs from Marangu Gate through rainforest and moorland to Mandara, Horombo and Kibo Huts, and descends the same way.\n\nThis 6 day itinerary includes an extra acclimatisation day at Horombo Hut with a hike to Zebra Rocks, giving you more time to adjust to the altitude before the summit. The gentle gradient and hut accommodation make Marangu a comfortable choice for first-time climbers.",
+                    'duration_days' => 6,
+                    'duration_nights' => 5,
+                    'theme' => 'The Coca-Cola Route',
+                    'pricing_tiers' => null,
+                    'skill_level' => 'Easy',
+                    'itinerary' => $numberDays([
+                        $arrivalDay,
+                        ['title' => 'Marangu Gate (1860m) to Mandara Hut (2700m)', 'description' => "After breakfast you are picked up from your hotel at around 8:00 AM and driven to Marangu Gate. After registration you hike for about 5 hours through lush rainforest, where you may see blue monkeys and black-and-white colobus monkeys, to Mandara Hut. If time allows, take a short walk to Maundi Crater for views towards Kenya. Overnight at Mandara Hut.\nDistance covered: 8.3km / 5.2mi | Approx. time taken: 5 hours", 'accommodation' => 'Mandara Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Mandara Hut (2700m) to Horombo Hut (3700m)', 'description' => "Leave the rainforest behind and cross into the heath and moorland zone. At Horombo Hut you can relax and enjoy views of Kibo and Mawenzi Peaks and the plains of the Masai Steppe. Overnight at Horombo Hut.\nDistance covered: 12.5km / 7.8mi | Approx. time taken: 4 – 6 hours", 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Acclimatization trek to Zebra Rocks (4020m) and back to Horombo Hut (3700m)', 'description' => "An acclimatisation day to help your body adjust to the altitude. Hike up to Zebra Rocks (4,020m), named for their black-and-white striped appearance, then return to Horombo Hut for lunch and an afternoon of rest. Overnight at Horombo Hut.\nDistance covered: 5km / 3.1mi | Approx. time taken: 3 – 4 hours", 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Horombo Hut (3700m) to Kibo Hut (4700m)', 'description' => "Cross the vast Saddle, the high-altitude desert between Kibo and Mawenzi, to reach Kibo Hut in about 5–6 hours. After lunch you rest, have an early dinner and go to bed early before the midnight start.\nDistance covered: 9.5km / 5.9mi | Approx. time taken: 5 – 6 hours", 'accommodation' => 'Kibo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Kibo Hut (4700m) to Uhuru Peak (5895m) & down to Horombo Hut (3700m)', 'description' => "Wake around 1:00 AM and climb past Hans Meyer Cave (5,220m) to Gilman's Point (5,681m) on the crater rim around sunrise. Continue for about 1 hr 30 min along the rim to Uhuru Peak (5,895m), the highest point in Africa. Descend to Kibo Hut for lunch and a 1–2 hour rest, then continue down to Horombo Hut for dinner and your last night on the mountain.\nDistance covered: 22km / 13.7mi", 'accommodation' => 'Horombo Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Horombo Hut (3700m) to Marangu Gate (1860m)', 'description' => "Descend through the heath and moorland to Mandara Hut for a hot lunch, then continue through the rainforest to Marangu Gate. Complete the final formalities, say goodbye to your crew and transfer back to your hotel in Moshi to celebrate.\nDistance covered: 20.8km / 12.9mi | Approx. time taken: 8 hours", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        $departureDay,
+                    ]),
+                    'includes' => array_merge($mountainIncludes, ['Mountain hut accommodation']),
+                    'excludes' => $mountainExcludes,
+                    'accommodations' => [
+                        ['name' => 'Mountain Huts', 'description' => 'Sleep in the Mandara, Horombo and Kibo mountain huts, with shared dormitory-style rooms, dining halls and hot meals prepared by your crew.', 'image' => 'images/kilimanjaro images/Marangu3.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/kilimanjaro images/Marangu3.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
+                    ],
+                ]);
+            }
+
+            if ($slug === 'rongai') {
                 $route->update([
                     'overview' => "Trip outline: Day 1: arrival day · Days 2–8: on the mountain · Day 9: departure day.\n\nThe Rongai Route is the only Kilimanjaro route that approaches the mountain from the north, close to the Kenyan border. It is known for quiet trails, remote wilderness and a gradual ascent, and because the northern side receives less rain, it is a good choice during the rainy season.\n\nThis 7 day itinerary adds an acclimatisation day at Mawenzi Tarn Hut beneath the dramatic cliffs of Mawenzi Peak, giving you a more comfortable pace before the summit. After reaching Uhuru Peak (5,895m), you descend via the Marangu Route, experiencing two different sides of Kilimanjaro.",
                     'duration_days' => 7,
@@ -1530,6 +1593,39 @@ class PackagesSeeder extends Seeder
                 ]);
             }
 
+            if ($slug === 'northern-circuit') {
+                $route->update([
+                    'overview' => "Trip outline: Day 1: arrival day · Days 2–10: on the mountain · Day 11: departure day.\n\nThe Northern Circuit is the longest route on Kilimanjaro and one of the most rewarding. Starting from Londorossi Gate in the west, it crosses the Shira Plateau and then circles around the quiet northern slopes of Kibo, with sweeping views towards Kenya, before summiting via Gilman's Point.\n\nWith 9 days on the mountain, it offers the best acclimatisation and the highest summit success rate of any route, together with remote wilderness, very few other climbers and stunning 360° panoramas.",
+                    'duration_days' => 9,
+                    'duration_nights' => 8,
+                    'theme' => 'The Grand Circuit',
+                    'pricing_tiers' => null,
+                    'skill_level' => 'Moderate',
+                    'itinerary' => $numberDays([
+                        $arrivalDay,
+                        ['title' => 'Londorossi Gate (2,100 m) – Mti Mkubwa Camp (2,650 m)', 'description' => "Drive about 2 hours from Moshi to Londorossi Gate on the western side of Kilimanjaro. After registration, continue to the trailhead and trek through lush rainforest, where elephants, giraffes or buffaloes are sometimes seen, to Mti Mkubwa Camp for dinner and overnight.\nDistance: 7 km | Hiking time: 3–4 hours | Habitat: Rainforest", 'accommodation' => 'Mti Mkubwa Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Mti Mkubwa Camp (2,650 m) – Shira I Camp (3,600 m)', 'description' => "Finish the rainforest section and enter the moorland, where the landscape opens up with wide mountain views. Continue gently onto the Shira Plateau to Shira I Camp for dinner and overnight.\nDistance: 8 km | Hiking time: About 5 hours | Habitat: Rainforest / Moorland", 'accommodation' => 'Shira I Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira I Camp (3,600 m) – Shira II Camp (3,900 m)', 'description' => "A short, gradual walk east across the Shira Plateau with panoramic views, allowing your body to keep adjusting to the altitude. Lunch, dinner and overnight at Shira II Camp.\nDistance: 10 km | Hiking time: About 3 hours | Habitat: Low Alpine Zone", 'accommodation' => 'Shira II Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Shira II Camp (3,900 m) – Moir Camp (4,200 m)', 'description' => "Cross the northern side of the Shira Plateau towards the Lava Tower area, hiking higher for acclimatisation before descending to Moir Hut Camp. Lunch and an afternoon of rest, then dinner and overnight.\nDistance: 4 km | Hiking time: About 2 hours | Habitat: Low Alpine Zone", 'accommodation' => 'Moir Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Moir Camp (4,200 m) – Pofu Camp (4,000 m)', 'description' => "Climb out of Moir Valley, with an optional detour to Little Lent Hill (4,375 m), then follow gentle ups and downs along the remote northern slopes with views towards the Kenya–Tanzania border. Arrive at Pofu (Buffalo) Camp around midday for lunch and rest.\nDistance: 10 km | Hiking time: 5–7 hours | Habitat: High Alpine Zone", 'accommodation' => 'Pofu Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Pofu Camp (4,000 m) – Third Cave Camp (3,800 m)', 'description' => "Climb over Buffalo Ridge and continue east along the northern slopes through rugged, open country, then descend gradually to Rongai Third Cave. A shorter day with extra time to rest and acclimatise.\nDistance: 7 km | Hiking time: About 4 hours | Habitat: Alpine Zone", 'accommodation' => 'Third Cave Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Third Cave Camp (3,800 m) – School Hut (4,800 m)', 'description' => "Ascend steadily across the Saddle between Kibo and Mawenzi to School Hut. Settle in, have an early dinner and rest before waking before midnight for the summit.\nDistance: 7 km | Hiking time: 4–5 hours | Habitat: High Alpine Zone", 'accommodation' => 'School Hut', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'School Hut (4,800 m) – Uhuru Peak (5,895 m) – Millennium Camp (3,790 m)', 'description' => "Start at around midnight, climbing past Hans Meyer Cave to Gilman's Point (5,681 m) for sunrise over Mawenzi. Continue along the crater rim to Uhuru Peak (5,895 m), then descend via Stella Point and the scree slopes to Barafu Camp for a short rest, and on to Millennium Camp for dinner and your final night on the mountain.\nDistance: 16 km | Hiking time: About 12 hours | Habitat: Glacial / Alpine Zones", 'accommodation' => 'Millennium Camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
+                        ['title' => 'Millennium Camp (3,790 m) – Mweka Gate (1,630 m)', 'description' => "Descend through the montane rainforest to Mweka Gate, sign out and receive your summit certificate: green for Gilman's Point, gold for Uhuru Peak. Transfer back to your hotel in Moshi for rest and celebration.\nDistance: 14 km | Hiking time: About 5 hours | Habitat: Rainforest", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
+                        $departureDay,
+                    ]),
+                    'includes' => array_merge($mountainIncludes, ['All camping accommodations', 'Mountain tents']),
+                    'excludes' => $mountainExcludes,
+                    'accommodations' => [
+                        ['name' => 'Mountain Camping', 'description' => 'Remote wilderness camping around the northern slopes of Kilimanjaro, with hot meals and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
+                    ],
+                    'gallery' => [
+                        'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg',
+                        'images/kilimanjaro images/Kilimanjaro.jpeg',
+                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
+                    ],
+                ]);
+            }
         }
     }
 

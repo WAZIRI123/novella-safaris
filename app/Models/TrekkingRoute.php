@@ -6,17 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class TrekkingRoute extends Model
 {
-    /**
-     * Route overview pages (linked from the menu) that list a route's
-     * day options; they are not bookable packages themselves.
-     */
-    public const OVERVIEW_SLUGS = ['machame', 'lemosho', 'marangu', 'rongai', 'umbwe', 'northern-circuit', 'meru'];
-
-    public function scopePackages($query)
-    {
-        return $query->whereNotIn('slug', self::OVERVIEW_SLUGS);
-    }
-
     protected $fillable = [
         'name', 'slug', 'days', 'price', 'description', 'overview', 'image',
         'difficulty', 'features', 'duration_days', 'duration_nights',
