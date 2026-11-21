@@ -377,11 +377,12 @@ class PackagesSeeder extends Seeder
 
     private function trekkingRoutes(): void
     {
+        TrekkingRoute::where('slug', '5-day-machame-express')->delete();
+
         $data = [
             ['machame', 'Machame Route', 'The Whiskey Route  steeper, more scenic, and the most popular route on the mountain.', ['Moderate', 'Best success', 'Scenic'], 1969, 7, 'Moderate', 'images/kilimanjaro images/machame-route-6-days-2.jpeg'],
             ['7-day-machame-route', '7 Days Machame Route', 'Classic 7-day Machame itinerary  balanced acclimatisation and scenic sections.', ['Moderate', 'Popular'], 1969, 7, 'Moderate', 'images/kilimanjaro images/machame-group.jpg'],
             ['6-day-machame-route', '6 Days Machame Route', 'The Whiskey Route Challenge  scenic Machame route with a shorter, high-adventure summit push.', ['Popular', 'Scenic', 'Challenge'], 2100, 6, 'Challenging', 'images/25.jpeg'],
-            ['5-day-machame-express', '5 Days Machame Express', 'Shorter Machame option for experienced trekkers who want a quicker summit push.', ['Express', 'Fitness required'], 1599, 5, 'Strenuous', 'images/26.jpeg'],
             ['lemosho', 'Lemosho Route', 'Approach from the west  remote, quiet, and the best acclimatisation profile of any route.', ['Best acclimatisation', 'Remote'], 2251, 8, 'Moderate', 'images/kilimanjaro images/Kilimanjaro-Lemosho-Route-8-days.jpeg'],
             ['marangu', 'Marangu Route', 'The Coca-Cola Route  the only route with mountain huts. Gentler, and comfortable for first-timers.', ['Huts', 'Beginner-friendly'], 1556, 6, 'Easy', 'images/kilimanjaro images/Marangu3.jpg'],
             ['5-day-marangu-route', '5 Days Marangu Route', 'The classic Coca-Cola Route with mountain hut accommodation, a faster 5 day climb for well-acclimatised trekkers.', ['Huts', 'Faster climb'], 1556, 5, 'Moderate', 'images/kilimanjaro images/Marangu3.jpg'],
@@ -1580,33 +1581,6 @@ class PackagesSeeder extends Seeder
             ];
             $mountainExcludes = ['Flights', 'Visa', 'Tips to mountain crew', 'Private toilet ($120 per group)', 'Laundry services'];
             $numberDays = fn (array $days) => array_map(fn ($day, $i) => ['day' => $i + 1] + $day, $days, array_keys($days));
-
-            if ($slug === '5-day-machame-express') {
-                $route->update([
-                    'overview' => "The 5 Days Machame Express is a faster version of the famous Machame 'Whiskey Route', made for fit and experienced trekkers who want a quicker summit push. You still enjoy the full Machame scenery: lush rainforest, open moorland, the Shira Plateau, Lava Tower, the Barranco Wall and the high alpine desert.\n\nWith one day less on the mountain than the 6 day Machame, there is less time for acclimatisation and the summit day is long, as you descend all the way to Mweka Gate after reaching Uhuru Peak. We recommend this itinerary for climbers with previous high-altitude experience.\n\nQuick Facts: Duration 5 Days / 4 Nights; Starting Point Machame Gate; Ending Point Mweka Gate; Difficulty Strenuous; Accommodation Mountain camping; Summit Uhuru Peak 5,895m / 19,341ft; Best Time January to March and June to October.",
-                    'duration_days' => 5,
-                    'duration_nights' => 4,
-                    'theme' => 'Machame Express Climb',
-                    'skill_level' => 'Strenuous',
-                    'itinerary' => $numberDays([
-                        ['title' => 'Machame Gate (1800m) to Machame Camp (2835m)', 'description' => 'After breakfast you will be picked up at your hotel around 8:00 am and transferred to Machame Gate, passing coffee and banana plantations grown by the Chagga people. After park registration you start your Kilimanjaro climb through the tropical rainforest to Machame Camp (2835m), with a picnic lunch on the way. Dinner and overnight at Machame Camp.', 'accommodation' => 'Machame camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
-                        ['title' => 'Machame Camp (2835m) to Shira Cave Camp (3750m)', 'description' => 'You start hiking around 8:00 am, climbing for about an hour to the top of the forest before continuing at a gentler gradient through the moorland zone. After lunch you continue up a rocky ridge onto the Shira Plateau, with views of the Western Breach and its glaciers. Dinner and overnight at Shira Cave Camp (3750m).', 'accommodation' => 'Shira camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
-                        ['title' => 'Shira Cave Camp (3750m) to Lava Tower (4600m) to Barranco Camp (3900m)', 'description' => 'Following the "climb high, sleep low" principle, you hike into the alpine desert up to Lava Tower (4600m) for lunch, then descend to Barranco Camp (3900m). The descent offers beautiful views of the Western Breach and the Barranco Wall, and the camp sits in a valley below the wall with a memorable sunset. Dinner and overnight at Barranco Camp.', 'accommodation' => 'Barranco camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
-                        ['title' => 'Barranco Camp (3900m) to Karanga to Barafu Camp (4640m)', 'description' => 'After breakfast you climb the Great Barranco Wall, a non-technical but long scramble over rocks, and continue to Karanga Camp for lunch and the last water stop before the summit. In the afternoon you trek through the alpine desert to Barafu Camp (4640m), the base camp for the summit. Early dinner and rest before the midnight start.', 'accommodation' => 'Barafu camp', 'meals' => ['Breakfast', 'Lunch', 'Dinner']],
-                        ['title' => 'Barafu Camp (4640m) to Uhuru Peak (5895m) then down to Mweka Gate (1630m)', 'description' => "You wake around midnight for tea and cookies and climb the scree for 4 to 5 hours to reach Stella Point (5756m) on the crater rim as the first rays of sun appear. It takes about 1 hour more to reach Uhuru Peak (5895m), the highest point in Africa, where you take photos before descending to Barafu Camp for lunch and a rest.\n\nYou then continue the long descent past Millennium Camp and through the rainforest to Mweka Gate, where you collect your summit certificate. A private car takes you back to your hotel in Moshi for a warm shower and a well-deserved celebration.", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast', 'Lunch']],
-                    ]),
-                    'includes' => array_merge($mountainIncludes, ['All camping accommodations', 'Mountain tents']),
-                    'excludes' => $mountainExcludes,
-                    'accommodations' => [
-                        ['name' => 'Mountain Camping', 'description' => 'Classic mountain camping throughout the route, surrounded by dramatic volcanic landscapes, with hot meals and a dedicated climbing crew.', 'image' => 'images/kilimanjaro images/kilimanjaro-routes-7-best-routes-to-climb-mount-kilimanjaro.jpg'],
-                    ],
-                    'gallery' => [
-                        'images/26.jpeg',
-                        'images/kilimanjaro images/Kilimanjaro.jpeg',
-                        'images/kilimanjaro images/Mount-Kilimanjaro-Mauly-Tours.jpg',
-                    ],
-                ]);
-            }
 
             if ($slug === 'lemosho') {
                 $route->update([
