@@ -1956,9 +1956,9 @@ class PackagesSeeder extends Seeder
     private function dayTrips(): void
     {
         $data = [
-            ['materuni-waterfall', 'Materuni Waterfall', 'Hidden Gem of Kilimanjaro. A scenic day trip that combines a guided hike through lush countryside with a visit to one of Tanzania most beautiful waterfalls.', ['Waterfall', 'Coffee', 'Culture'], 80, 'Full day', 'images/Day Trips/IMG-2331-1780110336048-544612569.jpg'],
+            ['materuni-waterfall', 'Materuni Waterfall', 'Hidden Gem of Kilimanjaro. A scenic day trip that combines a guided hike through lush countryside with a visit to one of Tanzania most beautiful waterfalls.', ['Waterfall', 'Coffee', 'Culture'], 80, 'Full day', 'images/Day Trips/IMG-1402-1780110475334-118582944.jpg'],
             ['maasai-tour', 'Maasai Tour', 'Experience Local Heritage. A unique cultural experience where visitors can learn about the traditions, customs, and daily life of the Maasai people.', ['Culture', 'Traditions', 'Village'], 145, 'Full day', 'images/Day Trips/IMG-4419-1780110169806-65108106.jpg'],
-            ['chemka-hot-springs', 'Chemka Hot Springs', 'Turquoise Waters Experience. A relaxing day trip to a natural oasis of crystal-clear turquoise waters surrounded by lush vegetation.', ['Swimming', 'Relaxation', 'Nature'], 80, 'Full day', 'images/Day Trips/IMG-1402-1780110475334-118582944.jpg'],
+            ['chemka-hot-springs', 'Chemka Hot Springs', 'Turquoise Waters Experience. A relaxing day trip to a natural oasis of crystal-clear turquoise waters surrounded by lush vegetation.', ['Swimming', 'Relaxation', 'Nature'], 80, 'Full day', 'images/Day Trips/IMG-2331-1780110336048-544612569.jpg'],
             ['tarangire-national-park', 'Tarangire National Park Day Trip', 'Explore Tarangire National Park, famous for its large elephant herds, ancient baobab trees, and remarkable wildlife.', ['Elephants', 'Baobabs', 'Wildlife'], 145, 'Full day', 'https://arushatrips.com/wp-content/uploads/2019/10/Tarangire-national-park-2.png'],
             ['arusha-national-park-walking-safari', 'Arusha National Park Walking Safari', 'Walk alongside wildlife at the foot of Mount Meru, discovering green surroundings, lakes, waterfalls, and Arusha National Park’s unique black-and-white colobus monkeys.', ['Walking Safari', 'Wildlife', 'Mount Meru'], 165, 'Full day', 'https://arushatrips.com/wp-content/uploads/2019/10/Arusha-National-Park-overview.png'],
         ];
@@ -2044,10 +2044,10 @@ class PackagesSeeder extends Seeder
                         'Personal of nature expenses',
                     ],
                     'accommodations' => [
-                        ['name' => 'Hotel Return', 'description' => 'Return to your hotel in Moshi after the tour.', 'image' => 'images/Day Trips/DSC01306-1780110936265-474666078.jpg'],
+                        ['name' => 'Hotel Return', 'description' => 'Return to your hotel in Moshi after the tour.', 'image' => 'images/Day Trips/IMG-2331-1780110336048-544612569.jpg'],
                     ],
                     'gallery' => [
-                        'images/Day Trips/IMG-1402-1780110475334-118582944.jpg',
+                        'images/Day Trips/IMG-2331-1780110336048-544612569.jpg',
                         'images/Day Trips/DSC01306-1780110936265-474666078.jpg',
                     ],
                 ]);
@@ -2088,7 +2088,7 @@ class PackagesSeeder extends Seeder
                         ['name' => 'Hotel Return', 'description' => 'Return to your hotel in Moshi after the tour.', 'image' => 'images/Day Trips/IMG-1402-1780110475334-118582944.jpg'],
                     ],
                     'gallery' => [
-                        'images/Day Trips/IMG-2331-1780110336048-544612569.jpg',
+                        'images/Day Trips/IMG-1402-1780110475334-118582944.jpg',
                         'images/Day Trips/DSC01306-1780110936265-474666078.jpg',
                     ],
                 ]);
