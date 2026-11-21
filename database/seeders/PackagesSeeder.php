@@ -1738,6 +1738,47 @@ class PackagesSeeder extends Seeder
                 ]);
             }
         }
+
+        $kilimanjaroAndMeruIncludes = [
+            '2 nights at Park View Inn (or similar) in Moshi on a bed-and-breakfast basis (1 night before and 1 night after the trek)',
+            'Airport pick-up on arrival and drop-off on departure',
+            'Transportation to and from the Kilimanjaro park gate',
+            'Kilimanjaro Park entrance fees',
+            'Camping or hut accommodation fees',
+            'Crater fees (if applicable)',
+            'Kilimanjaro rescue team fees',
+            'High-quality 4-season tents',
+            'Double-thickness (10 cm) foam mattresses',
+            'Professional, experienced, and friendly guides, cooks, and porters',
+            'Three freshly prepared meals per day during the trek',
+            'Filtered and treated drinking water throughout the climb',
+            'Hot water for washing',
+            'Fair wages for the mountain crew according to KINAPA and KIATO regulations',
+            'All government taxes',
+            'Portable oxygen cylinders for emergency use',
+            'English- or French-speaking certified mountain guide',
+            'Oximeter, first aid supplies, and stethoscope',
+            'Private portable toilet with a tent (1 toilet for groups of 1–5 climbers, 2 toilets for groups of 6–10 climbers)',
+            'Mountain communication radio',
+            'Official Kilimanjaro summit certificate',
+        ];
+
+        $kilimanjaroAndMeruExcludes = [
+            'Meals and drinks at the hotel (before and after the trek)',
+            'Travel insurance',
+            'Shower tent (available at an additional cost)',
+            'International and local flights',
+            'Laundry services at the hotel',
+            'Personal gear, items, and toiletries',
+            'Gratuities',
+        ];
+
+        foreach ($data as [$slug]) {
+            TrekkingRoute::where('slug', $slug)->update([
+                'includes' => $kilimanjaroAndMeruIncludes,
+                'excludes' => $kilimanjaroAndMeruExcludes,
+            ]);
+        }
     }
 
     private function zanzibarPackages(): void
@@ -2315,4 +2356,3 @@ class PackagesSeeder extends Seeder
         }
     }
 }
-
