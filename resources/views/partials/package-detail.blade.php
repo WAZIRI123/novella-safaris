@@ -225,8 +225,21 @@
                             </thead>
                             <tbody>
                                 @foreach ($package->pricing_tiers as $tier)
+                                    @php
+                                        $personCount = (int) ($tier['persons'] ?? 1);
+                                        $isTrekking = strtolower((string) ($package->category ?? '')) === 'trekking';
+                                        $personLabel = $personCount . ' ' . ($personCount === 1 ? 'Person' : 'Persons');
+                                        if ($isTrekking) {
+                                            $personLabel = match ($personCount) {
+                                                2 => '2-4 Persons',
+                                                5 => '5-9 Persons',
+                                                10 => '10+ Persons',
+                                                default => $personLabel,
+                                            };
+                                        }
+                                    @endphp
                                     <tr>
-                                        <td>{{ $tier['persons'] ?? '' }} {{ (($tier['persons'] ?? 1) > 1) ? 'Persons' : 'Person' }}</td>
+                                        <td>{{ $personLabel }}</td>
                                         <td class="price">${{ number_format((float) ($tier['price'] ?? 0)) }}</td>
                                     </tr>
                                 @endforeach

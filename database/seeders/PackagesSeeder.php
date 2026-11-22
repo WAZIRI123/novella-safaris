@@ -47,6 +47,82 @@ class PackagesSeeder extends Seeder
                 'is_published' => true,
             ]);
 
+            $documentPricing = [
+                '2-days-safari-adventure' => [
+                    'price_from' => 1500,
+                    'tiers' => [
+                        ['persons' => 1, 'price' => 1500],
+                        ['persons' => 2, 'price' => 950],
+                        ['persons' => 3, 'price' => 850],
+                        ['persons' => 4, 'price' => 700],
+                        ['persons' => 5, 'price' => 650],
+                        ['persons' => 6, 'price' => 590],
+                    ],
+                ],
+                '4-days-wildlife-safari' => [
+                    'price_from' => 2250,
+                    'tiers' => [
+                        ['persons' => 1, 'price' => 2250],
+                        ['persons' => 2, 'price' => 1700],
+                        ['persons' => 3, 'price' => 1605],
+                        ['persons' => 4, 'price' => 1350],
+                        ['persons' => 5, 'price' => 1290],
+                        ['persons' => 6, 'price' => 1200],
+                    ],
+                ],
+                '5-days-safari-expedition' => [
+                    'price_from' => 2800,
+                    'tiers' => [
+                        ['persons' => 1, 'price' => 2800],
+                        ['persons' => 2, 'price' => 2250],
+                        ['persons' => 3, 'price' => 2050],
+                        ['persons' => 4, 'price' => 1900],
+                        ['persons' => 5, 'price' => 1780],
+                        ['persons' => 6, 'price' => 1690],
+                    ],
+                ],
+                '6-days-safari-discovery' => [
+                    'price_from' => 3700,
+                    'tiers' => [
+                        ['persons' => 1, 'price' => 3700],
+                        ['persons' => 2, 'price' => 2700],
+                        ['persons' => 3, 'price' => 2400],
+                        ['persons' => 4, 'price' => 2250],
+                        ['persons' => 5, 'price' => 2050],
+                        ['persons' => 6, 'price' => 1090],
+                    ],
+                ],
+                '7-days-safari-journey' => [
+                    'price_from' => 4200,
+                    'tiers' => [
+                        ['persons' => 1, 'price' => 4200],
+                        ['persons' => 2, 'price' => 2818],
+                        ['persons' => 3, 'price' => 2700],
+                        ['persons' => 4, 'price' => 2400],
+                        ['persons' => 5, 'price' => 2350],
+                        ['persons' => 6, 'price' => 2190],
+                    ],
+                ],
+                '8-days-safari-expedition' => [
+                    'price_from' => 4800,
+                    'tiers' => [
+                        ['persons' => 1, 'price' => 4800],
+                        ['persons' => 2, 'price' => 3647],
+                        ['persons' => 3, 'price' => 3200],
+                        ['persons' => 4, 'price' => 2900],
+                        ['persons' => 5, 'price' => 2700],
+                        ['persons' => 6, 'price' => 2500],
+                    ],
+                ],
+            ];
+
+            if (isset($documentPricing[$slug])) {
+                $safari->update([
+                    'price_from' => $documentPricing[$slug]['price_from'],
+                    'pricing_tiers' => $documentPricing[$slug]['tiers'],
+                ]);
+            }
+
             if ($slug === '2-days-safari-adventure') {
                 $safari->update([
                     'overview' => "A Short, Unforgettable Tanzania Wildlife Adventure\n\nExperience the magic of Tanzania with Novella Tanzania Safaris and Trekking on a memorable 2-day safari through Tarangire National Park and the Ngorongoro Crater.\n\nDesigned for travelers with limited time, this private safari combines spectacular landscapes, incredible wildlife, and exciting game drives into one unforgettable adventure. From the impressive elephant herds and ancient baobab trees of Tarangire to the breathtaking scenery and abundant wildlife of the Ngorongoro Crater, every day offers something special.\n\nWhether you are visiting Tanzania before or after a Kilimanjaro adventure, planning a Zanzibar holiday, or simply looking for a short wildlife escape, this safari is an excellent way to experience the highlights of northern Tanzania.\n\nSafari at a Glance\nDuration: 2 Days / 1 Night\nDestinations: Tarangire National Park & Ngorongoro Crater\nSafari Type: Private Safari\nTransport: 4x4 safari vehicle with pop-up roof\nAccommodation: Camping, mid-range, or luxury lodge options\nIdeal For: Couples, families, friends, solo travelers, and travelers with limited time\n\nSafari Highlights\n• Discover the wildlife-rich landscapes of Tarangire National Park\n• See large herds of elephants in their natural habitat\n• Admire Tarangire's iconic baobab trees and beautiful scenery\n• Explore the spectacular Ngorongoro Crater\n• Look out for lions, elephants, buffaloes, zebras, giraffes, hyenas, hippos, and flamingos\n• Have the opportunity to spot the endangered black rhinoceros\n• Enjoy private game drives with an experienced safari guide\n• Experience two of Tanzania's most famous wildlife destinations in just two days\n\nWhy Travel with Novella Tanzania Safaris and Trekking?\nAt Novella Tanzania Safaris and Trekking, we believe that a safari should be more than simply seeing wildlife. It should be an experience that allows you to connect with Tanzania's nature, landscapes, people, and culture.\n\nOur 2-day safari is carefully arranged to make the most of your limited time while providing a comfortable and enjoyable travel experience. With a private safari vehicle, knowledgeable guide, flexible arrangements, and a choice of accommodation, we can tailor the experience to suit your travel style and budget.\n\nWhether you are starting your Tanzanian adventure in Moshi or Arusha, or combining your safari with a Kilimanjaro climb or Zanzibar beach holiday, our team is ready to help you create an unforgettable journey.",
@@ -373,6 +449,22 @@ class PackagesSeeder extends Seeder
                 ]);
             }
         }
+
+        $documentPricing = [
+            '2-days-safari-adventure' => [1500, [[ 'persons' => 1, 'price' => 1500 ], [ 'persons' => 2, 'price' => 950 ], [ 'persons' => 3, 'price' => 850 ], [ 'persons' => 4, 'price' => 700 ], [ 'persons' => 5, 'price' => 650 ], [ 'persons' => 6, 'price' => 590 ]]],
+            '4-days-wildlife-safari' => [2250, [[ 'persons' => 1, 'price' => 2250 ], [ 'persons' => 2, 'price' => 1700 ], [ 'persons' => 3, 'price' => 1605 ], [ 'persons' => 4, 'price' => 1350 ], [ 'persons' => 5, 'price' => 1290 ], [ 'persons' => 6, 'price' => 1200 ]]],
+            '5-days-safari-expedition' => [2800, [[ 'persons' => 1, 'price' => 2800 ], [ 'persons' => 2, 'price' => 2250 ], [ 'persons' => 3, 'price' => 2050 ], [ 'persons' => 4, 'price' => 1900 ], [ 'persons' => 5, 'price' => 1780 ], [ 'persons' => 6, 'price' => 1690 ]]],
+            '6-days-safari-discovery' => [3700, [[ 'persons' => 1, 'price' => 3700 ], [ 'persons' => 2, 'price' => 2700 ], [ 'persons' => 3, 'price' => 2400 ], [ 'persons' => 4, 'price' => 2250 ], [ 'persons' => 5, 'price' => 2050 ], [ 'persons' => 6, 'price' => 1090 ]]],
+            '7-days-safari-journey' => [4200, [[ 'persons' => 1, 'price' => 4200 ], [ 'persons' => 2, 'price' => 2818 ], [ 'persons' => 3, 'price' => 2700 ], [ 'persons' => 4, 'price' => 2400 ], [ 'persons' => 5, 'price' => 2350 ], [ 'persons' => 6, 'price' => 2190 ]]],
+            '8-days-safari-expedition' => [4800, [[ 'persons' => 1, 'price' => 4800 ], [ 'persons' => 2, 'price' => 3647 ], [ 'persons' => 3, 'price' => 3200 ], [ 'persons' => 4, 'price' => 2900 ], [ 'persons' => 5, 'price' => 2700 ], [ 'persons' => 6, 'price' => 2500 ]]],
+        ];
+
+        foreach ($documentPricing as $slug => [$priceFrom, $tiers]) {
+            Safari::where('slug', $slug)->update([
+                'price_from' => $priceFrom,
+                'pricing_tiers' => $tiers,
+            ]);
+        }
     }
 
     private function trekkingRoutes(): void
@@ -420,6 +512,46 @@ class PackagesSeeder extends Seeder
                 'sort_order' => $i,
                 'is_published' => true,
             ]);
+
+            $documentPricing = [
+                'machame' => [2500, 1950, 1700, 1600],
+                '6-day-machame-route' => [2250, 1750, 1600, 1500],
+                '7-day-machame-route' => [2500, 1950, 1700, 1600],
+                'marangu' => [2250, 1750, 1600, 1500],
+                '5-day-marangu-route' => [2000, 1550, 1400, 1300],
+                '6-day-marangu-huts' => [2250, 1750, 1600, 1500],
+                'lemosho' => [2800, 2250, 1950, 1900],
+                '6-day-lemosho-route-climb' => [2250, 1750, 1600, 1500],
+                '7-day-lemosho-route-climb' => [2500, 1950, 1700, 1600],
+                '8-day-lemosho-route-climb' => [2800, 2250, 1950, 1900],
+                '8-day-lemosho-route-climb-kosovo-camp' => [3200, 2650, 2350, 2300],
+                '8-day-lemosho-route-crater-camp' => [3200, 2650, 2350, 2300],
+                'rongai' => [2500, 1950, 1700, 1600],
+                'rongai-6-day' => [2250, 1750, 1600, 1500],
+                '7-day-rongai-route' => [2500, 1950, 1700, 1600],
+                'umbwe' => [2250, 1750, 1600, 1500],
+                '6-day-umbwe-route-climb' => [2250, 1750, 1600, 1500],
+                '7-day-umbwe-route-climb' => [2500, 1950, 1700, 1600],
+                'northern-circuit' => [3300, 2600, 2300, 2100],
+                '8-days-northern-circuit-route' => [2800, 2250, 1950, 1900],
+                '9-days-northern-circuit-route' => [3300, 2600, 2300, 2100],
+                'meru' => [1500, 1150, 1000, 950],
+                'mount-meru-3-day' => [1250, 950, 850, 750],
+                '4-day-mount-meru-trek' => [1500, 1150, 1000, 950],
+            ];
+
+            if (isset($documentPricing[$slug])) {
+                [$one, $group, $large, $groupLarge] = $documentPricing[$slug];
+                $route->update([
+                    'price' => $one,
+                    'pricing_tiers' => [
+                        ['persons' => 1, 'price' => $one],
+                        ['persons' => 2, 'price' => $group],
+                        ['persons' => 5, 'price' => $large],
+                        ['persons' => 10, 'price' => $groupLarge],
+                    ],
+                ]);
+            }
 
             if ($slug === '8-day-lemosho-route-climb-kosovo-camp') {
                 $route->update([
@@ -945,10 +1077,10 @@ class PackagesSeeder extends Seeder
                     'theme' => 'Most popular and busiest route',
                     'skill_level' => 'Challenging',
                     'pricing_tiers' => [
-                        ['persons' => 1, 'price' => 2250],
-                        ['persons' => 2, 'price' => 2200],
-                        ['persons' => 5, 'price' => 2150],
-                        ['persons' => 10, 'price' => 2100],
+                        ['persons' => 1, 'price' => 2500],
+                        ['persons' => 2, 'price' => 1950],
+                        ['persons' => 5, 'price' => 1700],
+                        ['persons' => 10, 'price' => 1600],
                     ],
                     'itinerary' => [
                         ['day' => 1, 'title' => 'Arrive in Tanzania at Kilimanjaro International Airport (JRO)', 'description' => "Upon arrival at Kilimanjaro International Airport, you will be met by our representative and transferred to your hotel in Moshi. Later, you will meet your mountain guide for a detailed briefing about the upcoming trek. The guide will also conduct an equipment check to ensure you have all the essential mountain gear, with any missing items available for rent before the climb.", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast']],
@@ -1006,10 +1138,10 @@ class PackagesSeeder extends Seeder
                     'theme' => 'Most popular and busiest route',
                     'skill_level' => 'Challenging',
                     'pricing_tiers' => [
-                        ['persons' => 1, 'price' => 2250],
-                        ['persons' => 2, 'price' => 2200],
-                        ['persons' => 5, 'price' => 2150],
-                        ['persons' => 10, 'price' => 2100],
+                        ['persons' => 1, 'price' => 2500],
+                        ['persons' => 2, 'price' => 1950],
+                        ['persons' => 5, 'price' => 1700],
+                        ['persons' => 10, 'price' => 1600],
                     ],
                     'itinerary' => [
                         ['day' => 1, 'title' => 'Arrive in Tanzania at Kilimanjaro International Airport (JRO)', 'description' => "Upon arrival at Kilimanjaro International Airport, you will be met by our representative and transferred to your hotel in Moshi. Later, you will meet your mountain guide for a detailed briefing about the upcoming trek. The guide will also conduct an equipment check to ensure you have all the essential mountain gear, with any missing items available for rent before the climb.", 'accommodation' => 'Hotel in Moshi', 'meals' => ['Breakfast']],
@@ -1067,10 +1199,10 @@ class PackagesSeeder extends Seeder
                     'theme' => 'The Whiskey Route Challenge',
                     'skill_level' => 'Challenging',
                     'pricing_tiers' => [
-                        ['persons' => 1, 'price' => 2100],
-                        ['persons' => 2, 'price' => 2000],
-                        ['persons' => 5, 'price' => 1950],
-                        ['persons' => 10, 'price' => 1900],
+                        ['persons' => 1, 'price' => 2250],
+                        ['persons' => 2, 'price' => 1750],
+                        ['persons' => 5, 'price' => 1600],
+                        ['persons' => 10, 'price' => 1500],
                     ],
                     'itinerary' => [
                         ['day' => 1, 'title' => "Arrive in Tanzania", 'description' => "You will be picked up at the Kilimanjaro International Airport and transferred to your hotel in Moshi town, you will meet your guide who will brief you on your upcoming trek and do an equipment check to make sure you have all the necessary mountain gear. The missing gear can be rented on this day.", 'accommodation' => "Hotel in Moshi", 'meals' => ["Breakfast"]],
@@ -1711,7 +1843,6 @@ class PackagesSeeder extends Seeder
                     ],
                 ]);
             }
-        }
 
         $kilimanjaroAndMeruIncludes = [
             '2 nights at Park View Inn (or similar) in Moshi on a bed-and-breakfast basis (1 night before and 1 night after the trek)',
@@ -1747,12 +1878,52 @@ class PackagesSeeder extends Seeder
             'Gratuities',
         ];
 
+        $documentPricing = [
+            'machame' => [2500, 1950, 1700, 1600],
+            '6-day-machame-route' => [2250, 1750, 1600, 1500],
+            '7-day-machame-route' => [2500, 1950, 1700, 1600],
+            'marangu' => [2250, 1750, 1600, 1500],
+            '5-day-marangu-route' => [2000, 1550, 1400, 1300],
+            '6-day-marangu-huts' => [2250, 1750, 1600, 1500],
+            'lemosho' => [2800, 2250, 1950, 1900],
+            '6-day-lemosho-route-climb' => [2250, 1750, 1600, 1500],
+            '7-day-lemosho-route-climb' => [2500, 1950, 1700, 1600],
+            '8-day-lemosho-route-climb' => [2800, 2250, 1950, 1900],
+            '8-day-lemosho-route-climb-kosovo-camp' => [3200, 2650, 2350, 2300],
+            '8-day-lemosho-route-crater-camp' => [3200, 2650, 2350, 2300],
+            'rongai' => [2500, 1950, 1700, 1600],
+            'rongai-6-day' => [2250, 1750, 1600, 1500],
+            '7-day-rongai-route' => [2500, 1950, 1700, 1600],
+            'umbwe' => [2250, 1750, 1600, 1500],
+            '6-day-umbwe-route-climb' => [2250, 1750, 1600, 1500],
+            '7-day-umbwe-route-climb' => [2500, 1950, 1700, 1600],
+            'northern-circuit' => [3300, 2600, 2300, 2100],
+            '8-days-northern-circuit-route' => [2800, 2250, 1950, 1900],
+            '9-days-northern-circuit-route' => [3300, 2600, 2300, 2100],
+            'meru' => [1500, 1150, 1000, 950],
+            'mount-meru-3-day' => [1250, 950, 850, 750],
+            '4-day-mount-meru-trek' => [1500, 1150, 1000, 950],
+        ];
+
+        foreach ($documentPricing as $slug => [$one, $group, $large, $groupLarge]) {
+            TrekkingRoute::where('slug', $slug)->update([
+                'price' => $one,
+                'pricing_tiers' => [
+                    ['persons' => 1, 'price' => $one],
+                    ['persons' => 2, 'price' => $group],
+                    ['persons' => 5, 'price' => $large],
+                    ['persons' => 10, 'price' => $groupLarge],
+                ],
+            ]);
+        }
+
         foreach ($data as [$slug]) {
             TrekkingRoute::where('slug', $slug)->update([
                 'includes' => $kilimanjaroAndMeruIncludes,
                 'excludes' => $kilimanjaroAndMeruExcludes,
             ]);
         }
+    }
     }
 
     private function zanzibarPackages(): void
