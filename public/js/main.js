@@ -70,6 +70,15 @@
     // Mobile menu toggle
     const toggle = document.getElementById('navToggle');
     const menu   = document.getElementById('primaryNav');
+    const packingListToggle = menu && menu.querySelector('.packing-list-toggle');
+    if (packingListToggle) {
+        packingListToggle.addEventListener('click', (event) => {
+            event.preventDefault();
+            const dropdown = packingListToggle.parentElement;
+            const isOpen = dropdown.classList.toggle('open');
+            packingListToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+    }
     if (toggle && menu) {
         toggle.addEventListener('click', () => {
             toggle.classList.toggle('open');

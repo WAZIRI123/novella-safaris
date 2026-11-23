@@ -299,6 +299,7 @@ p { margin: 0 0 1em; color: var(--text); }
     border-top: 3px solid var(--yellow);
 }
 .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.has-dropdown.open > .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown li a { display: block; padding: 9px 20px; font-size: 14px; color: var(--navy); text-transform: none; letter-spacing: 0; }
 .dropdown li a:hover { background: var(--bg-light); color: var(--gold); padding-left: 24px; }
 
@@ -1835,6 +1836,7 @@ p { margin: 0 0 1em; color: var(--text); }
         display: none;
     }
     .has-dropdown:hover .dropdown { display: block; }
+    .has-dropdown.open > .dropdown { display: block; }
     .submenu {
         position: static;
         opacity: 1;

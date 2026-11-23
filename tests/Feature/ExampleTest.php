@@ -16,4 +16,13 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_header_includes_the_packaging_list_downloads(): void
+    {
+        $header = $this->view('partials.header');
+
+        $header->assertSee('Packagin list');
+        $header->assertSee(asset('assets/downloads/safari-packing-list.pdf'));
+        $header->assertSee(asset('assets/downloads/kilimanjaro-packing-list.pdf'));
+    }
 }

@@ -69,6 +69,13 @@
                 </li>
                 <li><a href="{{ route('zanzibar') }}"{!! $navActive('zanzibar') !!}>Zanzibar</a></li>
                 <li><a href="{{ route('day-trips') }}"{!! $navActive('day-trips') !!}>Day Trips</a></li>
+                <li class="has-dropdown">
+                    <a href="#" class="packing-list-toggle" aria-haspopup="true" aria-expanded="false">Packagin list <i class="bi bi-chevron-down"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="{{ asset('assets/downloads/safari-packing-list.pdf') }}" download>Safari</a></li>
+                        <li><a href="{{ asset('assets/downloads/kilimanjaro-packing-list.pdf') }}" download>Kilimanjaro</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
 
